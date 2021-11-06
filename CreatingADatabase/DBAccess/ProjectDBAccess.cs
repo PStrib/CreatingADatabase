@@ -68,7 +68,8 @@ namespace CreatingADatabase.DBAccess
             db.Cmd = db.Conn.CreateCommand();
             db.Cmd.CommandText = sqlCmd;
             db.Reader = db.Cmd.ExecuteReader();
-            int ProjectCode = db.Reader;
+            db.Reader.Read();
+            int ProjectCode = db.Reader.GetInt32(0);
             db.Reader.Close();
             return ProjectCode;
         }
@@ -156,7 +157,7 @@ namespace CreatingADatabase.DBAccess
         public void AddNewProject (Project p)
         {
             db.Cmd = db.Conn.CreateCommand();
-            db.Cmd.CommandText = "insert into Project values ('" + p.ProjectName + "','" + p.ManagerName + "','" +
+            db.Cmd.CommandText = "insert into Project (ProjectTitle, ProjectManager, ProjectBudget, ProjectStartDate, ProjectEndDate, ProjectCompleted) values ('" + p.ProjectName + "','" + p.ManagerName + "','" +
             p.ProjectBudget + "','" + p.ProjectStartDate.ToString("MM/dd/yyyy") + "','" + p.ProjectEndDate.ToString("MM/dd/yyyy") +
             "','" + p.ProjectCompleted + "')";
             db.Cmd.ExecuteNonQuery();

@@ -89,16 +89,14 @@ namespace CreatingADatabase.GUI
                 EmployeeDBAccess eDBAccess = new EmployeeDBAccess(db);
                 ProjectEmployeeDBAccess peDBAccess = new ProjectEmployeeDBAccess(db);
                 p.AddNewProject(project);
-                foreach(var employee in lboxSelectedEmployees.Items)
+                int projectID = pdbAccess.GetLastProjectID();
+                foreach (var employee in lboxSelectedEmployees.Items)
                 {
                     eDBAccess.GetEmployeesByName(employee.ToString());
                     Employee emp = eDBAccess.GetEmployeeObject();
                     int employeeID = emp.EmployeeNo;
-                    ProjectEmployee projectEmployee = new ProjectEmployee();
-
-                    int projectID = pdbAccess.GetLastProjectID();//----------need to make this method
-
-                    peDBAccess.AddNewProjectEmployee(ProjectEmployee);
+                    ProjectEmployee projectEmployee = new ProjectEmployee(projectID, employeeID);
+                    peDBAccess.AddNewProjectEmployee(projectEmployee);
                 }
                 MessageBox.Show("Project Added!");
                 ClearAllFields();

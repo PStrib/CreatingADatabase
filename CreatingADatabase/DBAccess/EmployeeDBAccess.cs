@@ -56,7 +56,7 @@ namespace CreatingADatabase.DBAccess
 
         public void GetEmployeesByName(string employee)
         {
-            string sqlCmd = "SELECT * FROM Project WHERE EmployeeName = '" + employee + "'";
+            string sqlCmd = "SELECT * FROM Employee WHERE EmployeeName = '" + employee + "'";
             db.Cmd = db.Conn.CreateCommand();
             db.Cmd.CommandText = sqlCmd;
             db.Reader = db.Cmd.ExecuteReader();
