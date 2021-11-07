@@ -43,5 +43,11 @@ namespace CreatingADatabase.GUI
             AddProjectForm addProjectForm = new AddProjectForm();
             addProjectForm.Show();
         }
+
+        private void btnInnerJoin_Click(object sender, EventArgs e)
+        {
+            InnerJoinForm innerJoinForm = new InnerJoinForm()/*(db)*/;
+            innerJoinForm.Show();
+        }
     }
 }
