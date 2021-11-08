@@ -64,6 +64,7 @@
     <Compile Include="DBAccess\EmployeeDBAccess.cs" />
     <Compile Include="DBAccess\ProjectDBAccess.cs" />
     <Compile Include="DBAccess\ProjectEmployeeDBAccess.cs" />
+    <Compile Include="DBAccess\ReportDBAccess.cs" />
     <Compile Include="GUI\AddProject.cs">
       <SubType>Form</SubType>
     </Compile>
