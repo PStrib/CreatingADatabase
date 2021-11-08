@@ -17,7 +17,7 @@ namespace CreatingADatabase.DBAccess
         public void AddNewProjectEmployee(ProjectEmployee pe)
         {
             db.Cmd = db.Conn.CreateCommand();
-            db.Cmd.CommandText = "insert into ProjectEmployee values ('" + pe.ProjectCode + "','" + pe.EmployeeNo + "','" + pe.HourlyRate + "')";
+            db.Cmd.CommandText = "insert into ProjectEmployee (ProjectCode, EmployeeNo) values (" + pe.ProjectCode + "," + pe.EmployeeNo + ")";
             db.Cmd.ExecuteNonQuery();
         }
     }

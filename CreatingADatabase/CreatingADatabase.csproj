@@ -76,6 +76,12 @@
     <Compile Include="GUI\EditForm.Designer.cs">
       <DependentUpon>EditForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\InnerJoinForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\InnerJoinForm.Designer.cs">
+      <DependentUpon>InnerJoinForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\MainApp.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -99,6 +105,7 @@
     <Compile Include="Objects\Employee.cs" />
     <Compile Include="Objects\Project.cs" />
     <Compile Include="Objects\ProjectEmployee.cs" />
+    <Compile Include="Objects\Report.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="GUI\AddProject.resx">
@@ -106,6 +113,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\EditForm.resx">
       <DependentUpon>EditForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\InnerJoinForm.resx">
+      <DependentUpon>InnerJoinForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\MainApp.resx">
       <DependentUpon>MainApp.cs</DependentUpon>

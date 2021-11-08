@@ -33,6 +33,7 @@ namespace CreatingADatabase.GUI
             this.btnSearchTool = new System.Windows.Forms.Button();
             this.btnEditProject = new System.Windows.Forms.Button();
             this.btnAddProject = new System.Windows.Forms.Button();
+            this.btnInnerJoin = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // WelcomeBanner
@@ -50,7 +51,7 @@ namespace CreatingADatabase.GUI
             // 
             this.btnSearchTool.Font = new System.Drawing.Font("Gazelle", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSearchTool.Location = new System.Drawing.Point(95, 43);
-            this.btnSearchTool.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnSearchTool.Margin = new System.Windows.Forms.Padding(2);
             this.btnSearchTool.Name = "btnSearchTool";
             this.btnSearchTool.Size = new System.Drawing.Size(140, 35);
             this.btnSearchTool.TabIndex = 1;
@@ -62,7 +63,7 @@ namespace CreatingADatabase.GUI
             // 
             this.btnEditProject.Font = new System.Drawing.Font("Gazelle", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEditProject.Location = new System.Drawing.Point(95, 82);
-            this.btnEditProject.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnEditProject.Margin = new System.Windows.Forms.Padding(2);
             this.btnEditProject.Name = "btnEditProject";
             this.btnEditProject.Size = new System.Drawing.Size(140, 35);
             this.btnEditProject.TabIndex = 2;
@@ -82,16 +83,29 @@ namespace CreatingADatabase.GUI
             this.btnAddProject.UseVisualStyleBackColor = true;
             this.btnAddProject.Click += new System.EventHandler(this.btnAddProject_Click);
             // 
+            // btnInnerJoin
+            // 
+            this.btnInnerJoin.Font = new System.Drawing.Font("Gazelle", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnInnerJoin.Location = new System.Drawing.Point(95, 160);
+            this.btnInnerJoin.Margin = new System.Windows.Forms.Padding(2);
+            this.btnInnerJoin.Name = "btnInnerJoin";
+            this.btnInnerJoin.Size = new System.Drawing.Size(140, 35);
+            this.btnInnerJoin.TabIndex = 4;
+            this.btnInnerJoin.Text = "Inner Join";
+            this.btnInnerJoin.UseVisualStyleBackColor = true;
+            this.btnInnerJoin.Click += new System.EventHandler(this.btnInnerJoin_Click);
+            // 
             // MainApp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(329, 191);
+            this.ClientSize = new System.Drawing.Size(329, 232);
+            this.Controls.Add(this.btnInnerJoin);
             this.Controls.Add(this.btnAddProject);
             this.Controls.Add(this.btnEditProject);
             this.Controls.Add(this.btnSearchTool);
             this.Controls.Add(this.WelcomeBanner);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "MainApp";
             this.Text = "MainApp";
             this.ResumeLayout(false);
@@ -105,5 +119,6 @@ namespace CreatingADatabase.GUI
         private System.Windows.Forms.Button btnSearchTool;
         private System.Windows.Forms.Button btnEditProject;
         private System.Windows.Forms.Button btnAddProject;
+        private System.Windows.Forms.Button btnInnerJoin;
     }
 }

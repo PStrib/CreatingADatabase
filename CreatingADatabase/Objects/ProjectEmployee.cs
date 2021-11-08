@@ -10,13 +10,18 @@ namespace CreatingADatabase.Objects
     {
         private int projectCode;
         private int employeeNo;
-        private decimal hourlyRate;
+        //private decimal hourlyRate;
 
-        public ProjectEmployee(int ProjectCode, int EmployeeNo, decimal HourlyRate)
+        //public ProjectEmployee(int ProjectCode, int EmployeeNo, decimal HourlyRate)
+        //{
+        //    projectCode = ProjectCode;
+        //    employeeNo = EmployeeNo;
+        //    hourlyRate = HourlyRate;
+        //}
+        public ProjectEmployee(int ProjectCode, int EmployeeNo)
         {
             projectCode = ProjectCode;
             employeeNo = EmployeeNo;
-            hourlyRate = HourlyRate;
         }
 
         public int ProjectCode
@@ -45,17 +50,17 @@ namespace CreatingADatabase.Objects
             }
         }
 
-        public decimal HourlyRate
-        {
-            get
-            {
-                return hourlyRate;
-            }
+        //public decimal HourlyRate
+        //{
+        //    get
+        //    {
+        //        return hourlyRate;
+        //    }
 
-            set
-            {
-                hourlyRate = value;
-            }
-        }
+        //    set
+        //    {
+        //        hourlyRate = value;
+        //    }
+        //}
     }
 }
