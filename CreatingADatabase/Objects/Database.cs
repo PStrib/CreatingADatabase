@@ -60,7 +60,7 @@ namespace CreatingADatabase.Objects
         {
             SqlConnectionStringBuilder ScStrBuild = new SqlConnectionStringBuilder();
             ScStrBuild.DataSource = "(LocalDB)\\mssqllocaldb";
-            ScStrBuild.AttachDBFilename = "|DataDirectory|ProjectDatabase.mdf";
+            ScStrBuild.AttachDBFilename = "|DataDirectory|SimpsonsDatabase.mdf";
             ScStrBuild.IntegratedSecurity = true;
             conn = new SqlConnection(ScStrBuild.ToString());
             try
