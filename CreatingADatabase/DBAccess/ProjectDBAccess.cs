@@ -30,7 +30,7 @@ namespace CreatingADatabase.DBAccess
             return proj;
         }
 
-        public void UpdateProject(Project p)
+        public void UpdateProject(Project p)//---------This will be very useful
         {
             db.Cmd = db.Conn.CreateCommand();
             db.Cmd.CommandText = "update Project set ProjectTitle= '" + p.ProjectName
@@ -154,7 +154,7 @@ namespace CreatingADatabase.DBAccess
             db.Reader = db.Cmd.ExecuteReader();
         }
 
-        public void AddNewProject (Project p)
+        public void AddNewProject (Project p)//----------------USEFUL
         {
             db.Cmd = db.Conn.CreateCommand();
             db.Cmd.CommandText = "insert into Project (ProjectTitle, ProjectManager, ProjectBudget, ProjectStartDate, ProjectEndDate, ProjectCompleted) values ('" + p.ProjectName + "','" + p.ManagerName + "','" +

@@ -61,6 +61,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DBAccess\ClientDBAccess.cs" />
     <Compile Include="DBAccess\EmployeeDBAccess.cs" />
     <Compile Include="DBAccess\ProjectDBAccess.cs" />
     <Compile Include="DBAccess\ProjectEmployeeDBAccess.cs" />

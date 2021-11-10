@@ -59,7 +59,10 @@ namespace CreatingADatabase.Objects
             }
             set
             {
-                contactForename = value;
+                if (CheckPresent(value))
+                    contactForename = value;
+                else
+                    throw new Exception("You must enter your forename or that of your company's contact person");
             }
         }
         public string ContactSurname
@@ -70,7 +73,10 @@ namespace CreatingADatabase.Objects
             }
             set
             {
-                contactSurname = value;
+                if (CheckPresent(value))
+                    contactSurname = value;
+                else
+                    throw new Exception("You must enter your surname or that of your company's contact person.");
             }
         }
         public string BusinessName
@@ -81,7 +87,10 @@ namespace CreatingADatabase.Objects
             }
             set
             {
-                businessName = value;
+                if (CheckPresent(value))
+                    businessName = value;
+                else
+                    throw new Exception("You must enter your business' name./nIf you are not booking for a business, enter your surname.");
             }
         }
         public int HouseNo
@@ -92,7 +101,10 @@ namespace CreatingADatabase.Objects
             }
             set
             {
-                houseNo = value;
+                if (CheckPresent(value))
+                    houseNo = value;
+                else
+                    throw new Exception("You must enter a house number");
             }
         }
 
@@ -104,7 +116,10 @@ namespace CreatingADatabase.Objects
             }
             set
             {
-                streetName = value;
+                if (CheckPresent(value))
+                    streetName = value;
+                else
+                    throw new Exception("You must enter a street name");
             }
         }
 
@@ -116,7 +131,10 @@ namespace CreatingADatabase.Objects
             }
             set
             {
-                townName = value;
+                if (CheckPresent(value))
+                    townName = value;
+                else
+                    throw new Exception("You must enter a town name");
             }
         }
 
@@ -128,7 +146,10 @@ namespace CreatingADatabase.Objects
             }
             set
             {
-                postCode = value;
+                if (CheckPresent(value))//TODO: add validation method to check if postcode is valid
+                    postCode = value;
+                else
+                    throw new Exception("You must enter a valid PostCode");
             }
         }
         public string County
@@ -139,7 +160,10 @@ namespace CreatingADatabase.Objects
             }
             set
             {
-                county = value;
+                if (CheckPresent(value))
+                    county = value;
+                else
+                    throw new Exception("You must enter a county");
             }
         }
         public string ContactPhoneNo
@@ -150,7 +174,10 @@ namespace CreatingADatabase.Objects
             }
             set
             {
-                contactPhoneNo = value;
+                if (CheckPresent(value))
+                    contactPhoneNo = value;
+                else
+                    throw new Exception("You must enter a phone number");
             }
         }
         public string ContactEmail
@@ -161,8 +188,28 @@ namespace CreatingADatabase.Objects
             }
             set
             {
-                contactEmail = value;
+                if (CheckPresent(value))
+                    contactEmail = value;
+                else
+                    throw new Exception("You must enter an email address");
             }
+        }
+
+        private bool CheckPresent(string value)
+        {
+            if (string.IsNullOrWhiteSpace(value))
+                return false;
+            else
+                return true;
+        }
+
+        private bool CheckPresent(int value)
+        {
+            string strvalue = Convert.ToString(value);
+            if (string.IsNullOrWhiteSpace(strvalue))
+                return false;
+            else
+                return true;
         }
     }
 }
