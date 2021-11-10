@@ -65,6 +65,12 @@
     <Compile Include="DBAccess\ProjectDBAccess.cs" />
     <Compile Include="DBAccess\ProjectEmployeeDBAccess.cs" />
     <Compile Include="DBAccess\ReportDBAccess.cs" />
+    <Compile Include="GUI\AddClient.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\AddClient.Designer.cs">
+      <DependentUpon>AddClient.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\AddProject.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -101,6 +107,7 @@
     <Compile Include="GUI\SearchFormByName.Designer.cs">
       <DependentUpon>SearchFormByName.cs</DependentUpon>
     </Compile>
+    <Compile Include="Objects\Client.cs" />
     <Compile Include="Objects\Database.cs" />
     <Compile Include="Objects\Department.cs" />
     <Compile Include="Objects\Employee.cs" />
@@ -109,6 +116,9 @@
     <Compile Include="Objects\Report.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="GUI\AddClient.resx">
+      <DependentUpon>AddClient.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\AddProject.resx">
       <DependentUpon>AddProject.cs</DependentUpon>
     </EmbeddedResource>
