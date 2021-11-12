@@ -170,7 +170,7 @@ namespace CreatingADatabase.Objects
         {
             get
             {
-                return ContactPhoneNo;
+                return contactPhoneNo;
             }
             set
             {
