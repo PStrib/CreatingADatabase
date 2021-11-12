@@ -54,6 +54,7 @@ namespace CreatingADatabase.GUI
             this.btnAddClient.TabIndex = 5;
             this.btnAddClient.Text = "Add Client";
             this.btnAddClient.UseVisualStyleBackColor = true;
+            this.btnAddClient.Click += new System.EventHandler(this.btnAddClient_Click);
             // 
             // MainApp
             // 

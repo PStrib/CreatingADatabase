@@ -49,5 +49,14 @@ namespace CreatingADatabase.GUI
             InnerJoinForm innerJoinForm = new InnerJoinForm()/*(db)*/;
             innerJoinForm.Show();
         }
+
+        private void btnAddClient_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            AddClient addClient = new AddClient();
+            addClient.ShowDialog();
+            this.Close();
+            this.Dispose();
+        }
     }
 }
