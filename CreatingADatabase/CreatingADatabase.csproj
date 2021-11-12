@@ -96,6 +96,12 @@
     <Compile Include="GUI\MainApp.Designer.cs">
       <DependentUpon>MainApp.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\SearchClients.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\SearchClients.Designer.cs">
+      <DependentUpon>SearchClients.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\SearchForm.cs">
       <SubType>Form</SubType>
     </Compile>

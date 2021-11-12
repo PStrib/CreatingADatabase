@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
 namespace CreatingADatabase.Objects
@@ -146,7 +147,7 @@ namespace CreatingADatabase.Objects
             }
             set
             {
-                if (CheckPresent(value))//TODO: add validation method to check if postcode is valid
+                if (CheckPostCode(value))
                     postCode = value;
                 else
                     throw new Exception("You must enter a valid PostCode");
@@ -210,6 +211,17 @@ namespace CreatingADatabase.Objects
                 return false;
             else
                 return true;
+        }
+
+        private bool CheckPostCode(string value)
+        {
+            Regex rgx = new Regex(@"^(([gG][iI][rR] {0,}0[aA]{2})|((([a-pr-uwyzA-PR-UWYZ][a-hk-yA-HK-Y]?[0-9][0-9]?)|(([a-pr-uwyzA-PR-UWYZ][0-9][a-hjkstuwA-HJKSTUW])|([a-pr-uwyzA-PR-UWYZ][a-hk-yA-HK-Y][0-9][abehmnprv-yABEHMNPRV-Y]))) {0,}[0-9][abd-hjlnp-uw-zABD-HJLNP-UW-Z]{2}))$");
+            var match = Regex.Match(value, rgx.ToString());
+
+            if (!match.Success)
+                return false;
+            else
+                return true; //Copy pasted off StackOverflow
         }
     }
 }

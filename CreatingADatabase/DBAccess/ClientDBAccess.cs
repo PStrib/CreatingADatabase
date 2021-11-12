@@ -41,5 +41,13 @@ namespace CreatingADatabase.DBAccess
             "','" + c.TownName + "','" +c.PostCode+ "','" + c.County + "','" + c.ContactPhoneNo + "','" + c.ContactEmail +"')";
             db.Cmd.ExecuteNonQuery();
         }
+
+        public void GetClientsWithName(string clientName)
+        {
+            string sqlCmd = ("SELECT * FROM Client WHERE ContactForename LIKE '" + clientName + "%' OR ContactSurname LIKE '" + clientName + "%'");
+            db.Cmd = db.Conn.CreateCommand();
+            db.Cmd.CommandText = sqlCmd;
+            db.Reader = db.Cmd.ExecuteReader();
+        }
     }
 }

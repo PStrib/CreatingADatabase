@@ -110,7 +110,7 @@ namespace CreatingADatabase.DBAccess
         }
 
 
-        public void GetProjectsWithID(int projCode)
+        public void GetProjectsWithID(int projCode)//--------USEFUL
         {
             string sqlCmd = "SELECT * FROM Project WHERE ProjectCode =" + projCode.ToString();
             db.Cmd = db.Conn.CreateCommand();
@@ -118,7 +118,7 @@ namespace CreatingADatabase.DBAccess
             db.Reader = db.Cmd.ExecuteReader();
         }
 
-        public void GetProjectsWithName(string projName)
+        public void GetProjectsWithName(string projName)//--------USEFUL
         {
             string sqlCmd = ("SELECT * FROM Project WHERE ProjectTitle LIKE '" + projName+"%'");
             db.Cmd = db.Conn.CreateCommand();
