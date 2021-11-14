@@ -29,6 +29,7 @@ namespace CreatingADatabase.GUI
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddClient));
             this.txtContactForename = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.txtContactSurname = new System.Windows.Forms.TextBox();
@@ -58,26 +59,26 @@ namespace CreatingADatabase.GUI
             this.txtContactForename.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtContactForename.Location = new System.Drawing.Point(152, 74);
             this.txtContactForename.Name = "txtContactForename";
-            this.txtContactForename.Size = new System.Drawing.Size(115, 22);
+            this.txtContactForename.Size = new System.Drawing.Size(189, 22);
             this.txtContactForename.TabIndex = 0;
             this.txtContactForename.Text = "Chuck";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Fipps", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(-5, -9);
+            this.label1.Font = new System.Drawing.Font("Gazelle", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(73, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(300, 81);
+            this.label1.Size = new System.Drawing.Size(208, 40);
             this.label1.TabIndex = 1;
-            this.label1.Text = "Add a Client";
+            this.label1.Text = "Add a Client:";
             // 
             // txtContactSurname
             // 
             this.txtContactSurname.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtContactSurname.Location = new System.Drawing.Point(152, 102);
             this.txtContactSurname.Name = "txtContactSurname";
-            this.txtContactSurname.Size = new System.Drawing.Size(115, 22);
+            this.txtContactSurname.Size = new System.Drawing.Size(189, 22);
             this.txtContactSurname.TabIndex = 2;
             this.txtContactSurname.Text = "Huckleberry";
             // 
@@ -86,7 +87,7 @@ namespace CreatingADatabase.GUI
             this.txtBusinessName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBusinessName.Location = new System.Drawing.Point(152, 210);
             this.txtBusinessName.Name = "txtBusinessName";
-            this.txtBusinessName.Size = new System.Drawing.Size(115, 22);
+            this.txtBusinessName.Size = new System.Drawing.Size(189, 22);
             this.txtBusinessName.TabIndex = 3;
             this.txtBusinessName.Text = "You Want Berries?";
             // 
@@ -135,7 +136,7 @@ namespace CreatingADatabase.GUI
             this.txtHouseNo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtHouseNo.Location = new System.Drawing.Point(152, 238);
             this.txtHouseNo.Name = "txtHouseNo";
-            this.txtHouseNo.Size = new System.Drawing.Size(115, 22);
+            this.txtHouseNo.Size = new System.Drawing.Size(189, 22);
             this.txtHouseNo.TabIndex = 8;
             this.txtHouseNo.Text = "68";
             // 
@@ -144,7 +145,7 @@ namespace CreatingADatabase.GUI
             this.txtStreetName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtStreetName.Location = new System.Drawing.Point(152, 266);
             this.txtStreetName.Name = "txtStreetName";
-            this.txtStreetName.Size = new System.Drawing.Size(115, 22);
+            this.txtStreetName.Size = new System.Drawing.Size(189, 22);
             this.txtStreetName.TabIndex = 10;
             this.txtStreetName.Text = "Fake Street";
             // 
@@ -153,7 +154,7 @@ namespace CreatingADatabase.GUI
             this.txtTownName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTownName.Location = new System.Drawing.Point(152, 294);
             this.txtTownName.Name = "txtTownName";
-            this.txtTownName.Size = new System.Drawing.Size(115, 22);
+            this.txtTownName.Size = new System.Drawing.Size(189, 22);
             this.txtTownName.TabIndex = 11;
             this.txtTownName.Text = "Gamblestown";
             // 
@@ -162,7 +163,7 @@ namespace CreatingADatabase.GUI
             this.txtPostcode.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPostcode.Location = new System.Drawing.Point(152, 322);
             this.txtPostcode.Name = "txtPostcode";
-            this.txtPostcode.Size = new System.Drawing.Size(115, 22);
+            this.txtPostcode.Size = new System.Drawing.Size(189, 22);
             this.txtPostcode.TabIndex = 12;
             this.txtPostcode.Text = "BT57 1AQ";
             // 
@@ -171,7 +172,7 @@ namespace CreatingADatabase.GUI
             this.txtCounty.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCounty.Location = new System.Drawing.Point(152, 350);
             this.txtCounty.Name = "txtCounty";
-            this.txtCounty.Size = new System.Drawing.Size(115, 22);
+            this.txtCounty.Size = new System.Drawing.Size(189, 22);
             this.txtCounty.TabIndex = 13;
             this.txtCounty.Text = "Down";
             // 
@@ -180,7 +181,7 @@ namespace CreatingADatabase.GUI
             this.txtContactNo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtContactNo.Location = new System.Drawing.Point(152, 130);
             this.txtContactNo.Name = "txtContactNo";
-            this.txtContactNo.Size = new System.Drawing.Size(115, 22);
+            this.txtContactNo.Size = new System.Drawing.Size(189, 22);
             this.txtContactNo.TabIndex = 14;
             this.txtContactNo.Text = "02892050505";
             // 
@@ -189,7 +190,7 @@ namespace CreatingADatabase.GUI
             this.txtContactEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtContactEmail.Location = new System.Drawing.Point(152, 158);
             this.txtContactEmail.Name = "txtContactEmail";
-            this.txtContactEmail.Size = new System.Drawing.Size(115, 22);
+            this.txtContactEmail.Size = new System.Drawing.Size(189, 22);
             this.txtContactEmail.TabIndex = 15;
             this.txtContactEmail.Text = "CHuckleberry@Hotmail.com";
             // 
@@ -256,9 +257,9 @@ namespace CreatingADatabase.GUI
             // btnAddClient
             // 
             this.btnAddClient.Font = new System.Drawing.Font("Calibri", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAddClient.Location = new System.Drawing.Point(31, 378);
+            this.btnAddClient.Location = new System.Drawing.Point(80, 378);
             this.btnAddClient.Name = "btnAddClient";
-            this.btnAddClient.Size = new System.Drawing.Size(221, 45);
+            this.btnAddClient.Size = new System.Drawing.Size(189, 45);
             this.btnAddClient.TabIndex = 22;
             this.btnAddClient.Text = "Add";
             this.btnAddClient.UseVisualStyleBackColor = true;
@@ -268,7 +269,7 @@ namespace CreatingADatabase.GUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(291, 451);
+            this.ClientSize = new System.Drawing.Size(354, 435);
             this.Controls.Add(this.btnAddClient);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.label10);
@@ -291,6 +292,7 @@ namespace CreatingADatabase.GUI
             this.Controls.Add(this.txtContactSurname);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtContactForename);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "AddClient";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Add Client";

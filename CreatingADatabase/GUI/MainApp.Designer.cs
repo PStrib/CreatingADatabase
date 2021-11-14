@@ -29,6 +29,7 @@ namespace CreatingADatabase.GUI
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainApp));
             this.WelcomeBanner = new System.Windows.Forms.Label();
             this.btnAddClient = new System.Windows.Forms.Button();
             this.SuspendLayout();
@@ -63,6 +64,7 @@ namespace CreatingADatabase.GUI
             this.ClientSize = new System.Drawing.Size(359, 244);
             this.Controls.Add(this.btnAddClient);
             this.Controls.Add(this.WelcomeBanner);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "MainApp";
             this.Text = "Simpson\'s Department Store";
