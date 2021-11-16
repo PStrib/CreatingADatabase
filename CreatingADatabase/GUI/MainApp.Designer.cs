@@ -32,6 +32,7 @@ namespace CreatingADatabase.GUI
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainApp));
             this.WelcomeBanner = new System.Windows.Forms.Label();
             this.btnAddClient = new System.Windows.Forms.Button();
+            this.btnSearchEdit = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // WelcomeBanner
@@ -57,11 +58,24 @@ namespace CreatingADatabase.GUI
             this.btnAddClient.UseVisualStyleBackColor = true;
             this.btnAddClient.Click += new System.EventHandler(this.btnAddClient_Click);
             // 
+            // btnSearchEdit
+            // 
+            this.btnSearchEdit.Font = new System.Drawing.Font("Gazelle", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSearchEdit.Location = new System.Drawing.Point(46, 78);
+            this.btnSearchEdit.Margin = new System.Windows.Forms.Padding(2);
+            this.btnSearchEdit.Name = "btnSearchEdit";
+            this.btnSearchEdit.Size = new System.Drawing.Size(268, 35);
+            this.btnSearchEdit.TabIndex = 6;
+            this.btnSearchEdit.Text = "Search/Edit client details";
+            this.btnSearchEdit.UseVisualStyleBackColor = true;
+            this.btnSearchEdit.Click += new System.EventHandler(this.btnSearchEdit_Click);
+            // 
             // MainApp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(359, 244);
+            this.Controls.Add(this.btnSearchEdit);
             this.Controls.Add(this.btnAddClient);
             this.Controls.Add(this.WelcomeBanner);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -77,5 +91,6 @@ namespace CreatingADatabase.GUI
 
         private System.Windows.Forms.Label WelcomeBanner;
         private System.Windows.Forms.Button btnAddClient;
+        private System.Windows.Forms.Button btnSearchEdit;
     }
 }

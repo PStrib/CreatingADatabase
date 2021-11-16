@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -42,9 +43,22 @@ namespace CreatingADatabase.DBAccess
             db.Cmd.ExecuteNonQuery();
         }
 
-        public void GetClientsWithName(string clientName)
+        public void GetClientsWithName(string businessName)
         {
-            string sqlCmd = ("SELECT * FROM Client WHERE ContactForename LIKE '" + clientName + "%' OR ContactSurname LIKE '" + clientName + "%'");
+            string sqlCmd = ("SELECT * FROM Client WHERE BusinessName LIKE '" + businessName +"%'");
+            db.Cmd = db.Conn.CreateCommand();
+            db.Cmd.CommandText = sqlCmd;
+            db.Reader = db.Cmd.ExecuteReader();
+        }
+        public DataTable GetClientDataTable()
+        {
+            DataTable dt = new DataTable();
+            dt.Load(db.Reader);
+            return dt;
+        }
+        public void GetClientsWithID(int clientNo)
+        {
+            string sqlCmd = "SELECT * FROM Client WHERE ClientID =" + clientNo.ToString();
             db.Cmd = db.Conn.CreateCommand();
             db.Cmd.CommandText = sqlCmd;
             db.Reader = db.Cmd.ExecuteReader();

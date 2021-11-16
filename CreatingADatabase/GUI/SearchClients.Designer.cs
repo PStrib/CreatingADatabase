@@ -29,12 +29,74 @@ namespace CreatingADatabase.GUI
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.ClientDatagrid = new System.Windows.Forms.DataGridView();
+            this.btnSearchClients = new System.Windows.Forms.Button();
+            this.txtClientSearch = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.ClientDatagrid)).BeginInit();
+            this.SuspendLayout();
+            // 
+            // ClientDatagrid
+            // 
+            this.ClientDatagrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.ClientDatagrid.Location = new System.Drawing.Point(11, 157);
+            this.ClientDatagrid.Margin = new System.Windows.Forms.Padding(2);
+            this.ClientDatagrid.Name = "ClientDatagrid";
+            this.ClientDatagrid.RowTemplate.Height = 24;
+            this.ClientDatagrid.Size = new System.Drawing.Size(778, 282);
+            this.ClientDatagrid.TabIndex = 5;
+            // 
+            // btnSearchClients
+            // 
+            this.btnSearchClients.Location = new System.Drawing.Point(113, 51);
+            this.btnSearchClients.Margin = new System.Windows.Forms.Padding(2);
+            this.btnSearchClients.Name = "btnSearchClients";
+            this.btnSearchClients.Size = new System.Drawing.Size(574, 19);
+            this.btnSearchClients.TabIndex = 8;
+            this.btnSearchClients.Text = "Search";
+            this.btnSearchClients.UseVisualStyleBackColor = true;
+            this.btnSearchClients.Click += new System.EventHandler(this.btnSearchClients_Click);
+            // 
+            // txtClientSearch
+            // 
+            this.txtClientSearch.Location = new System.Drawing.Point(188, 27);
+            this.txtClientSearch.Margin = new System.Windows.Forms.Padding(2);
+            this.txtClientSearch.Name = "txtClientSearch";
+            this.txtClientSearch.Size = new System.Drawing.Size(500, 20);
+            this.txtClientSearch.TabIndex = 7;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(69, 30);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(115, 13);
+            this.label1.TabIndex = 6;
+            this.label1.Text = "Client name or number:";
+            // 
+            // SearchClients
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnSearchClients);
+            this.Controls.Add(this.txtClientSearch);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.ClientDatagrid);
+            this.Name = "SearchClients";
             this.Text = "SearchClients";
+            ((System.ComponentModel.ISupportInitialize)(this.ClientDatagrid)).EndInit();
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
         }
 
         #endregion
+
+        private System.Windows.Forms.DataGridView ClientDatagrid;
+        private System.Windows.Forms.Button btnSearchClients;
+        private System.Windows.Forms.TextBox txtClientSearch;
+        private System.Windows.Forms.Label label1;
     }
 }

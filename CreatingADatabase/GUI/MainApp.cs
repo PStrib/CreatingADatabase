@@ -58,5 +58,14 @@ namespace CreatingADatabase.GUI
             this.Close();
             this.Dispose();
         }
+
+        private void btnSearchEdit_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            SearchClients searchClients = new SearchClients();
+            searchClients.ShowDialog();
+            this.Close();
+            this.Dispose();
+        }
     }
 }

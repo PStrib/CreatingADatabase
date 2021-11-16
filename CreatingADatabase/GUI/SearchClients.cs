@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using CreatingADatabase.DBAccess;
 
 namespace CreatingADatabase.GUI
 {
@@ -15,6 +16,26 @@ namespace CreatingADatabase.GUI
         public SearchClients()
         {
             InitializeComponent();
+        }
+
+        private void btnSearchClients_Click(object sender, EventArgs e)
+        {
+            ClientDBAccess cDBAccess = new ClientDBAccess(Program.Db);
+            DataTable dt = new DataTable();
+            int typeCheck;
+
+            if (!Int32.TryParse(txtClientSearch.Text, out typeCheck))
+            {
+                cDBAccess.GetClientsWithName(txtClientSearch.Text);
+                dt = cDBAccess.GetClientDataTable();
+                ClientDatagrid.DataSource = dt;
+            }
+            else
+            {
+                cDBAccess.GetClientsWithID(Convert.ToInt32(txtClientSearch.Text));
+                dt = cDBAccess.GetClientDataTable();
+                ClientDatagrid.DataSource = dt;
+            }
         }
     }
 }
