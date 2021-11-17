@@ -61,7 +61,6 @@ namespace CreatingADatabase.GUI
             this.txtContactForename.Name = "txtContactForename";
             this.txtContactForename.Size = new System.Drawing.Size(189, 22);
             this.txtContactForename.TabIndex = 0;
-            this.txtContactForename.Text = "Chuck";
             // 
             // label1
             // 
@@ -80,7 +79,6 @@ namespace CreatingADatabase.GUI
             this.txtContactSurname.Name = "txtContactSurname";
             this.txtContactSurname.Size = new System.Drawing.Size(189, 22);
             this.txtContactSurname.TabIndex = 2;
-            this.txtContactSurname.Text = "Huckleberry";
             // 
             // txtBusinessName
             // 
@@ -89,7 +87,6 @@ namespace CreatingADatabase.GUI
             this.txtBusinessName.Name = "txtBusinessName";
             this.txtBusinessName.Size = new System.Drawing.Size(189, 22);
             this.txtBusinessName.TabIndex = 3;
-            this.txtBusinessName.Text = "You Want Berries?";
             // 
             // label2
             // 
@@ -138,7 +135,6 @@ namespace CreatingADatabase.GUI
             this.txtHouseNo.Name = "txtHouseNo";
             this.txtHouseNo.Size = new System.Drawing.Size(189, 22);
             this.txtHouseNo.TabIndex = 8;
-            this.txtHouseNo.Text = "68";
             // 
             // txtStreetName
             // 
@@ -147,7 +143,6 @@ namespace CreatingADatabase.GUI
             this.txtStreetName.Name = "txtStreetName";
             this.txtStreetName.Size = new System.Drawing.Size(189, 22);
             this.txtStreetName.TabIndex = 10;
-            this.txtStreetName.Text = "Fake Street";
             // 
             // txtTownName
             // 
@@ -156,7 +151,6 @@ namespace CreatingADatabase.GUI
             this.txtTownName.Name = "txtTownName";
             this.txtTownName.Size = new System.Drawing.Size(189, 22);
             this.txtTownName.TabIndex = 11;
-            this.txtTownName.Text = "Gamblestown";
             // 
             // txtPostcode
             // 
@@ -165,7 +159,6 @@ namespace CreatingADatabase.GUI
             this.txtPostcode.Name = "txtPostcode";
             this.txtPostcode.Size = new System.Drawing.Size(189, 22);
             this.txtPostcode.TabIndex = 12;
-            this.txtPostcode.Text = "BT57 1AQ";
             // 
             // txtCounty
             // 
@@ -174,7 +167,6 @@ namespace CreatingADatabase.GUI
             this.txtCounty.Name = "txtCounty";
             this.txtCounty.Size = new System.Drawing.Size(189, 22);
             this.txtCounty.TabIndex = 13;
-            this.txtCounty.Text = "Down";
             // 
             // txtContactNo
             // 
@@ -183,7 +175,6 @@ namespace CreatingADatabase.GUI
             this.txtContactNo.Name = "txtContactNo";
             this.txtContactNo.Size = new System.Drawing.Size(189, 22);
             this.txtContactNo.TabIndex = 14;
-            this.txtContactNo.Text = "02892050505";
             // 
             // txtContactEmail
             // 
@@ -192,7 +183,6 @@ namespace CreatingADatabase.GUI
             this.txtContactEmail.Name = "txtContactEmail";
             this.txtContactEmail.Size = new System.Drawing.Size(189, 22);
             this.txtContactEmail.TabIndex = 15;
-            this.txtContactEmail.Text = "CHuckleberry@Hotmail.com";
             // 
             // label6
             // 

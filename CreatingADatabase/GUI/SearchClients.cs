@@ -37,5 +37,14 @@ namespace CreatingADatabase.GUI
                 ClientDatagrid.DataSource = dt;
             }
         }
+
+        private void ClientDatagrid_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            //Method to allow the user to edit client details from the datagridview.
+            ClientDBAccess cDBAccess = new ClientDBAccess(Program.Db);
+
+            int rowSelected=sender.
+
+        }
     }
 }
