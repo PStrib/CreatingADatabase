@@ -4,6 +4,7 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 using CreatingADatabase.Objects;
 
 namespace CreatingADatabase.DBAccess
@@ -58,10 +59,11 @@ namespace CreatingADatabase.DBAccess
         }
         public void GetClientsWithID(int clientNo)
         {
-            string sqlCmd = "SELECT * FROM Client WHERE ClientID =" + clientNo.ToString();
+            string sqlCmd = "SELECT * FROM Client WHERE ClientID =" + clientNo;
             db.Cmd = db.Conn.CreateCommand();
             db.Cmd.CommandText = sqlCmd;
             db.Reader = db.Cmd.ExecuteReader();
+           
         }
     }
 }

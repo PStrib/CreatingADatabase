@@ -12,7 +12,7 @@ namespace CreatingADatabase
     {
         private static Database db = new Database();
 
-        internal static Database Db
+        public static Database Db
         {
             get
             {
@@ -30,7 +30,8 @@ namespace CreatingADatabase
         /// </summary>
         [STAThread]
         static void Main()
-        {
+        {  
+           SetUpDataDirectoryPath();
            if (db.Connect())
             {
                 MessageBox.Show("Database connection successful.", "Success!"); 
@@ -42,7 +43,7 @@ namespace CreatingADatabase
 
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            SetUpDataDirectoryPath();
+            
             Application.Run(new MainApp()); 
         }
 
