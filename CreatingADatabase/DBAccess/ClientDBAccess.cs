@@ -48,7 +48,8 @@ namespace CreatingADatabase.DBAccess
         {
             db.Cmd = db.Conn.CreateCommand();
             db.Cmd.CommandText = "UPDATE Client set(ContactForename = '" + c.ContactForename + "', ContactSurname = '" + c.ContactSurname + "', BusinessName = '" +
-            c.BusinessName + "', HouseNo = '"+c.HouseNo+"', Street = '"+c.StreetName+"', Town = '"+c.TownName+"', PostCode = '"+c.PostCode+"', County = '"+c.County+"', ContactNo = '"+c.ContactPhoneNo+"', ContactEmail = '"+c.ContactEmail+"') WHERE ClientID="+c.ClientID+"";
+            c.BusinessName + "', HouseNo = '"+c.HouseNo+"', Street = '"+c.StreetName+"', Town = '"+c.TownName+"', PostCode = '"+c.PostCode+"'" +
+            ", County = '"+c.County+"', ContactNo = '"+c.ContactPhoneNo+"', ContactEmail = '"+c.ContactEmail+"') WHERE ClientID="+c.ClientID+"";
             db.Cmd.ExecuteNonQuery();
         }
 

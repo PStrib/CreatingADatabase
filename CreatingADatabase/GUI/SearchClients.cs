@@ -42,9 +42,9 @@ namespace CreatingADatabase.GUI
         {
             //Method to allow the user to edit client details from the datagridview.
             ClientDBAccess cDBAccess = new ClientDBAccess(Program.Db);
-
-            int rowSelected=sender.
-
+            var rowSelected = e.RowIndex+1;
+            var columnSelected = e.ColumnIndex+1;
+            
         }
     }
 }
