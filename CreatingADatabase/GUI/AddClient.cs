@@ -15,7 +15,7 @@ namespace CreatingADatabase.GUI
     public partial class AddClient : Form
     {
         private Database db = MainApp.Db;
-        ProjectDBAccess pdbAccess = new ProjectDBAccess(MainApp.Db);
+        ClientDBAccess cdbAccess = new ClientDBAccess(MainApp.Db);
         public AddClient()
         {
             InitializeComponent();
