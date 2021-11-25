@@ -26,6 +26,7 @@ namespace CreatingADatabase.GUI
             ClientDBAccess cDBAccess = new ClientDBAccess(Program.Db);
             DataTable dt = new DataTable();
             int typeCheck;
+            ClientDatagrid.Columns.Clear();
 
             if (!Int32.TryParse(txtClientSearch.Text, out typeCheck))
             {
@@ -54,7 +55,6 @@ namespace CreatingADatabase.GUI
             var senderDGV = (DataGridView)sender;
             if (senderDGV.Columns[e.ColumnIndex].Name == "btnUpdateClient")
             {
-                MessageBox.Show("You pressed the button!");
                 //Method to allow the user to edit client details from the datagridview.
                 var rowSelected = e.RowIndex;
                 bool valid = true;
