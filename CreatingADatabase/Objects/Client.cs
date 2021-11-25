@@ -175,10 +175,10 @@ namespace CreatingADatabase.Objects
             }
             set
             {
-                if (CheckPhoneNo(value))
+                if (CheckPresent(value))
                     contactPhoneNo = value;
                 else
-                    throw new Exception("You must enter a phone number");
+                    throw new Exception("You must enter a valid phone number");
             }
         }
         public string ContactEmail
