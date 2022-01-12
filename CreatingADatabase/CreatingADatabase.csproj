@@ -98,6 +98,12 @@
     <Compile Include="GUI\MainApp.Designer.cs">
       <DependentUpon>MainApp.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\OfficeHire.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\OfficeHire.Designer.cs">
+      <DependentUpon>OfficeHire.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\SearchClients.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -141,6 +147,9 @@
     <EmbeddedResource Include="GUI\MainApp.resx">
       <DependentUpon>MainApp.cs</DependentUpon>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\OfficeHire.resx">
+      <DependentUpon>OfficeHire.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\SearchClients.resx">
       <DependentUpon>SearchClients.cs</DependentUpon>

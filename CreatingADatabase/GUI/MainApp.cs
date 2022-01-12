@@ -67,5 +67,14 @@ namespace CreatingADatabase.GUI
             this.Close();
             this.Dispose();
         }
+
+        private void btnBooking_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            OfficeHire officeHire = new OfficeHire();
+            officeHire.ShowDialog();
+            this.Close();
+            this.Dispose();
+        }
     }
 }

@@ -33,6 +33,7 @@ namespace CreatingADatabase.GUI
             this.WelcomeBanner = new System.Windows.Forms.Label();
             this.btnAddClient = new System.Windows.Forms.Button();
             this.btnSearchEdit = new System.Windows.Forms.Button();
+            this.btnBooking = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // WelcomeBanner
@@ -49,10 +50,10 @@ namespace CreatingADatabase.GUI
             // btnAddClient
             // 
             this.btnAddClient.Font = new System.Drawing.Font("Gazelle", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAddClient.Location = new System.Drawing.Point(103, 39);
+            this.btnAddClient.Location = new System.Drawing.Point(16, 39);
             this.btnAddClient.Margin = new System.Windows.Forms.Padding(2);
             this.btnAddClient.Name = "btnAddClient";
-            this.btnAddClient.Size = new System.Drawing.Size(140, 35);
+            this.btnAddClient.Size = new System.Drawing.Size(268, 35);
             this.btnAddClient.TabIndex = 5;
             this.btnAddClient.Text = "Add Client";
             this.btnAddClient.UseVisualStyleBackColor = true;
@@ -61,7 +62,7 @@ namespace CreatingADatabase.GUI
             // btnSearchEdit
             // 
             this.btnSearchEdit.Font = new System.Drawing.Font("Gazelle", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSearchEdit.Location = new System.Drawing.Point(46, 78);
+            this.btnSearchEdit.Location = new System.Drawing.Point(16, 78);
             this.btnSearchEdit.Margin = new System.Windows.Forms.Padding(2);
             this.btnSearchEdit.Name = "btnSearchEdit";
             this.btnSearchEdit.Size = new System.Drawing.Size(268, 35);
@@ -70,11 +71,24 @@ namespace CreatingADatabase.GUI
             this.btnSearchEdit.UseVisualStyleBackColor = true;
             this.btnSearchEdit.Click += new System.EventHandler(this.btnSearchEdit_Click);
             // 
+            // btnBooking
+            // 
+            this.btnBooking.Font = new System.Drawing.Font("Gazelle", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBooking.Location = new System.Drawing.Point(16, 117);
+            this.btnBooking.Margin = new System.Windows.Forms.Padding(2);
+            this.btnBooking.Name = "btnBooking";
+            this.btnBooking.Size = new System.Drawing.Size(268, 35);
+            this.btnBooking.TabIndex = 7;
+            this.btnBooking.Text = "Make A Booking";
+            this.btnBooking.UseVisualStyleBackColor = true;
+            this.btnBooking.Click += new System.EventHandler(this.btnBooking_Click);
+            // 
             // MainApp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(359, 244);
+            this.Controls.Add(this.btnBooking);
             this.Controls.Add(this.btnSearchEdit);
             this.Controls.Add(this.btnAddClient);
             this.Controls.Add(this.WelcomeBanner);
@@ -92,5 +106,6 @@ namespace CreatingADatabase.GUI
         private System.Windows.Forms.Label WelcomeBanner;
         private System.Windows.Forms.Button btnAddClient;
         private System.Windows.Forms.Button btnSearchEdit;
+        private System.Windows.Forms.Button btnBooking;
     }
 }

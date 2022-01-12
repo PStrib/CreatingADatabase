@@ -71,8 +71,30 @@ namespace CreatingADatabase.DBAccess
             string sqlCmd = "SELECT * FROM Client WHERE ClientID =" + clientNo;
             db.Cmd = db.Conn.CreateCommand();
             db.Cmd.CommandText = sqlCmd;
+            db.Reader = db.Cmd.ExecuteReader();           
+        }
+
+        //public List<string> GetAllClientNames()
+        //{
+        //    //string clientID, BusinessName;
+
+        //    string sqlCmd = "Select ClientID, BusinessName FROM Client;";
+        //    db.Cmd = db.Conn.CreateCommand();
+        //    db.Cmd.CommandText = sqlCmd;
+        //    db.Reader = db.Cmd.ExecuteReader();
+        //    string results = db.Reader
+        //    return results;
+        //}
+        public string GetAllClientNames()
+        {
+            //string clientID, BusinessName;
+
+            string sqlCmd = "Select ClientID, BusinessName FROM Client;";
+            db.Cmd = db.Conn.CreateCommand();
+            db.Cmd.CommandText = sqlCmd;
             db.Reader = db.Cmd.ExecuteReader();
-           
+            string results = Convert.ToString(db.Reader);
+            return results;
         }
     }
 }

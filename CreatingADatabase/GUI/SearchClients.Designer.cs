@@ -70,12 +70,12 @@ namespace CreatingADatabase.GUI
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(69, 30);
+            this.label1.Location = new System.Drawing.Point(25, 30);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(115, 13);
+            this.label1.Size = new System.Drawing.Size(159, 13);
             this.label1.TabIndex = 6;
-            this.label1.Text = "Client name or number:";
+            this.label1.Text = "Business name or client number:";
             // 
             // label2
             // 
