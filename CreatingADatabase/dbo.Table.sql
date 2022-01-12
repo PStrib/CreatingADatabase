@@ -1,0 +1,5 @@
+﻿CREATE TABLE [dbo].[Room]
+(
+	[RoomID] INT NOT NULL PRIMARY KEY, 
+    [Type] NCHAR(15) NOT NULL
+)
