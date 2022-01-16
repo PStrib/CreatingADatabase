@@ -22,16 +22,7 @@ namespace CreatingADatabase.DBAccess
         {
             Client c = new Objects.Client();
             c.ClientID = db.Reader.GetInt32(0);
-            c.ContactForename = db.Reader.GetString(1);
-            c.ContactSurname = db.Reader.GetString(2);
-            c.BusinessName = db.Reader.GetString(3);
-            c.HouseNo = db.Reader.GetInt32(4);
-            c.StreetName = db.Reader.GetString(5);
-            c.TownName = db.Reader.GetString(6);
-            c.PostCode = db.Reader.GetString(7);
-            c.County = db.Reader.GetString(8);
-            c.ContactPhoneNo = db.Reader.GetString(9);
-            c.ContactEmail = db.Reader.GetString(10);
+            c.BusinessName = db.Reader.GetString(1);
             return c;
         }
 
@@ -82,19 +73,15 @@ namespace CreatingADatabase.DBAccess
             db.Cmd = db.Conn.CreateCommand();
             db.Cmd.CommandText = sqlCmd;
             db.Reader = db.Cmd.ExecuteReader();
-            string results = db.Reader
+
+            List<string> results = new List<string>();
+            while (db.Reader.Read())
+            {
+                Client c = GetClientFromDataReader();
+                results.Add($"{c.ClientID}: {c.BusinessName}");
+            }
+            db.Reader.Close();
             return results;
         }
-        //public string GetAllClientNames()
-        //{
-        //    //string clientID, BusinessName;
-
-        //    string sqlCmd = "Select ClientID, BusinessName FROM Client;";
-        //    db.Cmd = db.Conn.CreateCommand();
-        //    db.Cmd.CommandText = sqlCmd;
-        //    db.Reader = db.Cmd.ExecuteReader();
-        //    string results = Convert.ToString(db.Reader);
-        //    return results;
-        //}
     }
 }
