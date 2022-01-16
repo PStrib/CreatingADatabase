@@ -74,18 +74,7 @@ namespace CreatingADatabase.DBAccess
             db.Reader = db.Cmd.ExecuteReader();           
         }
 
-        //public List<string> GetAllClientNames()
-        //{
-        //    //string clientID, BusinessName;
-
-        //    string sqlCmd = "Select ClientID, BusinessName FROM Client;";
-        //    db.Cmd = db.Conn.CreateCommand();
-        //    db.Cmd.CommandText = sqlCmd;
-        //    db.Reader = db.Cmd.ExecuteReader();
-        //    string results = db.Reader
-        //    return results;
-        //}
-        public string GetAllClientNames()
+        public List<string> GetAllClientNames()
         {
             //string clientID, BusinessName;
 
@@ -93,8 +82,19 @@ namespace CreatingADatabase.DBAccess
             db.Cmd = db.Conn.CreateCommand();
             db.Cmd.CommandText = sqlCmd;
             db.Reader = db.Cmd.ExecuteReader();
-            string results = Convert.ToString(db.Reader);
+            string results = db.Reader
             return results;
         }
+        //public string GetAllClientNames()
+        //{
+        //    //string clientID, BusinessName;
+
+        //    string sqlCmd = "Select ClientID, BusinessName FROM Client;";
+        //    db.Cmd = db.Conn.CreateCommand();
+        //    db.Cmd.CommandText = sqlCmd;
+        //    db.Reader = db.Cmd.ExecuteReader();
+        //    string results = Convert.ToString(db.Reader);
+        //    return results;
+        //}
     }
 }
