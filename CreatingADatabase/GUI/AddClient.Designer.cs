@@ -52,6 +52,7 @@ namespace CreatingADatabase.GUI
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.btnAddClient = new System.Windows.Forms.Button();
+            this.btnBackToMenu = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // txtContactForename
@@ -66,7 +67,7 @@ namespace CreatingADatabase.GUI
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Gazelle", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(73, 9);
+            this.label1.Location = new System.Drawing.Point(59, 9);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(208, 40);
             this.label1.TabIndex = 1;
@@ -247,7 +248,7 @@ namespace CreatingADatabase.GUI
             // btnAddClient
             // 
             this.btnAddClient.Font = new System.Drawing.Font("Calibri", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAddClient.Location = new System.Drawing.Point(80, 378);
+            this.btnAddClient.Location = new System.Drawing.Point(152, 378);
             this.btnAddClient.Name = "btnAddClient";
             this.btnAddClient.Size = new System.Drawing.Size(189, 45);
             this.btnAddClient.TabIndex = 22;
@@ -255,11 +256,23 @@ namespace CreatingADatabase.GUI
             this.btnAddClient.UseVisualStyleBackColor = true;
             this.btnAddClient.Click += new System.EventHandler(this.btnAddClient_Click);
             // 
+            // btnBackToMenu
+            // 
+            this.btnBackToMenu.Font = new System.Drawing.Font("Calibri", 18F);
+            this.btnBackToMenu.Image = global::CreatingADatabase.Properties.Resources.BackButton1;
+            this.btnBackToMenu.Location = new System.Drawing.Point(12, 17);
+            this.btnBackToMenu.Name = "btnBackToMenu";
+            this.btnBackToMenu.Size = new System.Drawing.Size(22, 24);
+            this.btnBackToMenu.TabIndex = 23;
+            this.btnBackToMenu.UseVisualStyleBackColor = true;
+            this.btnBackToMenu.Click += new System.EventHandler(this.btnBackToMenu_Click);
+            // 
             // AddClient
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(354, 435);
+            this.Controls.Add(this.btnBackToMenu);
             this.Controls.Add(this.btnAddClient);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.label10);
@@ -315,5 +328,6 @@ namespace CreatingADatabase.GUI
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Button btnAddClient;
+        private System.Windows.Forms.Button btnBackToMenu;
     }
 }

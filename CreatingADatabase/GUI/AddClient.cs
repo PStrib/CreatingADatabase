@@ -124,5 +124,14 @@ namespace CreatingADatabase.GUI
             txtPostcode.Text = "";
             txtCounty.Text = "";
         }
+
+        private void btnBackToMenu_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            MainApp mainApp = new MainApp();
+            mainApp.ShowDialog();
+            this.Close();
+            this.Dispose();
+        }
     }
 }
