@@ -33,6 +33,19 @@ namespace CreatingADatabase.GUI
             this.CBoxYear = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.DGVColJanuary = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DGVColFebruary = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DGVColMarch = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DGVColApril = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DGVColMay = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DGVColJune = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DGVColJuly = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DGVColAugust = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DGVColSeptember = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DGVColNovember = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DGVColDecember = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // CBoxClients
@@ -61,7 +74,7 @@ namespace CreatingADatabase.GUI
             "2033",
             "2034",
             "2035"});
-            this.CBoxYear.Location = new System.Drawing.Point(12, 65);
+            this.CBoxYear.Location = new System.Drawing.Point(15, 66);
             this.CBoxYear.Name = "CBoxYear";
             this.CBoxYear.Size = new System.Drawing.Size(120, 21);
             this.CBoxYear.TabIndex = 3;
@@ -78,23 +91,114 @@ namespace CreatingADatabase.GUI
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(12, 49);
+            this.label2.Location = new System.Drawing.Point(16, 50);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(32, 13);
             this.label2.TabIndex = 5;
             this.label2.Text = "Year:";
             // 
+            // dataGridView1
+            // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.DGVColJanuary,
+            this.DGVColFebruary,
+            this.DGVColMarch,
+            this.DGVColApril,
+            this.DGVColMay,
+            this.DGVColJune,
+            this.DGVColJuly,
+            this.DGVColAugust,
+            this.DGVColSeptember,
+            this.DGVColNovember,
+            this.DGVColDecember});
+            this.dataGridView1.Location = new System.Drawing.Point(20, 120);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
+            this.dataGridView1.Size = new System.Drawing.Size(1142, 328);
+            this.dataGridView1.TabIndex = 6;
+            // 
+            // DGVColJanuary
+            // 
+            this.DGVColJanuary.HeaderText = "January";
+            this.DGVColJanuary.Name = "DGVColJanuary";
+            this.DGVColJanuary.ReadOnly = true;
+            // 
+            // DGVColFebruary
+            // 
+            this.DGVColFebruary.HeaderText = "February";
+            this.DGVColFebruary.Name = "DGVColFebruary";
+            this.DGVColFebruary.ReadOnly = true;
+            // 
+            // DGVColMarch
+            // 
+            this.DGVColMarch.HeaderText = "March";
+            this.DGVColMarch.Name = "DGVColMarch";
+            this.DGVColMarch.ReadOnly = true;
+            // 
+            // DGVColApril
+            // 
+            this.DGVColApril.HeaderText = "April";
+            this.DGVColApril.Name = "DGVColApril";
+            this.DGVColApril.ReadOnly = true;
+            // 
+            // DGVColMay
+            // 
+            this.DGVColMay.HeaderText = "May";
+            this.DGVColMay.Name = "DGVColMay";
+            this.DGVColMay.ReadOnly = true;
+            // 
+            // DGVColJune
+            // 
+            this.DGVColJune.HeaderText = "June";
+            this.DGVColJune.Name = "DGVColJune";
+            this.DGVColJune.ReadOnly = true;
+            // 
+            // DGVColJuly
+            // 
+            this.DGVColJuly.HeaderText = "July";
+            this.DGVColJuly.Name = "DGVColJuly";
+            this.DGVColJuly.ReadOnly = true;
+            // 
+            // DGVColAugust
+            // 
+            this.DGVColAugust.HeaderText = "August";
+            this.DGVColAugust.Name = "DGVColAugust";
+            this.DGVColAugust.ReadOnly = true;
+            // 
+            // DGVColSeptember
+            // 
+            this.DGVColSeptember.HeaderText = "September";
+            this.DGVColSeptember.Name = "DGVColSeptember";
+            this.DGVColSeptember.ReadOnly = true;
+            // 
+            // DGVColNovember
+            // 
+            this.DGVColNovember.HeaderText = "November";
+            this.DGVColNovember.Name = "DGVColNovember";
+            this.DGVColNovember.ReadOnly = true;
+            // 
+            // DGVColDecember
+            // 
+            this.DGVColDecember.HeaderText = "December";
+            this.DGVColDecember.Name = "DGVColDecember";
+            this.DGVColDecember.ReadOnly = true;
+            // 
             // OfficeHire
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1184, 464);
+            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.CBoxYear);
             this.Controls.Add(this.CBoxClients);
             this.Name = "OfficeHire";
             this.Text = "OfficeHire";
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -105,5 +209,17 @@ namespace CreatingADatabase.GUI
         private System.Windows.Forms.ComboBox CBoxYear;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DGVColJanuary;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DGVColFebruary;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DGVColMarch;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DGVColApril;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DGVColMay;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DGVColJune;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DGVColJuly;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DGVColAugust;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DGVColSeptember;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DGVColNovember;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DGVColDecember;
     }
 }
