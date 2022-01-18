@@ -19,7 +19,7 @@ namespace CreatingADatabase.GUI
         public OfficeHire()
         {
             InitializeComponent();
-            LBoxClients.DataSource = cdbAccess.GetAllClientNames();
+            CBoxClients.DataSource = cdbAccess.GetAllClientNames();
             //MessageBox.Show(cdbAccess.GetAllClientNames());
         }
         //The method Listbox.FindString() may be helpful
