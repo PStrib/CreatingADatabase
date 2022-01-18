@@ -101,8 +101,13 @@ namespace CreatingADatabase.GUI
             {
                 ClientDBAccess cDBAccess = new ClientDBAccess(db);
                 c.AddNewClient(client);
-                MessageBox.Show("Project Added!");
+                MessageBox.Show("Client Added!");
                 ClearAllFields();
+                this.Hide();
+                MainApp mainApp = new MainApp();
+                mainApp.ShowDialog();
+                this.Close();
+                this.Dispose();
             }
         }
 

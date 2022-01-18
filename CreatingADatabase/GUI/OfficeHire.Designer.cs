@@ -35,7 +35,7 @@ namespace CreatingADatabase.GUI
             // LBoxClients
             // 
             this.LBoxClients.FormattingEnabled = true;
-            this.LBoxClients.Location = new System.Drawing.Point(43, 114);
+            this.LBoxClients.Location = new System.Drawing.Point(12, 12);
             this.LBoxClients.Name = "LBoxClients";
             this.LBoxClients.Size = new System.Drawing.Size(312, 30);
             this.LBoxClients.TabIndex = 0;
