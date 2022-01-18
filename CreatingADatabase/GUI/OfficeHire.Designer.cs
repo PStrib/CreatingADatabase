@@ -45,6 +45,7 @@ namespace CreatingADatabase.GUI
             this.DGVColSeptember = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DGVColNovember = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DGVColDecember = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnBackToMenu = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -186,11 +187,23 @@ namespace CreatingADatabase.GUI
             this.DGVColDecember.Name = "DGVColDecember";
             this.DGVColDecember.ReadOnly = true;
             // 
+            // btnBackToMenu
+            // 
+            this.btnBackToMenu.Font = new System.Drawing.Font("Bahnschrift", 10F);
+            this.btnBackToMenu.Location = new System.Drawing.Point(994, 24);
+            this.btnBackToMenu.Name = "btnBackToMenu";
+            this.btnBackToMenu.Size = new System.Drawing.Size(150, 38);
+            this.btnBackToMenu.TabIndex = 7;
+            this.btnBackToMenu.Text = "Back to main menu";
+            this.btnBackToMenu.UseVisualStyleBackColor = true;
+            this.btnBackToMenu.Click += new System.EventHandler(this.btnBackToMenu_Click);
+            // 
             // OfficeHire
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1184, 464);
+            this.Controls.Add(this.btnBackToMenu);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -221,5 +234,6 @@ namespace CreatingADatabase.GUI
         private System.Windows.Forms.DataGridViewTextBoxColumn DGVColSeptember;
         private System.Windows.Forms.DataGridViewTextBoxColumn DGVColNovember;
         private System.Windows.Forms.DataGridViewTextBoxColumn DGVColDecember;
+        private System.Windows.Forms.Button btnBackToMenu;
     }
 }

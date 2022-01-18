@@ -20,7 +20,15 @@ namespace CreatingADatabase.GUI
         {
             InitializeComponent();
             CBoxClients.DataSource = cdbAccess.GetAllClientNames();
-            //MessageBox.Show(cdbAccess.GetAllClientNames());
+        }
+
+        private void btnBackToMenu_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            MainApp mainApp = new MainApp();
+            mainApp.ShowDialog();
+            this.Close();
+            this.Dispose();
         }
         //The method Listbox.FindString() may be helpful
 
