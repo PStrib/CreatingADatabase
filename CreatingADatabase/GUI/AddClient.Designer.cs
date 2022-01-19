@@ -53,6 +53,7 @@ namespace CreatingADatabase.GUI
             this.label11 = new System.Windows.Forms.Label();
             this.btnAddClient = new System.Windows.Forms.Button();
             this.btnBackToMenu = new System.Windows.Forms.Button();
+            this.lblErrors = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // txtContactForename
@@ -267,11 +268,21 @@ namespace CreatingADatabase.GUI
             this.btnBackToMenu.UseVisualStyleBackColor = true;
             this.btnBackToMenu.Click += new System.EventHandler(this.btnBackToMenu_Click);
             // 
+            // lblErrors
+            // 
+            this.lblErrors.AutoSize = true;
+            this.lblErrors.ForeColor = System.Drawing.Color.Red;
+            this.lblErrors.Location = new System.Drawing.Point(12, 436);
+            this.lblErrors.Name = "lblErrors";
+            this.lblErrors.Size = new System.Drawing.Size(0, 13);
+            this.lblErrors.TabIndex = 24;
+            // 
             // AddClient
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(354, 435);
+            this.ClientSize = new System.Drawing.Size(351, 594);
+            this.Controls.Add(this.lblErrors);
             this.Controls.Add(this.btnBackToMenu);
             this.Controls.Add(this.btnAddClient);
             this.Controls.Add(this.label11);
@@ -329,5 +340,6 @@ namespace CreatingADatabase.GUI
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Button btnAddClient;
         private System.Windows.Forms.Button btnBackToMenu;
+        private System.Windows.Forms.Label lblErrors;
     }
 }

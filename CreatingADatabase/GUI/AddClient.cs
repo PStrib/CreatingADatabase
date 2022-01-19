@@ -32,14 +32,14 @@ namespace CreatingADatabase.GUI
             {
                 client.ContactForename = txtContactForename.Text;
             }
-            catch (Exception ex) { MessageBox.Show(ex.Message); valid = false; }
+            catch (Exception ex) { lblErrors.Text+=ex.Message+"\n"; valid = false; }
 
             //Try-catch for setting client's contact Surname
             try
             {
                 client.ContactSurname = txtContactSurname.Text;
             }
-            catch (Exception ex) { MessageBox.Show(ex.Message); valid = false; }
+            catch (Exception ex) { lblErrors.Text += ex.Message + "\n"; valid = false; }
 
             //Try-catch for setting client's contact phone no.
             try
