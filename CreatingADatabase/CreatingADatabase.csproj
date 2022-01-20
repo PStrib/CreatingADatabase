@@ -68,6 +68,7 @@
     <Compile Include="DBAccess\ProjectDBAccess.cs" />
     <Compile Include="DBAccess\ProjectEmployeeDBAccess.cs" />
     <Compile Include="DBAccess\ReportDBAccess.cs" />
+    <Compile Include="DBAccess\RoomDBAccess.cs" />
     <Compile Include="GUI\AddClient.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -129,6 +130,9 @@
     <Compile Include="Objects\Project.cs" />
     <Compile Include="Objects\ProjectEmployee.cs" />
     <Compile Include="Objects\Report.cs" />
+    <Compile Include="Objects\Reservation-Room.cs" />
+    <Compile Include="Objects\Reservation.cs" />
+    <Compile Include="Objects\Room.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="GUI\AddClient.resx">
