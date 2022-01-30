@@ -48,9 +48,9 @@ namespace CreatingADatabase.GUI
             {
                 foreach (DataGridViewCell cell in row.Cells)
                 {
-                    int officeNum =
-                    int month = 
-                    int year
+                    //int officeNum =
+                    //int month = 
+                    //int year =
                 }
             }
         }
