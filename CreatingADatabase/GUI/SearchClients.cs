@@ -145,5 +145,10 @@ namespace CreatingADatabase.GUI
 
         private void ClientDatagrid_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         { }
+
+        private void SearchClients_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

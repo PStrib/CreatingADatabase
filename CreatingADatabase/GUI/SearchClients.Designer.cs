@@ -98,6 +98,7 @@ namespace CreatingADatabase.GUI
             this.Controls.Add(this.ClientDatagrid);
             this.Name = "SearchClients";
             this.Text = "SearchClients";
+            this.Load += new System.EventHandler(this.SearchClients_Load);
             ((System.ComponentModel.ISupportInitialize)(this.ClientDatagrid)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

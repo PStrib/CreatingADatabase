@@ -16,6 +16,8 @@ namespace CreatingADatabase.GUI
     {
         private Database db = MainApp.Db;
         ClientDBAccess cdbAccess = new ClientDBAccess(MainApp.Db);
+        private object cell;
+
         public OfficeHire()
         {
             InitializeComponent();
@@ -26,10 +28,10 @@ namespace CreatingADatabase.GUI
         private void PopulateRowHeadings()
         {
             string[] officeNames = new string[10] { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10" };
-            dataGridView1.RowCount = 10;
-            for (int i = 0; i < dataGridView1.Rows.Count; i++)
+            DGVAvailability.RowCount = 10;
+            for (int i = 0; i < DGVAvailability.Rows.Count; i++)
             {
-                dataGridView1.Rows[i].HeaderCell.Value = officeNames[i];
+                DGVAvailability.Rows[i].HeaderCell.Value = officeNames[i];
             }
         }
 
@@ -44,7 +46,7 @@ namespace CreatingADatabase.GUI
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
-            foreach (DataGridViewRow row in dataGridView1.Rows)
+            foreach (DataGridViewRow row in DGVAvailability.Rows)
             {
                 foreach (DataGridViewCell cell in row.Cells)
                 {
@@ -54,13 +56,22 @@ namespace CreatingADatabase.GUI
                 }
             }
         }
+
+        private void DGVAvailabilityCellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            System.Drawing.Color c = DGVAvailability.Rows[e.RowIndex].Cells[e.ColumnIndex].Style.BackColor;
+            if (c == Color.Empty)
+            {
+                DGVAvailability.Rows[e.RowIndex].Cells[e.ColumnIndex].Style.BackColor = Color.Red;
+            }
+        }
         //The method Listbox.FindString() may be helpful
-//        select roomid, month(startdate), year(startdate), month(enddate), year(enddate)
-//from[reservation - room]
-//where month(startdate)>=1 
-//and year(startdate)=2022
-//and month(enddate)<=6
-//and year(enddate)=2022
+        //        select roomid, month(startdate), year(startdate), month(enddate), year(enddate)
+        //from[reservation - room]
+        //where month(startdate)>=1 
+        //and year(startdate)=2022
+        //and month(enddate)<=6
+        //and year(enddate)=2022
 
 
     }

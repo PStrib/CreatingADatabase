@@ -33,9 +33,7 @@ namespace CreatingADatabase.GUI
             this.CBoxYear = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.btnBackToMenu = new System.Windows.Forms.Button();
-            this.btnSearch = new System.Windows.Forms.Button();
+            this.DGVAvailability = new System.Windows.Forms.DataGridView();
             this.DGVColJanuary = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DGVColFebruary = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DGVColMarch = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -47,7 +45,9 @@ namespace CreatingADatabase.GUI
             this.DGVColSeptember = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DGVColNovember = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DGVColDecember = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.btnBackToMenu = new System.Windows.Forms.Button();
+            this.btnSearch = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.DGVAvailability)).BeginInit();
             this.SuspendLayout();
             // 
             // CBoxClients
@@ -99,12 +99,12 @@ namespace CreatingADatabase.GUI
             this.label2.TabIndex = 5;
             this.label2.Text = "Year:";
             // 
-            // dataGridView1
+            // DGVAvailability
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.DGVAvailability.AllowUserToAddRows = false;
+            this.DGVAvailability.AllowUserToDeleteRows = false;
+            this.DGVAvailability.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DGVAvailability.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.DGVColJanuary,
             this.DGVColFebruary,
             this.DGVColMarch,
@@ -116,32 +116,12 @@ namespace CreatingADatabase.GUI
             this.DGVColSeptember,
             this.DGVColNovember,
             this.DGVColDecember});
-            this.dataGridView1.Location = new System.Drawing.Point(20, 120);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(1142, 328);
-            this.dataGridView1.TabIndex = 6;
-            // 
-            // btnBackToMenu
-            // 
-            this.btnBackToMenu.Font = new System.Drawing.Font("Bahnschrift", 10F);
-            this.btnBackToMenu.Location = new System.Drawing.Point(994, 24);
-            this.btnBackToMenu.Name = "btnBackToMenu";
-            this.btnBackToMenu.Size = new System.Drawing.Size(150, 38);
-            this.btnBackToMenu.TabIndex = 7;
-            this.btnBackToMenu.Text = "Back to main menu";
-            this.btnBackToMenu.UseVisualStyleBackColor = true;
-            this.btnBackToMenu.Click += new System.EventHandler(this.btnBackToMenu_Click);
-            // 
-            // btnSearch
-            // 
-            this.btnSearch.Location = new System.Drawing.Point(600, 84);
-            this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(75, 23);
-            this.btnSearch.TabIndex = 8;
-            this.btnSearch.Text = "button1";
-            this.btnSearch.UseVisualStyleBackColor = true;
-            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
+            this.DGVAvailability.Location = new System.Drawing.Point(20, 120);
+            this.DGVAvailability.Name = "DGVAvailability";
+            this.DGVAvailability.ReadOnly = true;
+            this.DGVAvailability.Size = new System.Drawing.Size(1142, 328);
+            this.DGVAvailability.TabIndex = 6;
+            this.DGVAvailability.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGVAvailabilityCellClick);
             // 
             // DGVColJanuary
             // 
@@ -209,6 +189,27 @@ namespace CreatingADatabase.GUI
             this.DGVColDecember.Name = "DGVColDecember";
             this.DGVColDecember.ReadOnly = true;
             // 
+            // btnBackToMenu
+            // 
+            this.btnBackToMenu.Font = new System.Drawing.Font("Bahnschrift", 10F);
+            this.btnBackToMenu.Location = new System.Drawing.Point(994, 24);
+            this.btnBackToMenu.Name = "btnBackToMenu";
+            this.btnBackToMenu.Size = new System.Drawing.Size(150, 38);
+            this.btnBackToMenu.TabIndex = 7;
+            this.btnBackToMenu.Text = "Back to main menu";
+            this.btnBackToMenu.UseVisualStyleBackColor = true;
+            this.btnBackToMenu.Click += new System.EventHandler(this.btnBackToMenu_Click);
+            // 
+            // btnSearch
+            // 
+            this.btnSearch.Location = new System.Drawing.Point(163, 66);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(75, 23);
+            this.btnSearch.TabIndex = 8;
+            this.btnSearch.Text = "Search";
+            this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
+            // 
             // OfficeHire
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -216,14 +217,14 @@ namespace CreatingADatabase.GUI
             this.ClientSize = new System.Drawing.Size(1184, 464);
             this.Controls.Add(this.btnSearch);
             this.Controls.Add(this.btnBackToMenu);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.DGVAvailability);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.CBoxYear);
             this.Controls.Add(this.CBoxClients);
             this.Name = "OfficeHire";
             this.Text = "OfficeHire";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DGVAvailability)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -234,7 +235,7 @@ namespace CreatingADatabase.GUI
         private System.Windows.Forms.ComboBox CBoxYear;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView DGVAvailability;
         private System.Windows.Forms.Button btnBackToMenu;
         private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.DataGridViewTextBoxColumn DGVColJanuary;
