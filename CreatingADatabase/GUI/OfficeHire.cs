@@ -62,7 +62,12 @@ namespace CreatingADatabase.GUI
             System.Drawing.Color c = DGVAvailability.Rows[e.RowIndex].Cells[e.ColumnIndex].Style.BackColor;
             if (c == Color.Empty)
             {
-                DGVAvailability.Rows[e.RowIndex].Cells[e.ColumnIndex].Style.BackColor = Color.Red;
+                DGVAvailability.Rows[e.RowIndex].Cells[e.ColumnIndex].Style.BackColor = Color.Blue;
+            }
+
+            else if (c == Color.Blue)
+            {
+                DGVAvailability.Rows[e.RowIndex].Cells[e.ColumnIndex].Style.BackColor = Color.White;
             }
         }
         //The method Listbox.FindString() may be helpful
