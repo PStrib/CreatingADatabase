@@ -23,9 +23,10 @@ namespace CreatingADatabase.DBAccess
             db.Cmd.ExecuteNonQuery();
         }
 
-        public void GetReservationRoomWithMonthAndYear(Reservation_Room rr)
+        public void GetReservationRoom(Reservation_Room rr)
         {
-
+            db.Cmd.CommandText = "select roomid, concat(month(startdate),'/',year(startdate)) as StartDate, concat(month(enddate),'/', year(enddate)) as EndDate from[reservation - room]" +
+                "where month(startdate)>= 1 and year(startdate)= 2022";
         }
     }
 }
