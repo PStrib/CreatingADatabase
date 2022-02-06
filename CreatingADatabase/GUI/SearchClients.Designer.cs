@@ -47,6 +47,7 @@ namespace CreatingADatabase.GUI
             this.ClientDatagrid.Size = new System.Drawing.Size(778, 282);
             this.ClientDatagrid.TabIndex = 5;
             this.ClientDatagrid.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.ClientDataGrid_CellClick);
+            this.ClientDatagrid.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.ClientDatagrid_CellContentClick);
             // 
             // btnSearchClients
             // 

@@ -46,6 +46,21 @@ namespace CreatingADatabase.GUI
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
+            //iterate trough 
+            int month = Convert.ToInt32(cmbMonth.SelectedItem);
+            int year = Convert.ToInt32(CBoxYear.SelectedItem);
+            List<string> monthyears = new List<String>();
+            for(int i = 0; i < 24; i++)
+            {
+                if (month == 13)
+                {
+                    month = 1;
+                    year += 1;
+                }
+                monthyears.Add(month + "/" + year);
+                DGVAvailability.Columns[i] = monthyears;
+                month++;
+            }
             foreach (DataGridViewRow row in DGVAvailability.Rows)
             {
                 foreach (DataGridViewCell cell in row.Cells)

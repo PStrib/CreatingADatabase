@@ -22,5 +22,10 @@ namespace CreatingADatabase.DBAccess
                 " values (" + rr.ReservationID + "," + rr.RoomID + "," + rr.EndDate + "," + rr.DepositPaid +"," + rr.StartDate+ ")";
             db.Cmd.ExecuteNonQuery();
         }
+
+        public void GetReservationRoomWithMonthAndYear(Reservation_Room rr)
+        {
+
+        }
     }
 }

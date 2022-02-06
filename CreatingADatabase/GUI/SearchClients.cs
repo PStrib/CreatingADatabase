@@ -150,5 +150,10 @@ namespace CreatingADatabase.GUI
         {
 
         }
+
+        private void ClientDatagrid_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

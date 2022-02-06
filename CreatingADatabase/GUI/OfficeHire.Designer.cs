@@ -34,19 +34,10 @@ namespace CreatingADatabase.GUI
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.DGVAvailability = new System.Windows.Forms.DataGridView();
-            this.DGVColJanuary = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DGVColFebruary = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DGVColMarch = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DGVColApril = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DGVColMay = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DGVColJune = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DGVColJuly = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DGVColAugust = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DGVColSeptember = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DGVColNovember = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DGVColDecember = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnBackToMenu = new System.Windows.Forms.Button();
             this.btnSearch = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
+            this.cmbMonth = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.DGVAvailability)).BeginInit();
             this.SuspendLayout();
             // 
@@ -76,7 +67,7 @@ namespace CreatingADatabase.GUI
             "2033",
             "2034",
             "2035"});
-            this.CBoxYear.Location = new System.Drawing.Point(15, 66);
+            this.CBoxYear.Location = new System.Drawing.Point(264, 75);
             this.CBoxYear.Name = "CBoxYear";
             this.CBoxYear.Size = new System.Drawing.Size(120, 21);
             this.CBoxYear.TabIndex = 3;
@@ -93,7 +84,7 @@ namespace CreatingADatabase.GUI
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(16, 50);
+            this.label2.Location = new System.Drawing.Point(265, 59);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(32, 13);
             this.label2.TabIndex = 5;
@@ -104,90 +95,12 @@ namespace CreatingADatabase.GUI
             this.DGVAvailability.AllowUserToAddRows = false;
             this.DGVAvailability.AllowUserToDeleteRows = false;
             this.DGVAvailability.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DGVAvailability.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.DGVColJanuary,
-            this.DGVColFebruary,
-            this.DGVColMarch,
-            this.DGVColApril,
-            this.DGVColMay,
-            this.DGVColJune,
-            this.DGVColJuly,
-            this.DGVColAugust,
-            this.DGVColSeptember,
-            this.DGVColNovember,
-            this.DGVColDecember});
             this.DGVAvailability.Location = new System.Drawing.Point(20, 120);
             this.DGVAvailability.Name = "DGVAvailability";
             this.DGVAvailability.ReadOnly = true;
             this.DGVAvailability.Size = new System.Drawing.Size(1142, 328);
             this.DGVAvailability.TabIndex = 6;
             this.DGVAvailability.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGVAvailabilityCellClick);
-            // 
-            // DGVColJanuary
-            // 
-            this.DGVColJanuary.HeaderText = "01-2022";
-            this.DGVColJanuary.Name = "DGVColJanuary";
-            this.DGVColJanuary.ReadOnly = true;
-            // 
-            // DGVColFebruary
-            // 
-            this.DGVColFebruary.HeaderText = "02-2022";
-            this.DGVColFebruary.Name = "DGVColFebruary";
-            this.DGVColFebruary.ReadOnly = true;
-            // 
-            // DGVColMarch
-            // 
-            this.DGVColMarch.HeaderText = "03-2022";
-            this.DGVColMarch.Name = "DGVColMarch";
-            this.DGVColMarch.ReadOnly = true;
-            // 
-            // DGVColApril
-            // 
-            this.DGVColApril.HeaderText = "April";
-            this.DGVColApril.Name = "DGVColApril";
-            this.DGVColApril.ReadOnly = true;
-            // 
-            // DGVColMay
-            // 
-            this.DGVColMay.HeaderText = "May";
-            this.DGVColMay.Name = "DGVColMay";
-            this.DGVColMay.ReadOnly = true;
-            // 
-            // DGVColJune
-            // 
-            this.DGVColJune.HeaderText = "June";
-            this.DGVColJune.Name = "DGVColJune";
-            this.DGVColJune.ReadOnly = true;
-            // 
-            // DGVColJuly
-            // 
-            this.DGVColJuly.HeaderText = "July";
-            this.DGVColJuly.Name = "DGVColJuly";
-            this.DGVColJuly.ReadOnly = true;
-            // 
-            // DGVColAugust
-            // 
-            this.DGVColAugust.HeaderText = "August";
-            this.DGVColAugust.Name = "DGVColAugust";
-            this.DGVColAugust.ReadOnly = true;
-            // 
-            // DGVColSeptember
-            // 
-            this.DGVColSeptember.HeaderText = "September";
-            this.DGVColSeptember.Name = "DGVColSeptember";
-            this.DGVColSeptember.ReadOnly = true;
-            // 
-            // DGVColNovember
-            // 
-            this.DGVColNovember.HeaderText = "November";
-            this.DGVColNovember.Name = "DGVColNovember";
-            this.DGVColNovember.ReadOnly = true;
-            // 
-            // DGVColDecember
-            // 
-            this.DGVColDecember.HeaderText = "December";
-            this.DGVColDecember.Name = "DGVColDecember";
-            this.DGVColDecember.ReadOnly = true;
             // 
             // btnBackToMenu
             // 
@@ -202,7 +115,7 @@ namespace CreatingADatabase.GUI
             // 
             // btnSearch
             // 
-            this.btnSearch.Location = new System.Drawing.Point(163, 66);
+            this.btnSearch.Location = new System.Drawing.Point(412, 75);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(75, 23);
             this.btnSearch.TabIndex = 8;
@@ -210,11 +123,43 @@ namespace CreatingADatabase.GUI
             this.btnSearch.UseVisualStyleBackColor = true;
             this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(37, 61);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(40, 13);
+            this.label3.TabIndex = 10;
+            this.label3.Text = "Month:";
+            // 
+            // cmbMonth
+            // 
+            this.cmbMonth.FormattingEnabled = true;
+            this.cmbMonth.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "10",
+            "11",
+            "12"});
+            this.cmbMonth.Location = new System.Drawing.Point(40, 75);
+            this.cmbMonth.Name = "cmbMonth";
+            this.cmbMonth.Size = new System.Drawing.Size(120, 21);
+            this.cmbMonth.TabIndex = 9;
+            // 
             // OfficeHire
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1184, 464);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.cmbMonth);
             this.Controls.Add(this.btnSearch);
             this.Controls.Add(this.btnBackToMenu);
             this.Controls.Add(this.DGVAvailability);
@@ -238,16 +183,7 @@ namespace CreatingADatabase.GUI
         private System.Windows.Forms.DataGridView DGVAvailability;
         private System.Windows.Forms.Button btnBackToMenu;
         private System.Windows.Forms.Button btnSearch;
-        private System.Windows.Forms.DataGridViewTextBoxColumn DGVColJanuary;
-        private System.Windows.Forms.DataGridViewTextBoxColumn DGVColFebruary;
-        private System.Windows.Forms.DataGridViewTextBoxColumn DGVColMarch;
-        private System.Windows.Forms.DataGridViewTextBoxColumn DGVColApril;
-        private System.Windows.Forms.DataGridViewTextBoxColumn DGVColMay;
-        private System.Windows.Forms.DataGridViewTextBoxColumn DGVColJune;
-        private System.Windows.Forms.DataGridViewTextBoxColumn DGVColJuly;
-        private System.Windows.Forms.DataGridViewTextBoxColumn DGVColAugust;
-        private System.Windows.Forms.DataGridViewTextBoxColumn DGVColSeptember;
-        private System.Windows.Forms.DataGridViewTextBoxColumn DGVColNovember;
-        private System.Windows.Forms.DataGridViewTextBoxColumn DGVColDecember;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.ComboBox cmbMonth;
     }
 }
