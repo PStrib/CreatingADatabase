@@ -38,13 +38,14 @@ namespace CreatingADatabase.GUI
             this.btnSearch = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.cmbMonth = new System.Windows.Forms.ComboBox();
+            this.label4 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.DGVAvailability)).BeginInit();
             this.SuspendLayout();
             // 
             // CBoxClients
             // 
             this.CBoxClients.FormattingEnabled = true;
-            this.CBoxClients.Location = new System.Drawing.Point(15, 25);
+            this.CBoxClients.Location = new System.Drawing.Point(19, 25);
             this.CBoxClients.Name = "CBoxClients";
             this.CBoxClients.Size = new System.Drawing.Size(314, 21);
             this.CBoxClients.TabIndex = 2;
@@ -67,7 +68,7 @@ namespace CreatingADatabase.GUI
             "2033",
             "2034",
             "2035"});
-            this.CBoxYear.Location = new System.Drawing.Point(264, 75);
+            this.CBoxYear.Location = new System.Drawing.Point(147, 72);
             this.CBoxYear.Name = "CBoxYear";
             this.CBoxYear.Size = new System.Drawing.Size(120, 21);
             this.CBoxYear.TabIndex = 3;
@@ -84,7 +85,7 @@ namespace CreatingADatabase.GUI
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(265, 59);
+            this.label2.Location = new System.Drawing.Point(148, 56);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(32, 13);
             this.label2.TabIndex = 5;
@@ -97,15 +98,14 @@ namespace CreatingADatabase.GUI
             this.DGVAvailability.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DGVAvailability.Location = new System.Drawing.Point(20, 120);
             this.DGVAvailability.Name = "DGVAvailability";
-            this.DGVAvailability.ReadOnly = true;
-            this.DGVAvailability.Size = new System.Drawing.Size(1142, 328);
+            this.DGVAvailability.Size = new System.Drawing.Size(684, 328);
             this.DGVAvailability.TabIndex = 6;
             this.DGVAvailability.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGVAvailabilityCellClick);
             // 
             // btnBackToMenu
             // 
             this.btnBackToMenu.Font = new System.Drawing.Font("Bahnschrift", 10F);
-            this.btnBackToMenu.Location = new System.Drawing.Point(994, 24);
+            this.btnBackToMenu.Location = new System.Drawing.Point(554, 9);
             this.btnBackToMenu.Name = "btnBackToMenu";
             this.btnBackToMenu.Size = new System.Drawing.Size(150, 38);
             this.btnBackToMenu.TabIndex = 7;
@@ -115,7 +115,7 @@ namespace CreatingADatabase.GUI
             // 
             // btnSearch
             // 
-            this.btnSearch.Location = new System.Drawing.Point(412, 75);
+            this.btnSearch.Location = new System.Drawing.Point(295, 72);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(75, 23);
             this.btnSearch.TabIndex = 8;
@@ -126,7 +126,7 @@ namespace CreatingADatabase.GUI
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(37, 61);
+            this.label3.Location = new System.Drawing.Point(16, 58);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(40, 13);
             this.label3.TabIndex = 10;
@@ -148,16 +148,26 @@ namespace CreatingADatabase.GUI
             "10",
             "11",
             "12"});
-            this.cmbMonth.Location = new System.Drawing.Point(40, 75);
+            this.cmbMonth.Location = new System.Drawing.Point(19, 72);
             this.cmbMonth.Name = "cmbMonth";
             this.cmbMonth.Size = new System.Drawing.Size(120, 21);
             this.cmbMonth.TabIndex = 9;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(168, 104);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(78, 13);
+            this.label4.TabIndex = 11;
+            this.label4.Text = "Room Number:";
             // 
             // OfficeHire
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1184, 464);
+            this.ClientSize = new System.Drawing.Size(721, 464);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.cmbMonth);
             this.Controls.Add(this.btnSearch);
@@ -185,5 +195,6 @@ namespace CreatingADatabase.GUI
         private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ComboBox cmbMonth;
+        private System.Windows.Forms.Label label4;
     }
 }
