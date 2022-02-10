@@ -40,7 +40,7 @@ namespace CreatingADatabase.GUI
             // 
             this.WelcomeBanner.AutoSize = true;
             this.WelcomeBanner.Font = new System.Drawing.Font("Gazelle", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.WelcomeBanner.Location = new System.Drawing.Point(11, 7);
+            this.WelcomeBanner.Location = new System.Drawing.Point(8, 7);
             this.WelcomeBanner.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.WelcomeBanner.Name = "WelcomeBanner";
             this.WelcomeBanner.Size = new System.Drawing.Size(345, 30);
@@ -50,7 +50,7 @@ namespace CreatingADatabase.GUI
             // btnAddClient
             // 
             this.btnAddClient.Font = new System.Drawing.Font("Gazelle", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAddClient.Location = new System.Drawing.Point(16, 39);
+            this.btnAddClient.Location = new System.Drawing.Point(41, 42);
             this.btnAddClient.Margin = new System.Windows.Forms.Padding(2);
             this.btnAddClient.Name = "btnAddClient";
             this.btnAddClient.Size = new System.Drawing.Size(268, 35);
@@ -62,7 +62,7 @@ namespace CreatingADatabase.GUI
             // btnSearchEdit
             // 
             this.btnSearchEdit.Font = new System.Drawing.Font("Gazelle", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSearchEdit.Location = new System.Drawing.Point(16, 78);
+            this.btnSearchEdit.Location = new System.Drawing.Point(41, 81);
             this.btnSearchEdit.Margin = new System.Windows.Forms.Padding(2);
             this.btnSearchEdit.Name = "btnSearchEdit";
             this.btnSearchEdit.Size = new System.Drawing.Size(268, 35);
@@ -74,7 +74,7 @@ namespace CreatingADatabase.GUI
             // btnBooking
             // 
             this.btnBooking.Font = new System.Drawing.Font("Gazelle", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBooking.Location = new System.Drawing.Point(16, 117);
+            this.btnBooking.Location = new System.Drawing.Point(41, 120);
             this.btnBooking.Margin = new System.Windows.Forms.Padding(2);
             this.btnBooking.Name = "btnBooking";
             this.btnBooking.Size = new System.Drawing.Size(268, 35);
@@ -92,6 +92,7 @@ namespace CreatingADatabase.GUI
             this.Controls.Add(this.btnSearchEdit);
             this.Controls.Add(this.btnAddClient);
             this.Controls.Add(this.WelcomeBanner);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "MainApp";

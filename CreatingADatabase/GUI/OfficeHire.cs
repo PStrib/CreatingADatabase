@@ -70,8 +70,8 @@ namespace CreatingADatabase.GUI
                 foreach (DataGridViewCell cell in row.Cells)
                 {
                     int officeNum = DGVAvailability.CurrentCell.RowIndex + 2;
-                    //int month = 
-                    //int year =
+                    int monthSelected = DGVAvailability.CurrentCell.ColumnIndex;
+                    //int yearSelected =
                 }
             }
         }

@@ -178,6 +178,7 @@ namespace CreatingADatabase.GUI
             this.Controls.Add(this.CBoxYear);
             this.Controls.Add(this.CBoxClients);
             this.Name = "OfficeHire";
+            this.ShowIcon = false;
             this.Text = "OfficeHire";
             ((System.ComponentModel.ISupportInitialize)(this.DGVAvailability)).EndInit();
             this.ResumeLayout(false);

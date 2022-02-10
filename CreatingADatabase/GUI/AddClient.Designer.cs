@@ -306,8 +306,10 @@ namespace CreatingADatabase.GUI
             this.Controls.Add(this.txtContactSurname);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtContactForename);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "AddClient";
+            this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Add Client";
             this.ResumeLayout(false);

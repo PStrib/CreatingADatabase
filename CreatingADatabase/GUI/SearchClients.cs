@@ -155,5 +155,14 @@ namespace CreatingADatabase.GUI
         {
 
         }
+
+        private void btnBackToMenu_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            MainApp mainApp = new MainApp();
+            mainApp.ShowDialog();
+            this.Close();
+            this.Dispose();
+        }
     }
 }
