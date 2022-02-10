@@ -51,6 +51,7 @@ namespace CreatingADatabase.DBAccess
             db.Cmd.CommandText = sqlCmd;
             db.Reader = db.Cmd.ExecuteReader();
         }
+
         public DataTable GetClientDataTable()
         {
             DataTable dt = new DataTable();

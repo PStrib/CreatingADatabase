@@ -14,8 +14,7 @@ namespace CreatingADatabase.GUI
 {
     public partial class SearchClients : Form
     {
-        private Database db = MainApp.Db;
-        ClientDBAccess cdbAccess = new ClientDBAccess(MainApp.Db);
+        ClientDBAccess cDBAccess = new ClientDBAccess(MainApp.Db);
         public SearchClients()
         {
             InitializeComponent();
@@ -23,7 +22,7 @@ namespace CreatingADatabase.GUI
 
         private void btnSearchClients_Click(object sender, EventArgs e)
         {
-            ClientDBAccess cDBAccess = new ClientDBAccess(Program.Db);
+           // ClientDBAccess cDBAccess = new ClientDBAccess(Program.Db);
             DataTable dt = new DataTable();
             int typeCheck;
             ClientDatagrid.Columns.Clear();
@@ -58,7 +57,6 @@ namespace CreatingADatabase.GUI
                 //Method to allow the user to edit client details from the datagridview.
                 var rowSelected = e.RowIndex;
                 bool valid = true;
-                ClientDBAccess c = new ClientDBAccess(db);
                 Client client = new Client();
 
                 client.ClientID = Convert.ToInt32(senderDGV[0, rowSelected].Value);
@@ -136,15 +134,11 @@ namespace CreatingADatabase.GUI
                 if (valid) //If the form successfully completes all required text validation
                 {
                     //ClientDBAccess cDBAccess = new ClientDBAccess(db);
-                    c.UpdateClient(client);
+                    cDBAccess.UpdateClient(client);
                     MessageBox.Show("Client Information Updated!");
                 }
             }
         }
-
-
-        private void ClientDatagrid_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
-        { }
 
         private void SearchClients_Load(object sender, EventArgs e)
         {

@@ -14,14 +14,13 @@ namespace CreatingADatabase.GUI
 {
     public partial class OfficeHire : Form
     {
-        private Database db = MainApp.Db;
-        ClientDBAccess cdbAccess = new ClientDBAccess(MainApp.Db);
-        private object cell;
+        ClientDBAccess cDBAccess = new ClientDBAccess(MainApp.Db);
+        Reservation_RoomDBAccess rdbAccess = new Reservation_RoomDBAccess(MainApp.Db);
 
         public OfficeHire()
         {
             InitializeComponent();
-            CBoxClients.DataSource = cdbAccess.GetAllClientNames();
+            CBoxClients.DataSource = cDBAccess.GetAllClientNames();
         }
 
         private void PopulateColumnHeadings()
@@ -30,10 +29,11 @@ namespace CreatingADatabase.GUI
             DGVAvailability.ColumnCount = 10;
             for (int i = 0; i < DGVAvailability.Columns.Count; i++)
             {
-                DGVAvailability.Columns[i].HeaderCell.Value = officeNames[i];
+                DataGridViewColumn column = DGVAvailability.Columns[i];
+                column.HeaderCell.Value = officeNames[i];
+                column.Width = 20; //Play around with this
             }
-            DGVAvailability.RowHeadersWidth = 100;
-            
+            DGVAvailability.RowHeadersWidth = 100;           
         }
 
         private void btnBackToMenu_Click(object sender, EventArgs e)
@@ -69,11 +69,10 @@ namespace CreatingADatabase.GUI
             {
                 foreach (DataGridViewCell cell in row.Cells)
                 {
-                    int officeNum = DGVAvailability.CurrentCell.RowIndex + 2;
-                    int monthSelected = DGVAvailability.CurrentCell.ColumnIndex;
-                    //int yearSelected =
+                    int officeNum = DGVAvailability.CurrentCell.RowIndex + 2; // To be continued
                 }
             }
+
         }
 
         private void DGVAvailabilityCellClick(object sender, DataGridViewCellEventArgs e)
