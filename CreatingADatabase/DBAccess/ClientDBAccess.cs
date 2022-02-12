@@ -46,7 +46,7 @@ namespace CreatingADatabase.DBAccess
 
         public void GetClientsWithName(string businessName)
         {
-            string sqlCmd = ("SELECT * FROM Client WHERE BusinessName LIKE '" + businessName +"%'");
+            string sqlCmd = "SELECT * FROM Client WHERE BusinessName LIKE '" + businessName +"%' OR ContactForename LIKE '" +businessName+"%'";
             db.Cmd = db.Conn.CreateCommand();
             db.Cmd.CommandText = sqlCmd;
             db.Reader = db.Cmd.ExecuteReader();
