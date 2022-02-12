@@ -112,6 +112,7 @@ namespace CreatingADatabase.GUI
             this.Controls.Add(this.ClientDatagrid);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "SearchClients";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "SearchClients";
             this.Load += new System.EventHandler(this.SearchClients_Load);
             ((System.ComponentModel.ISupportInitialize)(this.ClientDatagrid)).EndInit();

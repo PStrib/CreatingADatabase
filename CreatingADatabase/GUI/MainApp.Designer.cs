@@ -96,6 +96,7 @@ namespace CreatingADatabase.GUI
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "MainApp";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Simpson\'s Department Store";
             this.ResumeLayout(false);
             this.PerformLayout();

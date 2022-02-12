@@ -180,6 +180,7 @@ namespace CreatingADatabase.GUI
             this.Controls.Add(this.CBoxClients);
             this.Name = "OfficeHire";
             this.ShowIcon = false;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "OfficeHire";
             ((System.ComponentModel.ISupportInitialize)(this.DGVAvailability)).EndInit();
             this.ResumeLayout(false);
