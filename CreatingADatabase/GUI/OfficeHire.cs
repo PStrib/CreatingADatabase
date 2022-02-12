@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -72,7 +73,18 @@ namespace CreatingADatabase.GUI
                     int officeNum = DGVAvailability.CurrentCell.RowIndex + 2; // To be continued
                 }
             }
+            //var test=rdbAccess.GetDateRange(Convert.ToString(month),Convert.ToString(year));
+            SqlDataReader reader = rdbAccess.GetDateRange(Convert.ToString(month), Convert.ToString(year));
+            string test="";
 
+            if (reader.HasRows)
+            {
+                while (reader.Read())
+                {
+                    test += reader.GetString(0);
+                }
+            }
+            MessageBox.Show(test);
         }
 
         private void DGVAvailabilityCellClick(object sender, DataGridViewCellEventArgs e)

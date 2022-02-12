@@ -24,13 +24,13 @@ namespace CreatingADatabase.DBAccess
             db.Cmd.ExecuteNonQuery();
         }
 
-        public void GetReservationRoom(string month, string year)
+        public SqlDataReader GetDateRange(string month, string year)
         {
             db.Cmd = db.Conn.CreateCommand();
-            db.Cmd.CommandText = "select roomid, concat(month(startdate),'/',year(startdate)) as StartDate, concat(month(enddate),'/', year(enddate)) as EndDate from[reservation - room]" +
+            db.Cmd.CommandText = "select roomid, concat(month(startdate),'/',year(startdate)) as StartDate, concat(month(enddate),'/', year(enddate)) as EndDate from[Reservation-Room]" +
                 "where month(startdate)>= " + month + " and year(startdate)= " + year;
-            SqlDataReader r=db.Cmd.ExecuteReader();
-
+            var r=db.Cmd.ExecuteReader();
+            return r;
         }
     }
 }
