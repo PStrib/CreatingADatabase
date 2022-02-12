@@ -31,9 +31,9 @@ namespace CreatingADatabase.GUI
             {
                 DataGridViewColumn column = DGVAvailability.Columns[i];
                 column.HeaderCell.Value = officeNames[i];
-                column.Width = 20; //Play around with this
+                column.Width = 26; //Play around with this
             }
-            DGVAvailability.RowHeadersWidth = 100;           
+            DGVAvailability.RowHeadersWidth = 78;
         }
 
         private void btnBackToMenu_Click(object sender, EventArgs e)

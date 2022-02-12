@@ -45,7 +45,7 @@ namespace CreatingADatabase.GUI
             // CBoxClients
             // 
             this.CBoxClients.FormattingEnabled = true;
-            this.CBoxClients.Location = new System.Drawing.Point(19, 25);
+            this.CBoxClients.Location = new System.Drawing.Point(19, 31);
             this.CBoxClients.Name = "CBoxClients";
             this.CBoxClients.Size = new System.Drawing.Size(314, 21);
             this.CBoxClients.TabIndex = 2;
@@ -76,7 +76,7 @@ namespace CreatingADatabase.GUI
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 9);
+            this.label1.Location = new System.Drawing.Point(12, 15);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(36, 13);
             this.label1.TabIndex = 4;
@@ -98,18 +98,19 @@ namespace CreatingADatabase.GUI
             this.DGVAvailability.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DGVAvailability.Location = new System.Drawing.Point(20, 120);
             this.DGVAvailability.Name = "DGVAvailability";
-            this.DGVAvailability.Size = new System.Drawing.Size(684, 328);
+            this.DGVAvailability.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.DGVAvailability.Size = new System.Drawing.Size(355, 328);
             this.DGVAvailability.TabIndex = 6;
             this.DGVAvailability.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGVAvailabilityCellClick);
             // 
             // btnBackToMenu
             // 
             this.btnBackToMenu.Font = new System.Drawing.Font("Bahnschrift", 10F);
-            this.btnBackToMenu.Location = new System.Drawing.Point(554, 9);
+            this.btnBackToMenu.Location = new System.Drawing.Point(169, 1);
             this.btnBackToMenu.Name = "btnBackToMenu";
-            this.btnBackToMenu.Size = new System.Drawing.Size(150, 38);
+            this.btnBackToMenu.Size = new System.Drawing.Size(53, 26);
             this.btnBackToMenu.TabIndex = 7;
-            this.btnBackToMenu.Text = "Back to main menu";
+            this.btnBackToMenu.Text = "Back";
             this.btnBackToMenu.UseVisualStyleBackColor = true;
             this.btnBackToMenu.Click += new System.EventHandler(this.btnBackToMenu_Click);
             // 
@@ -156,7 +157,7 @@ namespace CreatingADatabase.GUI
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(168, 104);
+            this.label4.Location = new System.Drawing.Point(107, 104);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(78, 13);
             this.label4.TabIndex = 11;
@@ -166,7 +167,7 @@ namespace CreatingADatabase.GUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(721, 464);
+            this.ClientSize = new System.Drawing.Size(396, 464);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.cmbMonth);
