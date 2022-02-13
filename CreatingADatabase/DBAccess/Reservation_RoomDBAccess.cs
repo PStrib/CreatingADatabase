@@ -24,12 +24,12 @@ namespace CreatingADatabase.DBAccess
             db.Cmd.ExecuteNonQuery();
         }
 
-        public SqlDataReader GetDateRange(string month, string year)
+        public SqlDataReader GetDateRange(string year)
         {
             db.Cmd = db.Conn.CreateCommand();
             db.Cmd.CommandText = @"select roomid, month(startdate) as StartMonth,year(startdate) as StartYear,
-            month(enddate) as EndMonth, year(enddate) as EndYear" +
-                "where month(startdate)>= " + month + " and year(startdate)= " + year;
+            month(enddate) as EndMonth, year(enddate) as EndYear FROM [Reservation-Room]" +
+                "where month(startdate)>= 1 and year(startdate)= " + year;
             var r=db.Cmd.ExecuteReader();
             return r;
         }

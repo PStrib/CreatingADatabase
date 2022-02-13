@@ -48,6 +48,7 @@ namespace CreatingADatabase.GUI
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
+            // TODO Make January first month in DGV
             PopulateColumnHeadings();
             //iterate through and fill the column headers
             int monthSelected = Convert.ToInt32(cmbMonth.SelectedItem);
@@ -77,7 +78,7 @@ namespace CreatingADatabase.GUI
                 }
             }
             //var test=rdbAccess.GetDateRange(Convert.ToString(month),Convert.ToString(year));
-            SqlDataReader reader = rdbAccess.GetDateRange(Convert.ToString(monthSelected), Convert.ToString(yearSelected));
+            SqlDataReader reader = rdbAccess.GetDateRange(Convert.ToString(yearSelected));
             if (reader.HasRows)
             {
                 while (reader.Read())
@@ -87,6 +88,11 @@ namespace CreatingADatabase.GUI
                     {
                         row.Add(reader.GetInt32(column));
                     }
+                    int office = row[0];
+                    int startMonth = row[1];
+                    int startYear = row[2];
+                    int endMonth = row[3];
+                    int endYear = row[4];
                 }
             }
         }
