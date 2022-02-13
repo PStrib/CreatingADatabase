@@ -50,8 +50,11 @@ namespace CreatingADatabase.GUI
         {
             PopulateColumnHeadings();
             //iterate through and fill the column headers
-            int month = Convert.ToInt32(cmbMonth.SelectedItem);
-            int year = Convert.ToInt32(CBoxYear.SelectedItem);
+            int monthSelected = Convert.ToInt32(cmbMonth.SelectedItem);
+            int yearSelected = Convert.ToInt32(CBoxYear.SelectedItem);
+
+            int month = monthSelected;
+            int year = yearSelected;
             List<string> monthyears = new List<String>();
             for(int i = 0; i < 24; i++)
             {
@@ -74,17 +77,18 @@ namespace CreatingADatabase.GUI
                 }
             }
             //var test=rdbAccess.GetDateRange(Convert.ToString(month),Convert.ToString(year));
-            SqlDataReader reader = rdbAccess.GetDateRange(Convert.ToString(month), Convert.ToString(year));
-            string test="";
-
+            SqlDataReader reader = rdbAccess.GetDateRange(Convert.ToString(monthSelected), Convert.ToString(yearSelected));
             if (reader.HasRows)
             {
                 while (reader.Read())
                 {
-                    test += reader.GetString(0);
+                    List<int> row=new List<int>();
+                    for (int column=0; column<5; column++)
+                    {
+                        row.Add(reader.GetInt32(column));
+                    }
                 }
             }
-            MessageBox.Show(test);
         }
 
         private void DGVAvailabilityCellClick(object sender, DataGridViewCellEventArgs e)

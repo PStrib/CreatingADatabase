@@ -27,7 +27,8 @@ namespace CreatingADatabase.DBAccess
         public SqlDataReader GetDateRange(string month, string year)
         {
             db.Cmd = db.Conn.CreateCommand();
-            db.Cmd.CommandText = "select roomid, concat(month(startdate),'/',year(startdate)) as StartDate, concat(month(enddate),'/', year(enddate)) as EndDate from[Reservation-Room]" +
+            db.Cmd.CommandText = @"select roomid, month(startdate) as StartMonth,year(startdate) as StartYear,
+            month(enddate) as EndMonth, year(enddate) as EndYear" +
                 "where month(startdate)>= " + month + " and year(startdate)= " + year;
             var r=db.Cmd.ExecuteReader();
             return r;
