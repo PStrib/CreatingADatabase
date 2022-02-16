@@ -50,6 +50,7 @@ namespace CreatingADatabase.GUI
         {
             // TODO Make January first month in DGV
             PopulateColumnHeadings();
+            DGVAvailability.Rows.Clear();
             //iterate through and fill the column headers
             int monthSelected = Convert.ToInt32(cmbMonth.SelectedItem);
             int yearSelected = Convert.ToInt32(CBoxYear.SelectedItem);
@@ -65,7 +66,6 @@ namespace CreatingADatabase.GUI
                     year += 1;
                 }
                 monthyears.Add(month + "/" + year);
-                //DGVAvailability.Rows.Add(monthyears[i], monthyears[i]);
                 DGVAvailability.Rows.Add();
                 DGVAvailability.Rows[i].HeaderCell.Value = monthyears[i];
                 month++;
@@ -77,24 +77,9 @@ namespace CreatingADatabase.GUI
                     int officeNum = DGVAvailability.CurrentCell.RowIndex + 2; // To be continued
                 }
             }
-            //var test=rdbAccess.GetDateRange(Convert.ToString(month),Convert.ToString(year));
-            SqlDataReader reader = rdbAccess.GetDateRange(Convert.ToString(yearSelected));
-            if (reader.HasRows)
-            {
-                while (reader.Read())
-                {
-                    List<int> row=new List<int>();
-                    for (int column=0; column<5; column++)
-                    {
-                        row.Add(reader.GetInt32(column));
-                    }
-                    int office = row[0];
-                    int startMonth = row[1];
-                    int startYear = row[2];
-                    int endMonth = row[3];
-                    int endYear = row[4];
-                }
-            }
+            
+            List<RoomBooking> bookings = rdbAccess.GetDateRange(Convert.ToString(yearSelected));
+ 
         }
 
         private void DGVAvailabilityCellClick(object sender, DataGridViewCellEventArgs e)

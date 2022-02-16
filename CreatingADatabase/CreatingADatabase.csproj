@@ -69,6 +69,7 @@
     <Compile Include="DBAccess\ProjectEmployeeDBAccess.cs" />
     <Compile Include="DBAccess\ReportDBAccess.cs" />
     <Compile Include="DBAccess\Reservation_RoomDBAccess.cs" />
+    <Compile Include="DBAccess\RoomBooking.cs" />
     <Compile Include="DBAccess\RoomDBAccess.cs" />
     <Compile Include="GUI\AddClient.cs">
       <SubType>Form</SubType>

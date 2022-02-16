@@ -24,14 +24,34 @@ namespace CreatingADatabase.DBAccess
             db.Cmd.ExecuteNonQuery();
         }
 
-        public SqlDataReader GetDateRange(string year)
+        public List<RoomBooking> GetDateRange(string year)
         {
             db.Cmd = db.Conn.CreateCommand();
             db.Cmd.CommandText = @"select roomid, month(startdate) as StartMonth,year(startdate) as StartYear,
             month(enddate) as EndMonth, year(enddate) as EndYear FROM [Reservation-Room]" +
                 "where month(startdate)>= 1 and year(startdate)= " + year;
-            var r=db.Cmd.ExecuteReader();
-            return r;
+
+            List<RoomBooking> roomBookings = new List<RoomBooking>();
+            SqlDataReader reader=db.Cmd.ExecuteReader();
+            if (reader.HasRows)
+            {
+                while (reader.Read())
+                {
+                    List<int> row = new List<int>();
+                    for (int column = 0; column < 5; column++)
+                    {
+                        row.Add(reader.GetInt32(column));
+                    }
+                    roomBookings.Add(new RoomBooking(
+                        office: row[0],
+                        startMonth: row[1],
+                        startYear: row[2],
+                        endMonth: row[3],
+                        endYear: row[4]));
+                }
+            }
+            reader.Close();
+            return roomBookings;
         }
     }
 }
