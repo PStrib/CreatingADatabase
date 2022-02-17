@@ -49,6 +49,7 @@ namespace CreatingADatabase.GUI
         private void btnSearch_Click(object sender, EventArgs e)
         {
             // TODO Make January first month in DGV
+            // return a value even if range starts before end of search 
             PopulateColumnHeadings();
             DGVAvailability.Rows.Clear();
             //iterate through and fill the column headers
@@ -77,8 +78,14 @@ namespace CreatingADatabase.GUI
                     int officeNum = DGVAvailability.CurrentCell.RowIndex + 2; // To be continued
                 }
             }
-            
-            List<RoomBooking> bookings = rdbAccess.GetDateRange(Convert.ToString(yearSelected));
+
+            DateTime viewStart = new DateTime(yearSelected, 01, 01);
+            DateTime viewEnd = viewStart.AddYears(2);
+            List<RoomBooking> bookings = rdbAccess.GetDateRange(viewStart, viewEnd);
+            foreach(RoomBooking b in bookings)
+            {
+                
+            }
  
         }
 

@@ -24,12 +24,23 @@ namespace CreatingADatabase.DBAccess
             db.Cmd.ExecuteNonQuery();
         }
 
-        public List<RoomBooking> GetDateRange(string year)
+        public List<RoomBooking> GetDateRange(DateTime viewStart, DateTime viewEnd)
         {
             db.Cmd = db.Conn.CreateCommand();
-            db.Cmd.CommandText = @"select roomid, month(startdate) as StartMonth,year(startdate) as StartYear,
-            month(enddate) as EndMonth, year(enddate) as EndYear FROM [Reservation-Room]" +
-                "where month(startdate)>= 1 and year(startdate)= " + year;
+            db.Cmd.CommandText = $@"DECLARE @viewStart date;
+                                DECLARE @viewEnd date;
+                                set @viewStart=CAST ('{viewStart}' AS date);
+                                set @viewEnd=CAST ('{viewEnd}' AS date);
+
+                                select roomid,
+                                month(startdate) as StartMonth,
+                                year(startdate) as StartYear,
+                                month(enddate) as EndMonth,
+                                year(enddate) as EndYear
+                                FROM [Reservation-Room]
+
+                                where not(enddate<@viewStart
+                                OR startdate>@viewEnd);";
 
             List<RoomBooking> roomBookings = new List<RoomBooking>();
             SqlDataReader reader=db.Cmd.ExecuteReader();
@@ -52,6 +63,19 @@ namespace CreatingADatabase.DBAccess
             }
             reader.Close();
             return roomBookings;
+        }
+    }
+    class RoomBooking
+    {
+        public int office, startMonth, startYear, endMonth, endYear;
+
+        public RoomBooking(int office, int startMonth, int startYear, int endMonth, int endYear)
+        {
+            this.office = office;
+            this.startMonth = startMonth;
+            this.startYear = startYear;
+            this.endMonth = endMonth;
+            this.endYear = endYear;
         }
     }
 }
