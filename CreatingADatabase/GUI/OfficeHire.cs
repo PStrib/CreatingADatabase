@@ -49,16 +49,14 @@ namespace CreatingADatabase.GUI
         private void btnSearch_Click(object sender, EventArgs e)
         {
             // TODO Make January first month in DGV
-            // return a value even if range starts before end of search 
+            
             PopulateColumnHeadings();
             DGVAvailability.Rows.Clear();
             //iterate through and fill the column headers
-            int monthSelected = Convert.ToInt32(cmbMonth.SelectedItem);
             int yearSelected = Convert.ToInt32(CBoxYear.SelectedItem);
 
-            int month = monthSelected;
+            int month = 1; //Month is always January
             int year = yearSelected;
-            List<string> monthyears = new List<String>();
             for(int i = 0; i < 24; i++)
             {
                 if (month == 13)
@@ -66,27 +64,38 @@ namespace CreatingADatabase.GUI
                     month = 1;
                     year += 1;
                 }
-                monthyears.Add(month + "/" + year);
+
                 DGVAvailability.Rows.Add();
-                DGVAvailability.Rows[i].HeaderCell.Value = monthyears[i];
+                // TODO: make this be a DateTime
+                DGVAvailability.Rows[i].HeaderCell.Value = $"{month}/{year}";
                 month++;
             }
-            foreach (DataGridViewRow row in DGVAvailability.Rows)
-            {
-                foreach (DataGridViewCell cell in row.Cells)
-                {
-                    int officeNum = DGVAvailability.CurrentCell.RowIndex + 2; // To be continued
-                }
-            }
+
 
             DateTime viewStart = new DateTime(yearSelected, 01, 01);
             DateTime viewEnd = viewStart.AddYears(2);
             List<RoomBooking> bookings = rdbAccess.GetDateRange(viewStart, viewEnd);
-            foreach(RoomBooking b in bookings)
+
+
+            foreach (DataGridViewRow row in DGVAvailability.Rows)
             {
-                
+                foreach (DataGridViewColumn column in DGVAvailability.Columns)
+                {
+                    //int officeNum = DGVAvailability.CurrentCell.RowIndex + 2; // To be continued
+                    foreach (RoomBooking b in bookings)
+                    {
+                        var dateString = row.HeaderCell.Value as string;
+                        var a = dateString.Split('/');
+                        var m = Convert.ToInt32(a[0]);
+                        var y = Convert.ToInt32(a[1]);
+                        var rowDate = new DateTime(y, m, 1);
+                        if (Convert.ToInt32(column.HeaderCell.Value) == b.office && (rowDate < b.endDate && rowDate >b.startDate ))
+                        {
+                            DGVAvailability[row.Index, column.Index].Style.BackColor = Color.Red;
+                        }
+                    }
+                }
             }
- 
         }
 
         private void DGVAvailabilityCellClick(object sender, DataGridViewCellEventArgs e)

@@ -27,55 +27,42 @@ namespace CreatingADatabase.DBAccess
         public List<RoomBooking> GetDateRange(DateTime viewStart, DateTime viewEnd)
         {
             db.Cmd = db.Conn.CreateCommand();
-            db.Cmd.CommandText = $@"DECLARE @viewStart date;
-                                DECLARE @viewEnd date;
-                                set @viewStart=CAST ('{viewStart}' AS date);
-                                set @viewEnd=CAST ('{viewEnd}' AS date);
-
+            db.Cmd.CommandText = $@"
                                 select roomid,
-                                month(startdate) as StartMonth,
-                                year(startdate) as StartYear,
-                                month(enddate) as EndMonth,
-                                year(enddate) as EndYear
+                                startDate,
+                                endDate
                                 FROM [Reservation-Room]
 
-                                where not(enddate<@viewStart
-                                OR startdate>@viewEnd);";
+                                where not(enddate < CAST('{viewStart}' AS date)
+                                OR startdate > CAST('{viewEnd}' AS date));";
 
             List<RoomBooking> roomBookings = new List<RoomBooking>();
-            SqlDataReader reader=db.Cmd.ExecuteReader();
-            if (reader.HasRows)
+            using (SqlDataReader reader = db.Cmd.ExecuteReader())
             {
-                while (reader.Read())
+                if (reader.HasRows)
                 {
-                    List<int> row = new List<int>();
-                    for (int column = 0; column < 5; column++)
+                    while (reader.Read())
                     {
-                        row.Add(reader.GetInt32(column));
+                        roomBookings.Add(new RoomBooking(
+                            office: reader.GetInt32(0),
+                            startDate: reader.GetDateTime(1),
+                            endDate: reader.GetDateTime(2)));
                     }
-                    roomBookings.Add(new RoomBooking(
-                        office: row[0],
-                        startMonth: row[1],
-                        startYear: row[2],
-                        endMonth: row[3],
-                        endYear: row[4]));
                 }
             }
-            reader.Close();
             return roomBookings;
         }
     }
     class RoomBooking
     {
-        public int office, startMonth, startYear, endMonth, endYear;
+        public int office;
+        public DateTime startDate, endDate;
 
-        public RoomBooking(int office, int startMonth, int startYear, int endMonth, int endYear)
+        public RoomBooking(int office, DateTime startDate, DateTime endDate)
         {
             this.office = office;
-            this.startMonth = startMonth;
-            this.startYear = startYear;
-            this.endMonth = endMonth;
-            this.endYear = endYear;
+            this.startDate = startDate;
+            this.endDate = endDate;
         }
     }
 }
