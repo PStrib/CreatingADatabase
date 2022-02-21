@@ -122,6 +122,11 @@ namespace CreatingADatabase.GUI
             }
 
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            btnSearch_Click(sender, e);
+        }
         //The method Listbox.FindString() may be helpful
     }
 }
