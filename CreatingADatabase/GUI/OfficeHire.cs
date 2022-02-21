@@ -91,7 +91,9 @@ namespace CreatingADatabase.GUI
                         var rowDate = new DateTime(y, m, 1);
                         if (Convert.ToInt32(column.HeaderCell.Value) == b.office && (rowDate < b.endDate && rowDate >b.startDate ))
                         {
-                            DGVAvailability[row.Index, column.Index].Style.BackColor = Color.Red;
+                            DataGridViewCell dataGridViewCell = DGVAvailability[column.Index, row.Index];
+                            dataGridViewCell.Style.BackColor = Color.Red;
+                            dataGridViewCell.ReadOnly = true;
                         }
                     }
                 }
