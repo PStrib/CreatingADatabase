@@ -32,7 +32,7 @@ namespace CreatingADatabase.GUI
             {
                 DataGridViewColumn column = DGVAvailability.Columns[i];
                 column.HeaderCell.Value = officeNames[i];
-                column.Width = 26; //Play around with this
+                column.Width = 26;
             }
             DGVAvailability.RowHeadersWidth = 78;
         }
@@ -47,9 +47,7 @@ namespace CreatingADatabase.GUI
         }
 
         private void btnSearch_Click(object sender, EventArgs e)
-        {
-            // TODO Make January first month in DGV
-            
+        {           
             PopulateColumnHeadings();
             DGVAvailability.Rows.Clear();
             //iterate through and fill the column headers
@@ -71,7 +69,6 @@ namespace CreatingADatabase.GUI
                 month++;
             }
 
-
             DateTime viewStart = new DateTime(yearSelected, 01, 01);
             DateTime viewEnd = viewStart.AddYears(2);
             List<RoomBooking> bookings = rdbAccess.GetDateRange(viewStart, viewEnd);
@@ -81,7 +78,6 @@ namespace CreatingADatabase.GUI
             {
                 foreach (DataGridViewColumn column in DGVAvailability.Columns)
                 {
-                    //int officeNum = DGVAvailability.CurrentCell.RowIndex + 2; // To be continued
                     foreach (RoomBooking b in bookings)
                     {
                         var dateString = row.HeaderCell.Value as string;
@@ -89,7 +85,7 @@ namespace CreatingADatabase.GUI
                         var m = Convert.ToInt32(a[0]);
                         var y = Convert.ToInt32(a[1]);
                         var rowDate = new DateTime(y, m, 1);
-                        if (Convert.ToInt32(column.HeaderCell.Value) == b.office && (rowDate < b.endDate && rowDate >b.startDate ))
+                        if (Convert.ToInt32(column.HeaderCell.Value) == b.office && (rowDate <= b.endDate && rowDate >=b.startDate ))
                         {
                             DataGridViewCell dataGridViewCell = DGVAvailability[column.Index, row.Index];
                             dataGridViewCell.Style.BackColor = Color.Red;
@@ -98,29 +94,7 @@ namespace CreatingADatabase.GUI
                     }
                 }
             }
-        }
-
-        private void DGVAvailabilityCellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            try
-            {
-                System.Drawing.Color c = DGVAvailability.Rows[e.RowIndex].Cells[e.ColumnIndex].Style.BackColor;
-                if (c == Color.Empty)
-                {
-                    DGVAvailability.Rows[e.RowIndex].Cells[e.ColumnIndex].Style.BackColor = Color.Blue;
-                }
-
-                else if (c == Color.Blue)
-                {
-                    DGVAvailability.Rows[e.RowIndex].Cells[e.ColumnIndex].Style.BackColor = Color.White;
-                }
-            }
-
-            catch
-            {
-                MessageBox.Show("You can't select a column or row heading");
-            }
-
+            DGVAvailability.ClearSelection();
         }
 
         private void button1_Click(object sender, EventArgs e)
