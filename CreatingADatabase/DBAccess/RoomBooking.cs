@@ -1,4 +1,0 @@
-﻿namespace CreatingADatabase.DBAccess
-{
-
-}

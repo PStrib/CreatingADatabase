@@ -16,6 +16,21 @@ namespace CreatingADatabase.DBAccess
             db = _db;
         }
 
+        public void AddNewBooking(int ClientID, DateTime StartDate, DateTime EndDate, int RoomNo, string StaffName)
+        {
+            db.Cmd = db.Conn.CreateCommand();
+            db.Cmd.CommandText = $@"
+                                INSERT INTO Reservation
+                              (CreationDate, Staff, ClientID)
+                             VALUES ('{DateTime.Today}', '{StaffName}', {ClientID});
+
+                           SELECT MAX (ReservationID);
+
+                         insert into [reservation-Room]
+                        values (MAX (ReservationID),{RoomNo},'{EndDate}',0,'{StartDate}')";
+            db.Cmd.ExecuteNonQuery();
+        }
+
         public void AddNewReservation_Room(Reservation_Room rr)
         {
             db.Cmd = db.Conn.CreateCommand();

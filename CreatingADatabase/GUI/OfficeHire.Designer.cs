@@ -37,14 +37,17 @@ namespace CreatingADatabase.GUI
             this.btnBackToMenu = new System.Windows.Forms.Button();
             this.btnSearch = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnRefreshTable = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.CBoxRoomNo = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
+            this.DTPStartDate = new System.Windows.Forms.DateTimePicker();
+            this.DTPEndDate = new System.Windows.Forms.DateTimePicker();
+            this.btnAddBooking = new System.Windows.Forms.Button();
+            this.TBStaffName = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.DGVAvailability)).BeginInit();
             this.SuspendLayout();
             // 
@@ -108,7 +111,6 @@ namespace CreatingADatabase.GUI
             this.DGVAvailability.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.DGVAvailability.Size = new System.Drawing.Size(355, 293);
             this.DGVAvailability.TabIndex = 6;
-            //this.DGVAvailability.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGVAvailabilityCellClick);
             // 
             // btnBackToMenu
             // 
@@ -141,16 +143,16 @@ namespace CreatingADatabase.GUI
             this.label4.TabIndex = 11;
             this.label4.Text = "Room Number:";
             // 
-            // button1
+            // btnRefreshTable
             // 
-            this.button1.Font = new System.Drawing.Font("Bahnschrift SemiBold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(383, 374);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(102, 28);
-            this.button1.TabIndex = 12;
-            this.button1.Text = "Refresh Table";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btnRefreshTable.Font = new System.Drawing.Font("Bahnschrift SemiBold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRefreshTable.Location = new System.Drawing.Point(383, 374);
+            this.btnRefreshTable.Name = "btnRefreshTable";
+            this.btnRefreshTable.Size = new System.Drawing.Size(102, 28);
+            this.btnRefreshTable.TabIndex = 12;
+            this.btnRefreshTable.Text = "Refresh Table";
+            this.btnRefreshTable.UseVisualStyleBackColor = true;
+            this.btnRefreshTable.Click += new System.EventHandler(this.button1_Click);
             // 
             // label3
             // 
@@ -182,10 +184,10 @@ namespace CreatingADatabase.GUI
             this.label6.TabIndex = 17;
             this.label6.Text = "End Date:";
             // 
-            // comboBox1
+            // CBoxRoomNo
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.CBoxRoomNo.FormattingEnabled = true;
+            this.CBoxRoomNo.Items.AddRange(new object[] {
             "2",
             "3",
             "4",
@@ -196,10 +198,10 @@ namespace CreatingADatabase.GUI
             "9",
             "10",
             "11"});
-            this.comboBox1.Location = new System.Drawing.Point(383, 259);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(201, 21);
-            this.comboBox1.TabIndex = 18;
+            this.CBoxRoomNo.Location = new System.Drawing.Point(383, 259);
+            this.CBoxRoomNo.Name = "CBoxRoomNo";
+            this.CBoxRoomNo.Size = new System.Drawing.Size(201, 21);
+            this.CBoxRoomNo.TabIndex = 18;
             // 
             // label7
             // 
@@ -211,33 +213,64 @@ namespace CreatingADatabase.GUI
             this.label7.TabIndex = 19;
             this.label7.Text = "Room No.";
             // 
-            // dateTimePicker1
+            // DTPStartDate
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(383, 173);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(201, 20);
-            this.dateTimePicker1.TabIndex = 20;
+            this.DTPStartDate.Location = new System.Drawing.Point(383, 173);
+            this.DTPStartDate.Name = "DTPStartDate";
+            this.DTPStartDate.Size = new System.Drawing.Size(201, 20);
+            this.DTPStartDate.TabIndex = 20;
             // 
-            // dateTimePicker2
+            // DTPEndDate
             // 
-            this.dateTimePicker2.Location = new System.Drawing.Point(383, 216);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(201, 20);
-            this.dateTimePicker2.TabIndex = 21;
+            this.DTPEndDate.Location = new System.Drawing.Point(383, 216);
+            this.DTPEndDate.Name = "DTPEndDate";
+            this.DTPEndDate.Size = new System.Drawing.Size(201, 20);
+            this.DTPEndDate.TabIndex = 21;
+            // 
+            // btnAddBooking
+            // 
+            this.btnAddBooking.Font = new System.Drawing.Font("Bahnschrift SemiBold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddBooking.Location = new System.Drawing.Point(383, 338);
+            this.btnAddBooking.Name = "btnAddBooking";
+            this.btnAddBooking.Size = new System.Drawing.Size(102, 28);
+            this.btnAddBooking.TabIndex = 22;
+            this.btnAddBooking.Text = "Refresh Table";
+            this.btnAddBooking.UseVisualStyleBackColor = true;
+            this.btnAddBooking.Click += new System.EventHandler(this.btnAddBooking_Click);
+            // 
+            // TBStaffName
+            // 
+            this.TBStaffName.Location = new System.Drawing.Point(385, 304);
+            this.TBStaffName.Name = "TBStaffName";
+            this.TBStaffName.Size = new System.Drawing.Size(198, 20);
+            this.TBStaffName.TabIndex = 23;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Bahnschrift SemiBold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(380, 285);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(75, 16);
+            this.label8.TabIndex = 24;
+            this.label8.Text = "Staff Name:";
             // 
             // OfficeHire
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(612, 417);
-            this.Controls.Add(this.dateTimePicker2);
-            this.Controls.Add(this.dateTimePicker1);
+            this.Controls.Add(this.label8);
+            this.Controls.Add(this.TBStaffName);
+            this.Controls.Add(this.btnAddBooking);
+            this.Controls.Add(this.DTPEndDate);
+            this.Controls.Add(this.DTPStartDate);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.CBoxRoomNo);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnRefreshTable);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.btnSearch);
             this.Controls.Add(this.btnBackToMenu);
@@ -265,13 +298,16 @@ namespace CreatingADatabase.GUI
         private System.Windows.Forms.Button btnBackToMenu;
         private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnRefreshTable;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox CBoxRoomNo;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
+        private System.Windows.Forms.DateTimePicker DTPStartDate;
+        private System.Windows.Forms.DateTimePicker DTPEndDate;
+        private System.Windows.Forms.Button btnAddBooking;
+        private System.Windows.Forms.TextBox TBStaffName;
+        private System.Windows.Forms.Label label8;
     }
 }

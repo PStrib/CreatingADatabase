@@ -101,6 +101,14 @@ namespace CreatingADatabase.GUI
         {
             btnSearch_Click(sender, e);
         }
+
+        private void btnAddBooking_Click(object sender, EventArgs e)
+        {
+            string clientBox = CBoxClients.Text;
+            string[] parts = clientBox.Split(':');
+
+            rdbAccess.AddNewBooking(Convert.ToInt16(parts[0]), DTPStartDate.Value, DTPEndDate.Value, Convert.ToInt16(CBoxRoomNo.Text), TBStaffName.Text);
+        }
         //The method Listbox.FindString() may be helpful
     }
 }
