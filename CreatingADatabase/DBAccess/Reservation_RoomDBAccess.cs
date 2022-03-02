@@ -24,10 +24,10 @@ namespace CreatingADatabase.DBAccess
                               (CreationDate, Staff, ClientID)
                              VALUES ('{DateTime.Today}', '{StaffName}', {ClientID});
 
-                           SELECT MAX (ReservationID);
+               
 
                          insert into [reservation-Room]
-                        values (MAX (ReservationID),{RoomNo},'{EndDate}',0,'{StartDate}')";
+                        values ((SELECT MAX (ReservationID) FROM Reservation),{RoomNo},'{EndDate}',0,'{StartDate}')";
             db.Cmd.ExecuteNonQuery();
         }
 
