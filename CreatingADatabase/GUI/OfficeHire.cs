@@ -112,6 +112,22 @@ namespace CreatingADatabase.GUI
 
             try
             {
+                int yearSelected = Convert.ToInt32(CBoxYear.SelectedItem);
+                DateTime viewStart = DTPStartDate.Value;
+                DateTime viewEnd = DTPEndDate.Value;
+                List<RoomBooking> bookings = rdbAccess.GetDateRange(viewStart, viewEnd);
+                bool validbooking = true;
+
+                foreach (RoomBooking b in bookings)
+                {
+                    //if there is a 
+                    if (b.office == Convert.ToInt16(CBoxRoomNo.Text) 
+                        && b.startDate)
+                    {
+
+                    }
+                }
+
                 rdbAccess.AddNewBooking(Convert.ToInt16(parts[0]), Convert.ToDateTime(formattedStartDate), Convert.ToDateTime(formattedEndDate), Convert.ToInt16(CBoxRoomNo.Text), TBStaffName.Text);
             }
             catch
