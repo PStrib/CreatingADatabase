@@ -232,9 +232,9 @@ namespace CreatingADatabase.GUI
             this.btnAddBooking.Font = new System.Drawing.Font("Bahnschrift SemiBold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAddBooking.Location = new System.Drawing.Point(383, 338);
             this.btnAddBooking.Name = "btnAddBooking";
-            this.btnAddBooking.Size = new System.Drawing.Size(102, 28);
+            this.btnAddBooking.Size = new System.Drawing.Size(116, 28);
             this.btnAddBooking.TabIndex = 22;
-            this.btnAddBooking.Text = "Refresh Table";
+            this.btnAddBooking.Text = "Update Booking";
             this.btnAddBooking.UseVisualStyleBackColor = true;
             this.btnAddBooking.Click += new System.EventHandler(this.btnAddBooking_Click);
             // 

@@ -99,6 +99,7 @@ namespace CreatingADatabase.GUI
 
         private void button1_Click(object sender, EventArgs e)
         {
+            CBoxYear.SelectedValue = 2022;
             btnSearch_Click(sender, e);
         }
 
@@ -106,8 +107,22 @@ namespace CreatingADatabase.GUI
         {
             string clientBox = CBoxClients.Text;
             string[] parts = clientBox.Split(':');
+            string formattedStartDate = DTPStartDate.Value.ToString("en-GB");
+            string formattedEndDate = DTPEndDate.Value.ToString("en-GB");
 
-            rdbAccess.AddNewBooking(Convert.ToInt16(parts[0]), DTPStartDate.Value, DTPEndDate.Value, Convert.ToInt16(CBoxRoomNo.Text), TBStaffName.Text);
+            try
+            {
+                rdbAccess.AddNewBooking(Convert.ToInt16(parts[0]), Convert.ToDateTime(formattedStartDate), Convert.ToDateTime(formattedEndDate), Convert.ToInt16(CBoxRoomNo.Text), TBStaffName.Text);
+            }
+            catch
+            {
+                MessageBox.Show("Error");
+            }
+            MessageBox.Show("Booking added!");
+            CBoxClients.Text = "";
+            DTPStartDate.Value = DateTime.Today;
+            DTPEndDate.Value = DateTime.Today;
+
         }
         //The method Listbox.FindString() may be helpful
     }

@@ -24,18 +24,10 @@ namespace CreatingADatabase.DBAccess
                               (CreationDate, Staff, ClientID)
                              VALUES ('{DateTime.Today}', '{StaffName}', {ClientID});
 
-               
+                              
 
                          insert into [reservation-Room]
                         values ((SELECT MAX (ReservationID) FROM Reservation),{RoomNo},'{EndDate}',0,'{StartDate}')";
-            db.Cmd.ExecuteNonQuery();
-        }
-
-        public void AddNewReservation_Room(Reservation_Room rr)
-        {
-            db.Cmd = db.Conn.CreateCommand();
-            db.Cmd.CommandText = "insert into Reservation-Room (ReservationID, RoomID, EndDate, DepositPaid?, StartDate)" +
-                " values (" + rr.ReservationID + "," + rr.RoomID + "," + rr.EndDate + "," + rr.DepositPaid +"," + rr.StartDate+ ")";
             db.Cmd.ExecuteNonQuery();
         }
 

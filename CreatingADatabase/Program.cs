@@ -32,14 +32,6 @@ namespace CreatingADatabase
         static void Main()
         {  
            SetUpDataDirectoryPath();
-           if (db.Connect())
-            {
-                MessageBox.Show("Database connection successful.", "Success!"); 
-            }
-            else
-            {
-                MessageBox.Show("Database connection failed.", "Error!");
-            }
 
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
