@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -107,12 +108,23 @@ namespace CreatingADatabase.GUI
         {
             string clientBox = CBoxClients.Text;
             string[] parts = clientBox.Split(':');
-            string formattedStartDate = DTPStartDate.Value.ToString("en-GB");
-            string formattedEndDate = DTPEndDate.Value.ToString("en-GB");
+            string startDate=Convert.ToString(DTPStartDate);
+            string endDate=Convert.ToString(DTPEndDate);
 
-            try
-            {
-                int yearSelected = Convert.ToInt32(CBoxYear.SelectedItem);
+           
+            //string formattedStartDate = dt.ToString("dd/MM/yyyy");
+
+            
+            //string formattedEndDate = dt.ToString("dd/MM/yyyy");
+
+            //So stupid
+            string formattedStartDate = DTPStartDate.Value.ToString("MM/dd/yyyy");
+            string formattedEndDate = DTPEndDate.Value.ToString("MM/dd/yyyy");
+            //So stupid
+
+            //try
+            //{
+            int yearSelected = Convert.ToInt32(CBoxYear.SelectedItem);
                 DateTime viewStart = DTPStartDate.Value;
                 DateTime viewEnd = DTPEndDate.Value;
                 List<RoomBooking> bookings = rdbAccess.GetDateRange(viewStart, viewEnd);
@@ -120,24 +132,30 @@ namespace CreatingADatabase.GUI
 
                 foreach (RoomBooking b in bookings)
                 {
-                    //if there is a 
-                    if (b.office == Convert.ToInt16(CBoxRoomNo.Text) 
-                        && b.startDate)
+                    if(b.office==Convert.ToInt16(CBoxRoomNo.Text))
                     {
-
+                        validbooking = false;
                     }
                 }
 
-                rdbAccess.AddNewBooking(Convert.ToInt16(parts[0]), Convert.ToDateTime(formattedStartDate), Convert.ToDateTime(formattedEndDate), Convert.ToInt16(CBoxRoomNo.Text), TBStaffName.Text);
-            }
-            catch
-            {
-                MessageBox.Show("Error");
-            }
-            MessageBox.Show("Booking added!");
-            CBoxClients.Text = "";
-            DTPStartDate.Value = DateTime.Today;
-            DTPEndDate.Value = DateTime.Today;
+                if (validbooking == false)
+                {
+                    MessageBox.Show("Your booking clashes with an existing booking");
+                }
+
+                else 
+                {
+                    rdbAccess.AddNewBooking(Convert.ToInt16(parts[0]), Convert.ToDateTime(formattedStartDate), Convert.ToDateTime(formattedEndDate), Convert.ToInt16(CBoxRoomNo.Text), TBStaffName.Text);
+                    MessageBox.Show("Booking added!");
+                }
+                CBoxClients.Text = "";
+                DTPStartDate.Value = DateTime.Today;
+                DTPEndDate.Value = DateTime.Today;
+            //}
+            //catch
+            //{
+            //    MessageBox.Show("Error");
+            //}
 
         }
         //The method Listbox.FindString() may be helpful
