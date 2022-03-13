@@ -22,13 +22,19 @@ namespace CreatingADatabase.DBAccess
             db.Cmd.CommandText = $@"
                                 INSERT INTO Reservation
                               (CreationDate, Staff, ClientID)
-                             VALUES ('{DateTime.Today}', '{StaffName}', {ClientID});
+                             VALUES ('{JustDate(DateTime.Today)}', '{StaffName}', {ClientID});
 
                               
 
                          insert into [reservation-Room]
-                        values ((SELECT MAX (ReservationID) FROM Reservation),{RoomNo},'{EndDate}',0,'{StartDate}')";
+                        values ((SELECT MAX (ReservationID) FROM Reservation),{RoomNo},'{JustDate(EndDate)}',0,'{JustDate(StartDate)}')";
             db.Cmd.ExecuteNonQuery();
+        }
+
+        //We have to use this format for compatibility with SQL Server
+        public string JustDate(DateTime t)
+        {
+            return t.ToString("MM/dd/yyyy");
         }
 
         public List<RoomBooking> GetDateRange(DateTime viewStart, DateTime viewEnd)
@@ -40,8 +46,8 @@ namespace CreatingADatabase.DBAccess
                                 endDate
                                 FROM [Reservation-Room]
 
-                                where not(enddate < CAST('{viewStart}' AS date)
-                                OR startdate > CAST('{viewEnd}' AS date));";
+                                where not(enddate < CAST('{JustDate(viewStart)}' AS date)
+                                OR startdate > CAST('{JustDate(viewEnd)}' AS date));";
 
             List<RoomBooking> roomBookings = new List<RoomBooking>();
             using (SqlDataReader reader = db.Cmd.ExecuteReader())

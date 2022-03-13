@@ -48,7 +48,7 @@ namespace CreatingADatabase.GUI
         }
 
         private void btnSearch_Click(object sender, EventArgs e)
-        {           
+        {
             PopulateColumnHeadings();
             DGVAvailability.Rows.Clear();
             //iterate through and fill the column headers
@@ -56,7 +56,7 @@ namespace CreatingADatabase.GUI
 
             int month = 1; //Month is always January
             int year = yearSelected;
-            for(int i = 0; i < 24; i++)
+            for (int i = 0; i < 24; i++)
             {
                 if (month == 13)
                 {
@@ -86,7 +86,7 @@ namespace CreatingADatabase.GUI
                         var m = Convert.ToInt32(a[0]);
                         var y = Convert.ToInt32(a[1]);
                         var rowDate = new DateTime(y, m, 1);
-                        if (Convert.ToInt32(column.HeaderCell.Value) == b.office && (rowDate <= b.endDate && rowDate >=b.startDate ))
+                        if (Convert.ToInt32(column.HeaderCell.Value) == b.office && (rowDate <= b.endDate && rowDate >= b.startDate))
                         {
                             DataGridViewCell dataGridViewCell = DGVAvailability[column.Index, row.Index];
                             dataGridViewCell.Style.BackColor = Color.Red;
@@ -108,55 +108,26 @@ namespace CreatingADatabase.GUI
         {
             string clientBox = CBoxClients.Text;
             string[] parts = clientBox.Split(':');
-            string startDate=Convert.ToString(DTPStartDate);
-            string endDate=Convert.ToString(DTPEndDate);
 
-           
-            //string formattedStartDate = dt.ToString("dd/MM/yyyy");
+            DateTime viewStart = DTPStartDate.Value;
+            DateTime viewEnd = DTPEndDate.Value;
+            List<RoomBooking> bookings = rdbAccess.GetDateRange(viewStart, viewEnd);
 
-            
-            //string formattedEndDate = dt.ToString("dd/MM/yyyy");
-
-            //So stupid
-            string formattedStartDate = DTPStartDate.Value.ToString("MM/dd/yyyy");
-            string formattedEndDate = DTPEndDate.Value.ToString("MM/dd/yyyy");
-            //So stupid
-
-            //try
-            //{
-            int yearSelected = Convert.ToInt32(CBoxYear.SelectedItem);
-                DateTime viewStart = DTPStartDate.Value;
-                DateTime viewEnd = DTPEndDate.Value;
-                List<RoomBooking> bookings = rdbAccess.GetDateRange(viewStart, viewEnd);
-                bool validbooking = true;
-
-                foreach (RoomBooking b in bookings)
-                {
-                    if(b.office==Convert.ToInt16(CBoxRoomNo.Text))
-                    {
-                        validbooking = false;
-                    }
-                }
-
-                if (validbooking == false)
+            foreach (RoomBooking b in bookings)
+            {
+                if (b.office == Convert.ToInt16(CBoxRoomNo.Text))
                 {
                     MessageBox.Show("Your booking clashes with an existing booking");
+                    return;
                 }
+            }
 
-                else 
-                {
-                    rdbAccess.AddNewBooking(Convert.ToInt16(parts[0]), Convert.ToDateTime(formattedStartDate), Convert.ToDateTime(formattedEndDate), Convert.ToInt16(CBoxRoomNo.Text), TBStaffName.Text);
-                    MessageBox.Show("Booking added!");
-                }
-                CBoxClients.Text = "";
-                DTPStartDate.Value = DateTime.Today;
-                DTPEndDate.Value = DateTime.Today;
-            //}
-            //catch
-            //{
-            //    MessageBox.Show("Error");
-            //}
-
+            rdbAccess.AddNewBooking(Convert.ToInt16(parts[0]), DTPStartDate.Value, DTPEndDate.Value,
+                                    Convert.ToInt16(CBoxRoomNo.Text), TBStaffName.Text);
+            MessageBox.Show("Booking added!");
+            CBoxClients.Text = "";
+            DTPStartDate.Value = DateTime.Today;
+            DTPEndDate.Value = DateTime.Today;
         }
         //The method Listbox.FindString() may be helpful
     }
