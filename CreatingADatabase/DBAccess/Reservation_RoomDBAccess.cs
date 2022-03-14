@@ -16,25 +16,35 @@ namespace CreatingADatabase.DBAccess
             db = _db;
         }
 
-        public void AddNewBooking(int ClientID, DateTime StartDate, DateTime EndDate, int RoomNo, string StaffName)
+        // Validates and records a booking and returns true if no collisions are detected.
+        public bool AddNewBooking(int clientID, DateTime startDateTime, DateTime endDateTime, int roomNo, string staffName)
         {
+            List<RoomBooking> bookings = GetDateRange(startDateTime, endDateTime);
+            foreach (RoomBooking b in bookings)
+            {
+                if (b.office == roomNo)
+                {
+                    return false;
+                }
+            }
             db.Cmd = db.Conn.CreateCommand();
             db.Cmd.CommandText = $@"
                                 INSERT INTO Reservation
                               (CreationDate, Staff, ClientID)
-                             VALUES ('{JustDate(DateTime.Today)}', '{StaffName}', {ClientID});
+                             VALUES ('{FormatDateTime(DateTime.Today)}', '{staffName}', {clientID});
 
                               
 
                          insert into [reservation-Room]
-                        values ((SELECT MAX (ReservationID) FROM Reservation),{RoomNo},'{JustDate(EndDate)}',0,'{JustDate(StartDate)}')";
+                        values ((SELECT MAX (ReservationID) FROM Reservation),{roomNo},'{FormatDateTime(endDateTime)}',0,'{FormatDateTime(startDateTime)}')";
             db.Cmd.ExecuteNonQuery();
+            return true;
         }
 
         //We have to use this format for compatibility with SQL Server
-        public string JustDate(DateTime t)
+        public string FormatDateTime(DateTime t)
         {
-            return t.ToString("MM/dd/yyyy");
+            return t.ToString("yyyy'-'MM'-'dd'T'HH':'mm':'ss.fffffffK");
         }
 
         public List<RoomBooking> GetDateRange(DateTime viewStart, DateTime viewEnd)
@@ -46,8 +56,8 @@ namespace CreatingADatabase.DBAccess
                                 endDate
                                 FROM [Reservation-Room]
 
-                                where not(enddate < CAST('{JustDate(viewStart)}' AS date)
-                                OR startdate > CAST('{JustDate(viewEnd)}' AS date));";
+                                where not(enddate < CAST('{FormatDateTime(viewStart)}' AS date)
+                                OR startdate > CAST('{FormatDateTime(viewEnd)}' AS date));";
 
             List<RoomBooking> roomBookings = new List<RoomBooking>();
             using (SqlDataReader reader = db.Cmd.ExecuteReader())

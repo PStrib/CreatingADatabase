@@ -109,21 +109,13 @@ namespace CreatingADatabase.GUI
             string clientBox = CBoxClients.Text;
             string[] parts = clientBox.Split(':');
 
-            DateTime viewStart = DTPStartDate.Value;
-            DateTime viewEnd = DTPEndDate.Value;
-            List<RoomBooking> bookings = rdbAccess.GetDateRange(viewStart, viewEnd);
-
-            foreach (RoomBooking b in bookings)
+            if(!rdbAccess.AddNewBooking(Convert.ToInt16(parts[0]), DTPStartDate.Value, DTPEndDate.Value,
+                                    Convert.ToInt16(CBoxRoomNo.Text), TBStaffName.Text))
             {
-                if (b.office == Convert.ToInt16(CBoxRoomNo.Text))
-                {
-                    MessageBox.Show("Your booking clashes with an existing booking");
-                    return;
-                }
+                MessageBox.Show("Booking clashes detected");
+                return;
             }
 
-            rdbAccess.AddNewBooking(Convert.ToInt16(parts[0]), DTPStartDate.Value, DTPEndDate.Value,
-                                    Convert.ToInt16(CBoxRoomNo.Text), TBStaffName.Text);
             MessageBox.Show("Booking added!");
             CBoxClients.Text = "";
             DTPStartDate.Value = DateTime.Today;
