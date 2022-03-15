@@ -44,11 +44,12 @@ namespace CreatingADatabase.GUI
             this.CBoxRoomNo = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
             this.DTPStartDate = new System.Windows.Forms.DateTimePicker();
-            this.DTPEndDate = new System.Windows.Forms.DateTimePicker();
             this.btnAddBooking = new System.Windows.Forms.Button();
             this.TBStaffName = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
+            this.numBoxMonths = new System.Windows.Forms.NumericUpDown();
             ((System.ComponentModel.ISupportInitialize)(this.DGVAvailability)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numBoxMonths)).BeginInit();
             this.SuspendLayout();
             // 
             // CBoxClients
@@ -180,9 +181,9 @@ namespace CreatingADatabase.GUI
             this.label6.Font = new System.Drawing.Font("Bahnschrift SemiBold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.Location = new System.Drawing.Point(380, 197);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(63, 16);
+            this.label6.Size = new System.Drawing.Size(120, 16);
             this.label6.TabIndex = 17;
-            this.label6.Text = "End Date:";
+            this.label6.Text = "How many months?";
             // 
             // CBoxRoomNo
             // 
@@ -220,13 +221,6 @@ namespace CreatingADatabase.GUI
             this.DTPStartDate.Size = new System.Drawing.Size(201, 20);
             this.DTPStartDate.TabIndex = 20;
             // 
-            // DTPEndDate
-            // 
-            this.DTPEndDate.Location = new System.Drawing.Point(383, 216);
-            this.DTPEndDate.Name = "DTPEndDate";
-            this.DTPEndDate.Size = new System.Drawing.Size(201, 20);
-            this.DTPEndDate.TabIndex = 21;
-            // 
             // btnAddBooking
             // 
             this.btnAddBooking.Font = new System.Drawing.Font("Bahnschrift SemiBold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -255,15 +249,22 @@ namespace CreatingADatabase.GUI
             this.label8.TabIndex = 24;
             this.label8.Text = "Staff Name:";
             // 
+            // numBoxMonths
+            // 
+            this.numBoxMonths.Location = new System.Drawing.Point(383, 221);
+            this.numBoxMonths.Name = "numBoxMonths";
+            this.numBoxMonths.Size = new System.Drawing.Size(60, 20);
+            this.numBoxMonths.TabIndex = 25;
+            // 
             // OfficeHire
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(612, 417);
+            this.Controls.Add(this.numBoxMonths);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.TBStaffName);
             this.Controls.Add(this.btnAddBooking);
-            this.Controls.Add(this.DTPEndDate);
             this.Controls.Add(this.DTPStartDate);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.CBoxRoomNo);
@@ -284,6 +285,7 @@ namespace CreatingADatabase.GUI
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "OfficeHire";
             ((System.ComponentModel.ISupportInitialize)(this.DGVAvailability)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numBoxMonths)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -305,9 +307,9 @@ namespace CreatingADatabase.GUI
         private System.Windows.Forms.ComboBox CBoxRoomNo;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.DateTimePicker DTPStartDate;
-        private System.Windows.Forms.DateTimePicker DTPEndDate;
         private System.Windows.Forms.Button btnAddBooking;
         private System.Windows.Forms.TextBox TBStaffName;
         private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.NumericUpDown numBoxMonths;
     }
 }

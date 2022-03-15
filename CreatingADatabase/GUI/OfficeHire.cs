@@ -109,8 +109,9 @@ namespace CreatingADatabase.GUI
             string clientBox = CBoxClients.Text;
             string[] parts = clientBox.Split(':');
 
-            if(!rdbAccess.AddNewBooking(Convert.ToInt16(parts[0]), DTPStartDate.Value, DTPEndDate.Value,
-                                    Convert.ToInt16(CBoxRoomNo.Text), TBStaffName.Text))
+            if (!rdbAccess.AddNewBooking(Convert.ToInt16(parts[0]), DTPStartDate.Value,
+                            DTPStartDate.Value.AddMonths(Convert.ToInt16(numBoxMonths.Value)),
+                            Convert.ToInt16(CBoxRoomNo.Text), TBStaffName.Text))
             {
                 MessageBox.Show("Booking clashes detected");
                 return;
@@ -119,7 +120,7 @@ namespace CreatingADatabase.GUI
             MessageBox.Show("Booking added!");
             CBoxClients.Text = "";
             DTPStartDate.Value = DateTime.Today;
-            DTPEndDate.Value = DateTime.Today;
+            numBoxMonths.Value = 0;
         }
         //The method Listbox.FindString() may be helpful
     }
