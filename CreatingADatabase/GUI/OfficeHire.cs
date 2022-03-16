@@ -23,6 +23,7 @@ namespace CreatingADatabase.GUI
         {
             InitializeComponent();
             CBoxClients.DataSource = cDBAccess.GetAllClientNames();
+            CBoxYear.Text = Convert.ToString(DateTime.Today.Year);
         }
 
         private void PopulateColumnHeadings()
@@ -118,9 +119,10 @@ namespace CreatingADatabase.GUI
             }
 
             MessageBox.Show("Booking added!");
-            CBoxClients.Text = "";
-            DTPStartDate.Value = DateTime.Today;
-            numBoxMonths.Value = 0;
+            //CBoxClients.Text = "";
+            //TBStaffName.Text = "";
+            //DTPStartDate.Value = DateTime.Today;
+            //numBoxMonths.Value = 0;
         }
         //The method Listbox.FindString() may be helpful
     }
