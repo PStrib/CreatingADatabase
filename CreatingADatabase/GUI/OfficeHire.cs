@@ -80,20 +80,22 @@ namespace CreatingADatabase.GUI
             {
                 foreach (DataGridViewColumn column in DGVAvailability.Columns)
                 {
-                    foreach (RoomBooking b in bookings)
+                    if(column.Index==6 && row.Index == 2)
                     {
-                        var dateString = row.HeaderCell.Value as string;
-                        var a = dateString.Split('/');
-                        var m = Convert.ToInt32(a[0]);
-                        var y = Convert.ToInt32(a[1]);
-                        var rowDate = new DateTime(y, m, 1);
-                        if (Convert.ToInt32(column.HeaderCell.Value) == b.office && (rowDate <= b.endDate && rowDate >= b.startDate))
+                        foreach (RoomBooking b in bookings)
                         {
-                            DataGridViewCell dataGridViewCell = DGVAvailability[column.Index, row.Index];
-                            dataGridViewCell.Style.BackColor = Color.Red;
-                            dataGridViewCell.ReadOnly = true;
+                            var dateString = row.HeaderCell.Value as string;
+                            var a = dateString.Split('/');
+                            var m = Convert.ToInt32(a[0]);
+                            var y = Convert.ToInt32(a[1]);
+                            var rowDate = new DateTime(y, m, 1);                            
+                                DataGridViewCell dataGridViewCell = DGVAvailability[column.Index, row.Index];
+                                dataGridViewCell.Style.BackColor = Color.Red;
+                                dataGridViewCell.ReadOnly = true;
+                            
                         }
                     }
+                    
                 }
             }
             DGVAvailability.ClearSelection();
