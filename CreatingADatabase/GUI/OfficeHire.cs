@@ -87,7 +87,7 @@ namespace CreatingADatabase.GUI
                         var m = Convert.ToInt32(a[0]);
                         var y = Convert.ToInt32(a[1]);
                         var rowDate = new DateTime(y, m, 1);
-                        if (Convert.ToInt32(column.HeaderCell.Value) == b.office && (rowDate <= b.endDate && rowDate >= b.startDate))
+                        if (Convert.ToInt32(column.HeaderCell.Value) == b.office && (rowDate <= b.endDate.Date && rowDate >= b.startDate.Date))
                         {
                             DataGridViewCell dataGridViewCell = DGVAvailability[column.Index, row.Index];
                             dataGridViewCell.Style.BackColor = Color.Red;
