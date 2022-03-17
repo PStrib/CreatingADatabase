@@ -79,23 +79,21 @@ namespace CreatingADatabase.GUI
             foreach (DataGridViewRow row in DGVAvailability.Rows)
             {
                 foreach (DataGridViewColumn column in DGVAvailability.Columns)
-                {
-                    if(column.Index==6 && row.Index == 2)
+                {                    
+                    foreach (RoomBooking b in bookings)
                     {
-                        foreach (RoomBooking b in bookings)
+                        var dateString = row.HeaderCell.Value as string;
+                        var a = dateString.Split('/');
+                        var m = Convert.ToInt32(a[0]);
+                        var y = Convert.ToInt32(a[1]);
+                        var rowDate = new DateTime(y, m, 1);
+                        if (Convert.ToInt32(column.HeaderCell.Value) == b.office && (rowDate <= b.endDate && rowDate >= b.startDate))
                         {
-                            var dateString = row.HeaderCell.Value as string;
-                            var a = dateString.Split('/');
-                            var m = Convert.ToInt32(a[0]);
-                            var y = Convert.ToInt32(a[1]);
-                            var rowDate = new DateTime(y, m, 1);                            
-                                DataGridViewCell dataGridViewCell = DGVAvailability[column.Index, row.Index];
-                                dataGridViewCell.Style.BackColor = Color.Red;
-                                dataGridViewCell.ReadOnly = true;
-                            
+                            DataGridViewCell dataGridViewCell = DGVAvailability[column.Index, row.Index];
+                            dataGridViewCell.Style.BackColor = Color.Red;
+                            dataGridViewCell.ReadOnly = true;
                         }
-                    }
-                    
+                    }                   
                 }
             }
             DGVAvailability.ClearSelection();
@@ -103,7 +101,6 @@ namespace CreatingADatabase.GUI
 
         private void button1_Click(object sender, EventArgs e)
         {
-            CBoxYear.SelectedValue = 2022;
             btnSearch_Click(sender, e);
         }
 
