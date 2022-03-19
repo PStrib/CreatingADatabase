@@ -20,12 +20,11 @@ namespace CreatingADatabase.GUI
         {
             InitializeComponent();
             CBoxClients.DataSource = cDBAccess.GetAllClientNames();
-            CBoxYear.Text = Convert.ToString(DateTime.Today.Year);
         }
         private void PopulateColumnHeadings()
         {
-            string[] officeNames = new string[10] { "2", "3", "4", "5", "6", "7", "8", "9", "10", "11" };
-            DGVAvailability.ColumnCount = 10;
+            string[] officeNames = new string[3] { "Date:", "AM", "PM" };
+            DGVAvailability.ColumnCount = 3;
             for (int i = 0; i < DGVAvailability.Columns.Count; i++)
             {
                 DataGridViewColumn column = DGVAvailability.Columns[i];
@@ -49,41 +48,42 @@ namespace CreatingADatabase.GUI
             PopulateColumnHeadings();
             DGVAvailability.Rows.Clear();
             //iterate through and fill the column headers
-            int yearSelected = Convert.ToInt32(CBoxYear.SelectedItem);
+            int yearSelected = DTPViewStart.Value.Year;
 
-            int month = 1; //Month is always January
+            int day = DTPViewStart.Value.Day;
+            int month = DTPViewStart.Value.Month;
             int year = yearSelected;
-            for (int i = 0; i < 24; i++)
-            {
-                if (month == 13)
-                {
-                    month = 1;
-                    year += 1;
-                }
 
+            DateTime viewStart = DTPViewStart.Value;
+            DateTime viewEnd = viewStart.AddMonths(2);
+            
+
+            int i = 0;
+            for (DateTime rowDate = viewStart; rowDate <=viewEnd; rowDate=rowDate.AddDays(1))
+            {
                 DGVAvailability.Rows.Add();
                 // TODO: make this be a DateTime
-                DGVAvailability.Rows[i].HeaderCell.Value = $"{month}/{year}";
-                month++;
+                DGVAvailability.Rows[i].HeaderCell.Value = $"{rowDate:dd'/'MM'/'yyyy}";
+                i++;
             }
 
-            DateTime viewStart = new DateTime(yearSelected, 01, 01);
-            DateTime viewEnd = viewStart.AddYears(2);
-            List<RoomBooking> bookings = rdbAccess.GetDateRange(viewStart, viewEnd);
+            List<ConferenceRoomBooking> bookings = rdbAccess.GetConferenceDateRange(viewStart, viewEnd);
 
 
             foreach (DataGridViewRow row in DGVAvailability.Rows)
             {
                 foreach (DataGridViewColumn column in DGVAvailability.Columns)
                 {
-                    foreach (RoomBooking b in bookings)
+                    foreach (ConferenceRoomBooking b in bookings)
                     {
                         var dateString = row.HeaderCell.Value as string;
                         var a = dateString.Split('/');
-                        var m = Convert.ToInt32(a[0]);
-                        var y = Convert.ToInt32(a[1]);
-                        var rowDate = new DateTime(y, m, 1);
-                        if (Convert.ToInt32(column.HeaderCell.Value) == b.office && (rowDate <= b.endDate.Date && rowDate >= b.startDate.Date))
+                        var d = Convert.ToInt32(a[0]);
+                        var m = Convert.ToInt32(a[1]);
+                        var y = Convert.ToInt32(a[2]);
+
+                        var rowDate = new DateTime(y, m, d);
+                        if ((rowDate <= b.endDate.Date && rowDate >= b.startDate.Date))
                         {
                             DataGridViewCell dataGridViewCell = DGVAvailability[column.Index, row.Index];
                             dataGridViewCell.Style.BackColor = Color.Red;
@@ -95,19 +95,14 @@ namespace CreatingADatabase.GUI
             DGVAvailability.ClearSelection();
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            btnSearch_Click(sender, e);
-        }
-
         private void btnAddBooking_Click(object sender, EventArgs e)
         {
             string clientBox = CBoxClients.Text;
             string[] parts = clientBox.Split(':');
 
-            if (!rdbAccess.AddNewBooking(Convert.ToInt16(parts[0]), DTPStartDate.Value,
+            if (!rdbAccess.AddNewConferenceBooking(Convert.ToInt16(parts[0]), DTPStartDate.Value,
                             DTPStartDate.Value.AddMonths(Convert.ToInt16(numBoxMonths.Value)),
-                            Convert.ToInt16(CBoxRoomNo.Text), TBStaffName.Text))
+                             TBStaffName.Text))
             {
                 MessageBox.Show("Booking clashes detected");
                 return;
@@ -118,6 +113,11 @@ namespace CreatingADatabase.GUI
             //TBStaffName.Text = "";
             //DTPStartDate.Value = DateTime.Today;
             //numBoxMonths.Value = 0;
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -34,20 +34,16 @@ namespace CreatingADatabase.GUI
             this.TBStaffName = new System.Windows.Forms.TextBox();
             this.btnAddBooking = new System.Windows.Forms.Button();
             this.DTPStartDate = new System.Windows.Forms.DateTimePicker();
-            this.label7 = new System.Windows.Forms.Label();
-            this.CBoxRoomNo = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.btnRefreshTable = new System.Windows.Forms.Button();
-            this.label4 = new System.Windows.Forms.Label();
-            this.btnSearch = new System.Windows.Forms.Button();
             this.btnBackToMenu = new System.Windows.Forms.Button();
             this.DGVAvailability = new System.Windows.Forms.DataGridView();
-            this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.CBoxYear = new System.Windows.Forms.ComboBox();
             this.CBoxClients = new System.Windows.Forms.ComboBox();
+            this.DTPViewStart = new System.Windows.Forms.DateTimePicker();
+            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.numBoxMonths)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DGVAvailability)).BeginInit();
             this.SuspendLayout();
@@ -85,6 +81,7 @@ namespace CreatingADatabase.GUI
             this.btnAddBooking.TabIndex = 41;
             this.btnAddBooking.Text = "Update Booking";
             this.btnAddBooking.UseVisualStyleBackColor = true;
+            this.btnAddBooking.Click += new System.EventHandler(this.btnAddBooking_Click);
             // 
             // DTPStartDate
             // 
@@ -92,35 +89,6 @@ namespace CreatingADatabase.GUI
             this.DTPStartDate.Name = "DTPStartDate";
             this.DTPStartDate.Size = new System.Drawing.Size(201, 20);
             this.DTPStartDate.TabIndex = 40;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Bahnschrift SemiBold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(482, 259);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(63, 16);
-            this.label7.TabIndex = 39;
-            this.label7.Text = "Room No.";
-            // 
-            // CBoxRoomNo
-            // 
-            this.CBoxRoomNo.FormattingEnabled = true;
-            this.CBoxRoomNo.Items.AddRange(new object[] {
-            "2",
-            "3",
-            "4",
-            "5",
-            "6",
-            "7",
-            "8",
-            "9",
-            "10",
-            "11"});
-            this.CBoxRoomNo.Location = new System.Drawing.Point(485, 278);
-            this.CBoxRoomNo.Name = "CBoxRoomNo";
-            this.CBoxRoomNo.Size = new System.Drawing.Size(201, 21);
-            this.CBoxRoomNo.TabIndex = 38;
             // 
             // label6
             // 
@@ -161,25 +129,7 @@ namespace CreatingADatabase.GUI
             this.btnRefreshTable.TabIndex = 34;
             this.btnRefreshTable.Text = "Refresh Table";
             this.btnRefreshTable.UseVisualStyleBackColor = true;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(208, 112);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(78, 13);
-            this.label4.TabIndex = 33;
-            this.label4.Text = "Room Number:";
-            // 
-            // btnSearch
-            // 
-            this.btnSearch.Font = new System.Drawing.Font("Bahnschrift SemiBold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSearch.Location = new System.Drawing.Point(254, 81);
-            this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(75, 23);
-            this.btnSearch.TabIndex = 32;
-            this.btnSearch.Text = "Search";
-            this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnRefreshTable.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // btnBackToMenu
             // 
@@ -190,6 +140,7 @@ namespace CreatingADatabase.GUI
             this.btnBackToMenu.TabIndex = 31;
             this.btnBackToMenu.Text = "Back";
             this.btnBackToMenu.UseVisualStyleBackColor = true;
+            this.btnBackToMenu.Click += new System.EventHandler(this.btnBackToMenu_Click);
             // 
             // DGVAvailability
             // 
@@ -202,15 +153,6 @@ namespace CreatingADatabase.GUI
             this.DGVAvailability.Size = new System.Drawing.Size(355, 293);
             this.DGVAvailability.TabIndex = 30;
             // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(122, 67);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(32, 13);
-            this.label2.TabIndex = 29;
-            this.label2.Text = "Year:";
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -221,29 +163,6 @@ namespace CreatingADatabase.GUI
             this.label1.TabIndex = 28;
             this.label1.Text = "Client:";
             // 
-            // CBoxYear
-            // 
-            this.CBoxYear.FormattingEnabled = true;
-            this.CBoxYear.Items.AddRange(new object[] {
-            "2022",
-            "2023",
-            "2024",
-            "2025",
-            "2026",
-            "2027",
-            "2028",
-            "2029",
-            "2030",
-            "2031",
-            "2032",
-            "2033",
-            "2034",
-            "2035"});
-            this.CBoxYear.Location = new System.Drawing.Point(121, 82);
-            this.CBoxYear.Name = "CBoxYear";
-            this.CBoxYear.Size = new System.Drawing.Size(120, 21);
-            this.CBoxYear.TabIndex = 27;
-            // 
             // CBoxClients
             // 
             this.CBoxClients.FormattingEnabled = true;
@@ -252,32 +171,48 @@ namespace CreatingADatabase.GUI
             this.CBoxClients.Size = new System.Drawing.Size(201, 21);
             this.CBoxClients.TabIndex = 26;
             // 
+            // DTPViewStart
+            // 
+            this.DTPViewStart.Location = new System.Drawing.Point(121, 92);
+            this.DTPViewStart.Name = "DTPViewStart";
+            this.DTPViewStart.Size = new System.Drawing.Size(201, 20);
+            this.DTPViewStart.TabIndex = 46;
+            this.DTPViewStart.ValueChanged += new System.EventHandler(this.btnSearch_Click);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Bahnschrift SemiBold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(118, 71);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(73, 16);
+            this.label2.TabIndex = 45;
+            this.label2.Text = "View From:";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
+            // 
             // ConferenceHire
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(708, 434);
+            this.Controls.Add(this.DTPViewStart);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.numBoxMonths);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.TBStaffName);
             this.Controls.Add(this.btnAddBooking);
             this.Controls.Add(this.DTPStartDate);
-            this.Controls.Add(this.label7);
-            this.Controls.Add(this.CBoxRoomNo);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.btnRefreshTable);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.btnSearch);
             this.Controls.Add(this.btnBackToMenu);
             this.Controls.Add(this.DGVAvailability);
-            this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.CBoxYear);
             this.Controls.Add(this.CBoxClients);
             this.Name = "ConferenceHire";
             this.Text = "ConferenceHire";
+            this.Load += new System.EventHandler(this.btnSearch_Click);
             ((System.ComponentModel.ISupportInitialize)(this.numBoxMonths)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.DGVAvailability)).EndInit();
             this.ResumeLayout(false);
@@ -292,19 +227,15 @@ namespace CreatingADatabase.GUI
         private System.Windows.Forms.TextBox TBStaffName;
         private System.Windows.Forms.Button btnAddBooking;
         private System.Windows.Forms.DateTimePicker DTPStartDate;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.ComboBox CBoxRoomNo;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btnRefreshTable;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.Button btnBackToMenu;
         private System.Windows.Forms.DataGridView DGVAvailability;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox CBoxYear;
         private System.Windows.Forms.ComboBox CBoxClients;
+        private System.Windows.Forms.DateTimePicker DTPViewStart;
+        private System.Windows.Forms.Label label2;
     }
 }

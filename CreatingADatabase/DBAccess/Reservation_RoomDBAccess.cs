@@ -41,10 +41,28 @@ namespace CreatingADatabase.DBAccess
             return true;
         }
 
+        public bool AddNewConferenceBooking(
+            int clientID,
+            DateTime startDateTime,
+            DateTime endDateTime,
+            string staffName)
+        {
+            db.Cmd = db.Conn.CreateCommand();
+            db.Cmd.CommandText = $@"
+                                INSERT INTO Reservation
+                              (CreationDate, Staff, ClientID)
+                             VALUES ('{FormatDateTime(DateTime.Today)}', '{staffName}', {clientID});
+
+                         insert into [reservation_Conference]
+                        values ((SELECT MAX (ReservationID) FROM Reservation),'{endDateTime:o}',0,'{startDateTime:o}')";
+            db.Cmd.ExecuteNonQuery();
+            return true;
+        }
+
         //We have to use this format for compatibility with SQL Server
         public string FormatDateTime(DateTime t)
         {
-            return t.ToString("yyyy'-'MM'-'dd'T'HH':'mm':'ss.fffffffK");
+            return t.ToString("o");
         }
 
         public List<RoomBooking> GetDateRange(DateTime viewStart, DateTime viewEnd)
@@ -75,15 +93,60 @@ namespace CreatingADatabase.DBAccess
             }
             return roomBookings;
         }
+
+        public List<ConferenceRoomBooking> GetConferenceDateRange(DateTime viewStart, DateTime viewEnd)
+        {
+            db.Cmd = db.Conn.CreateCommand();
+            db.Cmd.CommandText = $@"
+                                select isMorning,
+                                startDate,
+                                endDate
+                                FROM [Reservation_Conference]
+
+                                where not(enddate < CAST('{FormatDateTime(viewStart)}' AS date)
+                                OR startdate > CAST('{FormatDateTime(viewEnd)}' AS date));";
+
+            List<ConferenceRoomBooking> roomBookings = new List<ConferenceRoomBooking>();
+            using (SqlDataReader reader = db.Cmd.ExecuteReader())
+            {
+                if (reader.HasRows)
+                {
+                    while (reader.Read())
+                    {
+                        roomBookings.Add(new ConferenceRoomBooking(
+                            isMorning: reader.GetBoolean(0),
+                            startDate: reader.GetDateTime(1),
+                            endDate: reader.GetDateTime(2)));
+                    }
+                }
+            }
+            return roomBookings;
+        }
     }
-    class RoomBooking
+
+    abstract class AbstractRoomBooking
+    {
+        public DateTime startDate, endDate;
+    }
+
+    class RoomBooking: AbstractRoomBooking
     {
         public int office;
-        public DateTime startDate, endDate;
-
+        
         public RoomBooking(int office, DateTime startDate, DateTime endDate)
         {
             this.office = office;
+            this.startDate = startDate;
+            this.endDate = endDate;
+        }
+    }
+
+    class ConferenceRoomBooking: AbstractRoomBooking
+    {
+        public bool isMorning;
+        public ConferenceRoomBooking(bool isMorning, DateTime startDate, DateTime endDate)
+        {
+            this.isMorning = isMorning;
             this.startDate = startDate;
             this.endDate = endDate;
         }
