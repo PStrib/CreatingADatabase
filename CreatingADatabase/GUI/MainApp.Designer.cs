@@ -34,6 +34,7 @@ namespace CreatingADatabase.GUI
             this.btnAddClient = new System.Windows.Forms.Button();
             this.btnSearchEdit = new System.Windows.Forms.Button();
             this.btnBooking = new System.Windows.Forms.Button();
+            this.btnConferenceBooking = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // WelcomeBanner
@@ -79,15 +80,28 @@ namespace CreatingADatabase.GUI
             this.btnBooking.Name = "btnBooking";
             this.btnBooking.Size = new System.Drawing.Size(268, 35);
             this.btnBooking.TabIndex = 7;
-            this.btnBooking.Text = "Make A Booking";
+            this.btnBooking.Text = "Book an Office";
             this.btnBooking.UseVisualStyleBackColor = true;
             this.btnBooking.Click += new System.EventHandler(this.btnBooking_Click);
+            // 
+            // btnConferenceBooking
+            // 
+            this.btnConferenceBooking.Font = new System.Drawing.Font("Gazelle", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnConferenceBooking.Location = new System.Drawing.Point(41, 159);
+            this.btnConferenceBooking.Margin = new System.Windows.Forms.Padding(2);
+            this.btnConferenceBooking.Name = "btnConferenceBooking";
+            this.btnConferenceBooking.Size = new System.Drawing.Size(268, 59);
+            this.btnConferenceBooking.TabIndex = 8;
+            this.btnConferenceBooking.Text = "Book the Conference Suite";
+            this.btnConferenceBooking.UseVisualStyleBackColor = true;
+            this.btnConferenceBooking.Click += new System.EventHandler(this.btnConferenceBooking_Click);
             // 
             // MainApp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(359, 244);
+            this.ClientSize = new System.Drawing.Size(359, 288);
+            this.Controls.Add(this.btnConferenceBooking);
             this.Controls.Add(this.btnBooking);
             this.Controls.Add(this.btnSearchEdit);
             this.Controls.Add(this.btnAddClient);
@@ -109,5 +123,6 @@ namespace CreatingADatabase.GUI
         private System.Windows.Forms.Button btnAddClient;
         private System.Windows.Forms.Button btnSearchEdit;
         private System.Windows.Forms.Button btnBooking;
+        private System.Windows.Forms.Button btnConferenceBooking;
     }
 }

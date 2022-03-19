@@ -81,6 +81,12 @@
     <Compile Include="GUI\AddProject.Designer.cs">
       <DependentUpon>AddProject.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\ConferenceHire.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\ConferenceHire.Designer.cs">
+      <DependentUpon>ConferenceHire.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\EditForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -141,6 +147,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\AddProject.resx">
       <DependentUpon>AddProject.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\ConferenceHire.resx">
+      <DependentUpon>ConferenceHire.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\EditForm.resx">
       <DependentUpon>EditForm.cs</DependentUpon>

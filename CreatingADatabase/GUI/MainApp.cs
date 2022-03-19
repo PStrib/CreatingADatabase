@@ -76,5 +76,14 @@ namespace CreatingADatabase.GUI
             this.Close();
             this.Dispose();
         }
+
+        private void btnConferenceBooking_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            ConferenceHire conferenceHire = new ConferenceHire();
+            conferenceHire.ShowDialog();
+            this.Close();
+            this.Dispose();
+        }
     }
 }
