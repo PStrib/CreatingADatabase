@@ -23,15 +23,15 @@ namespace CreatingADatabase.GUI
         }
         private void PopulateColumnHeadings()
         {
-            string[] officeNames = new string[3] { "Date:", "AM", "PM" };
-            DGVAvailability.ColumnCount = 3;
-            for (int i = 0; i < DGVAvailability.Columns.Count; i++)
-            {
-                DataGridViewColumn column = DGVAvailability.Columns[i];
-                column.HeaderCell.Value = officeNames[i];
-                column.Width = 26;
-            }
-            DGVAvailability.RowHeadersWidth = 78;
+            DGVAvailability.ColumnCount = 2;
+
+            DGVAvailability.Columns[0].HeaderCell.Value = "AM";
+            DGVAvailability.Columns[0].Width = 30;
+
+            DGVAvailability.Columns[1].HeaderCell.Value = "PM";
+            DGVAvailability.Columns[1].Width = 30;
+
+            DGVAvailability.RowHeadersWidth = 78;//--------Adjust row header size
         }
 
         private void btnBackToMenu_Click(object sender, EventArgs e)
