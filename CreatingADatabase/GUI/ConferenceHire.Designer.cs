@@ -29,6 +29,7 @@ namespace CreatingADatabase.GUI
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ConferenceHire));
             this.numBoxDays = new System.Windows.Forms.NumericUpDown();
             this.label8 = new System.Windows.Forms.Label();
             this.TBStaffName = new System.Windows.Forms.TextBox();
@@ -51,7 +52,7 @@ namespace CreatingADatabase.GUI
             // 
             // numBoxDays
             // 
-            this.numBoxDays.Location = new System.Drawing.Point(382, 225);
+            this.numBoxDays.Location = new System.Drawing.Point(218, 225);
             this.numBoxDays.Name = "numBoxDays";
             this.numBoxDays.Size = new System.Drawing.Size(60, 20);
             this.numBoxDays.TabIndex = 44;
@@ -65,7 +66,7 @@ namespace CreatingADatabase.GUI
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Bahnschrift SemiBold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(379, 333);
+            this.label8.Location = new System.Drawing.Point(215, 333);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(75, 16);
             this.label8.TabIndex = 43;
@@ -73,7 +74,7 @@ namespace CreatingADatabase.GUI
             // 
             // TBStaffName
             // 
-            this.TBStaffName.Location = new System.Drawing.Point(382, 352);
+            this.TBStaffName.Location = new System.Drawing.Point(218, 352);
             this.TBStaffName.Name = "TBStaffName";
             this.TBStaffName.Size = new System.Drawing.Size(198, 20);
             this.TBStaffName.TabIndex = 42;
@@ -81,7 +82,7 @@ namespace CreatingADatabase.GUI
             // btnAddBooking
             // 
             this.btnAddBooking.Font = new System.Drawing.Font("Bahnschrift SemiBold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAddBooking.Location = new System.Drawing.Point(382, 378);
+            this.btnAddBooking.Location = new System.Drawing.Point(218, 378);
             this.btnAddBooking.Name = "btnAddBooking";
             this.btnAddBooking.Size = new System.Drawing.Size(116, 28);
             this.btnAddBooking.TabIndex = 41;
@@ -91,7 +92,7 @@ namespace CreatingADatabase.GUI
             // 
             // DTPStartDate
             // 
-            this.DTPStartDate.Location = new System.Drawing.Point(382, 177);
+            this.DTPStartDate.Location = new System.Drawing.Point(218, 177);
             this.DTPStartDate.Name = "DTPStartDate";
             this.DTPStartDate.Size = new System.Drawing.Size(134, 20);
             this.DTPStartDate.TabIndex = 40;
@@ -100,7 +101,7 @@ namespace CreatingADatabase.GUI
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Bahnschrift SemiBold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(379, 201);
+            this.label6.Location = new System.Drawing.Point(215, 201);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(104, 16);
             this.label6.TabIndex = 37;
@@ -110,7 +111,7 @@ namespace CreatingADatabase.GUI
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Bahnschrift SemiBold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(379, 156);
+            this.label5.Location = new System.Drawing.Point(215, 156);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(70, 16);
             this.label5.TabIndex = 36;
@@ -120,7 +121,7 @@ namespace CreatingADatabase.GUI
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Bahnschrift SemiBold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(379, 91);
+            this.label3.Location = new System.Drawing.Point(215, 91);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(127, 16);
             this.label3.TabIndex = 35;
@@ -145,14 +146,14 @@ namespace CreatingADatabase.GUI
             this.DGVAvailability.Location = new System.Drawing.Point(18, 113);
             this.DGVAvailability.Name = "DGVAvailability";
             this.DGVAvailability.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.DGVAvailability.Size = new System.Drawing.Size(355, 293);
+            this.DGVAvailability.Size = new System.Drawing.Size(179, 293);
             this.DGVAvailability.TabIndex = 30;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Bahnschrift SemiBold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(379, 113);
+            this.label1.Location = new System.Drawing.Point(215, 113);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(44, 16);
             this.label1.TabIndex = 28;
@@ -161,7 +162,7 @@ namespace CreatingADatabase.GUI
             // CBoxClients
             // 
             this.CBoxClients.FormattingEnabled = true;
-            this.CBoxClients.Location = new System.Drawing.Point(382, 132);
+            this.CBoxClients.Location = new System.Drawing.Point(218, 132);
             this.CBoxClients.Name = "CBoxClients";
             this.CBoxClients.Size = new System.Drawing.Size(201, 21);
             this.CBoxClients.TabIndex = 26;
@@ -186,17 +187,19 @@ namespace CreatingADatabase.GUI
             // 
             // txtCateringReqs
             // 
-            this.txtCateringReqs.Location = new System.Drawing.Point(382, 310);
+            this.txtCateringReqs.Location = new System.Drawing.Point(218, 267);
+            this.txtCateringReqs.Multiline = true;
             this.txtCateringReqs.Name = "txtCateringReqs";
-            this.txtCateringReqs.Size = new System.Drawing.Size(162, 20);
+            this.txtCateringReqs.Size = new System.Drawing.Size(198, 53);
             this.txtCateringReqs.TabIndex = 47;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(379, 294);
+            this.label4.Font = new System.Drawing.Font("Bahnschrift SemiBold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(215, 248);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(117, 13);
+            this.label4.Size = new System.Drawing.Size(144, 16);
             this.label4.TabIndex = 48;
             this.label4.Text = "Catering Requirements:";
             // 
@@ -204,7 +207,7 @@ namespace CreatingADatabase.GUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(708, 434);
+            this.ClientSize = new System.Drawing.Size(437, 434);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.txtCateringReqs);
             this.Controls.Add(this.DTPViewStart);
@@ -221,8 +224,10 @@ namespace CreatingADatabase.GUI
             this.Controls.Add(this.DGVAvailability);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.CBoxClients);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ConferenceHire";
-            this.Text = "ConferenceHire";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Conference Hire";
             this.Load += new System.EventHandler(this.btnSearch_Click);
             ((System.ComponentModel.ISupportInitialize)(this.numBoxDays)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.DGVAvailability)).EndInit();

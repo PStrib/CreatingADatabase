@@ -29,12 +29,13 @@ namespace CreatingADatabase.GUI
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SearchClients));
             this.ClientDatagrid = new System.Windows.Forms.DataGridView();
             this.btnSearchClients = new System.Windows.Forms.Button();
             this.txtClientSearch = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.btnBackToMenu = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.ClientDatagrid)).BeginInit();
             this.SuspendLayout();
             // 
@@ -52,10 +53,11 @@ namespace CreatingADatabase.GUI
             // 
             // btnSearchClients
             // 
-            this.btnSearchClients.Location = new System.Drawing.Point(106, 72);
+            this.btnSearchClients.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSearchClients.Location = new System.Drawing.Point(15, 95);
             this.btnSearchClients.Margin = new System.Windows.Forms.Padding(2);
             this.btnSearchClients.Name = "btnSearchClients";
-            this.btnSearchClients.Size = new System.Drawing.Size(574, 19);
+            this.btnSearchClients.Size = new System.Drawing.Size(88, 25);
             this.btnSearchClients.TabIndex = 8;
             this.btnSearchClients.Text = "Search";
             this.btnSearchClients.UseVisualStyleBackColor = true;
@@ -63,7 +65,7 @@ namespace CreatingADatabase.GUI
             // 
             // txtClientSearch
             // 
-            this.txtClientSearch.Location = new System.Drawing.Point(181, 48);
+            this.txtClientSearch.Location = new System.Drawing.Point(15, 71);
             this.txtClientSearch.Margin = new System.Windows.Forms.Padding(2);
             this.txtClientSearch.Name = "txtClientSearch";
             this.txtClientSearch.Size = new System.Drawing.Size(500, 20);
@@ -72,10 +74,11 @@ namespace CreatingADatabase.GUI
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(18, 51);
+            this.label1.Font = new System.Drawing.Font("Bahnschrift", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(11, 50);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(159, 13);
+            this.label1.Size = new System.Drawing.Size(247, 19);
             this.label1.TabIndex = 6;
             this.label1.Text = "Business name or client number:";
             // 
@@ -88,29 +91,29 @@ namespace CreatingADatabase.GUI
             this.label2.TabIndex = 9;
             this.label2.Text = "Double click on a cell to edit it";
             // 
-            // btnBackToMenu
+            // button1
             // 
-            this.btnBackToMenu.Font = new System.Drawing.Font("Calibri", 18F);
-            this.btnBackToMenu.Image = global::CreatingADatabase.Properties.Resources.BackButton1;
-            this.btnBackToMenu.Location = new System.Drawing.Point(9, 9);
-            this.btnBackToMenu.Name = "btnBackToMenu";
-            this.btnBackToMenu.Size = new System.Drawing.Size(22, 24);
-            this.btnBackToMenu.TabIndex = 24;
-            this.btnBackToMenu.UseVisualStyleBackColor = true;
-            this.btnBackToMenu.Click += new System.EventHandler(this.btnBackToMenu_Click);
+            this.button1.Font = new System.Drawing.Font("Bahnschrift", 10F);
+            this.button1.Location = new System.Drawing.Point(11, 12);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(53, 26);
+            this.button1.TabIndex = 32;
+            this.button1.Text = "Back";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.btnBackToMenu_Click);
             // 
             // SearchClients
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.btnBackToMenu);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.btnSearchClients);
             this.Controls.Add(this.txtClientSearch);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.ClientDatagrid);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "SearchClients";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "SearchClients";
@@ -128,6 +131,6 @@ namespace CreatingADatabase.GUI
         private System.Windows.Forms.TextBox txtClientSearch;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button btnBackToMenu;
+        private System.Windows.Forms.Button button1;
     }
 }

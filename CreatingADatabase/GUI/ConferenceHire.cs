@@ -32,7 +32,7 @@ namespace CreatingADatabase.GUI
             DGVAvailability.Columns[1].HeaderCell.Value = "PM";
             DGVAvailability.Columns[1].Width = 30;
 
-            DGVAvailability.RowHeadersWidth = 78;//--------Adjust row header size
+            DGVAvailability.RowHeadersWidth = 100;//--------Adjust row header size
         }
 
         private void btnBackToMenu_Click(object sender, EventArgs e)

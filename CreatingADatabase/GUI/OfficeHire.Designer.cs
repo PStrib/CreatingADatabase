@@ -29,6 +29,7 @@ namespace CreatingADatabase.GUI
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(OfficeHire));
             this.CBoxClients = new System.Windows.Forms.ComboBox();
             this.CBoxYear = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -280,8 +281,8 @@ namespace CreatingADatabase.GUI
             this.Controls.Add(this.label1);
             this.Controls.Add(this.CBoxYear);
             this.Controls.Add(this.CBoxClients);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "OfficeHire";
-            this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "OfficeHire";
             ((System.ComponentModel.ISupportInitialize)(this.DGVAvailability)).EndInit();
