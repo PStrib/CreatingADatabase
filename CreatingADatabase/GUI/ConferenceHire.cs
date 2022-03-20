@@ -75,12 +75,13 @@ namespace CreatingADatabase.GUI
             {
                 foreach (DataGridViewColumn column in DGVAvailability.Columns)
                 {
+                    bool isMorning = column.HeaderCell.Value as String == "AM";
                     foreach (ConferenceRoomBooking b in bookings)
                     {
                         var dateString = row.HeaderCell.Value as string;
-
                         var rowDate = DateTime.ParseExact(dateString, "dd'/'MM'/'yyyy", CultureInfo.InvariantCulture);
-                        if (rowDate <= b.endDate.Date && rowDate >= b.startDate.Date)
+                       
+                        if (rowDate <= b.endDate.Date && rowDate >= b.startDate.Date && b.isMorning==isMorning)
                         {
                             DataGridViewCell dataGridViewCell = DGVAvailability[column.Index, row.Index];
                             dataGridViewCell.Style.BackColor = Color.Red;
@@ -98,7 +99,7 @@ namespace CreatingADatabase.GUI
             string[] parts = clientBox.Split(':');
 
             if (!rdbAccess.AddNewConferenceBooking(Convert.ToInt16(parts[0]), DTPStartDate.Value,
-                            DTPStartDate.Value.AddMonths(Convert.ToInt16(numBoxMonths.Value)),
+                            DTPStartDate.Value.AddMonths(Convert.ToInt16(numBoxDays.Value)),
                              TBStaffName.Text))
             {
                 MessageBox.Show("Booking clashes detected");
@@ -106,15 +107,7 @@ namespace CreatingADatabase.GUI
             }
 
             MessageBox.Show("Booking added!");
-            //CBoxClients.Text = "";
-            //TBStaffName.Text = "";
-            //DTPStartDate.Value = DateTime.Today;
-            //numBoxMonths.Value = 0;
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
+            btnSearch_Click(sender, e);
         }
     }
 }
