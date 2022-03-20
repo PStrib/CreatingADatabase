@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -77,13 +78,9 @@ namespace CreatingADatabase.GUI
                     foreach (ConferenceRoomBooking b in bookings)
                     {
                         var dateString = row.HeaderCell.Value as string;
-                        var a = dateString.Split('/');
-                        var d = Convert.ToInt32(a[0]);
-                        var m = Convert.ToInt32(a[1]);
-                        var y = Convert.ToInt32(a[2]);
 
-                        var rowDate = new DateTime(y, m, d);
-                        if ((rowDate <= b.endDate.Date && rowDate >= b.startDate.Date))
+                        var rowDate = DateTime.ParseExact(dateString, "dd'/'MM'/'yyyy", CultureInfo.InvariantCulture);
+                        if (rowDate <= b.endDate.Date && rowDate >= b.startDate.Date)
                         {
                             DataGridViewCell dataGridViewCell = DGVAvailability[column.Index, row.Index];
                             dataGridViewCell.Style.BackColor = Color.Red;
