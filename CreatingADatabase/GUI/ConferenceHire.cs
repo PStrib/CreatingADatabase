@@ -21,6 +21,7 @@ namespace CreatingADatabase.GUI
         {
             InitializeComponent();
             CBoxClients.DataSource = cDBAccess.GetAllClientNames();
+            toolTip1.SetToolTip(lblHelpBox, "If you want to make an all day booking,\nsimply make half the booking with the 'is morning?' checkbox\nthen make the other half of your booking without it checked.");
         }
         private void PopulateColumnHeadings()
         {
@@ -98,9 +99,14 @@ namespace CreatingADatabase.GUI
             string clientBox = CBoxClients.Text;
             string[] parts = clientBox.Split(':');
 
+            //if()
+
             if (!rdbAccess.AddNewConferenceBooking(Convert.ToInt16(parts[0]), DTPStartDate.Value,
                             DTPStartDate.Value.AddMonths(Convert.ToInt16(numBoxDays.Value)),
-                             TBStaffName.Text))
+                            txtCateringReqs.Text,
+                            Convert.ToInt16(numBoxAttendees.Value),
+                            ChBoxIsMorning.Checked,
+                            TBStaffName.Text))
             {
                 MessageBox.Show("Booking clashes detected");
                 return;
@@ -108,6 +114,16 @@ namespace CreatingADatabase.GUI
 
             MessageBox.Show("Booking added!");
             btnSearch_Click(sender, e);
+        }
+
+        private void btnClearForm_Click(object sender, EventArgs e)
+        {
+            CBoxClients.Text = "";
+            DTPStartDate.Value = DateTime.Today;
+            numBoxDays.Value = 1;
+            txtCateringReqs.Text = "";
+            numBoxAttendees.Value = 1;
+            ChBoxIsMorning.Checked = false;
         }
     }
 }

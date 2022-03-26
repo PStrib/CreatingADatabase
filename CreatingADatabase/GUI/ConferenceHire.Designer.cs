@@ -29,6 +29,7 @@ namespace CreatingADatabase.GUI
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ConferenceHire));
             this.numBoxDays = new System.Windows.Forms.NumericUpDown();
             this.label8 = new System.Windows.Forms.Label();
@@ -46,13 +47,20 @@ namespace CreatingADatabase.GUI
             this.label2 = new System.Windows.Forms.Label();
             this.txtCateringReqs = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
+            this.ChBoxIsMorning = new System.Windows.Forms.CheckBox();
+            this.numBoxAttendees = new System.Windows.Forms.NumericUpDown();
+            this.label7 = new System.Windows.Forms.Label();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.lblHelpBox = new System.Windows.Forms.Label();
+            this.btnClearForm = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.numBoxDays)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DGVAvailability)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numBoxAttendees)).BeginInit();
             this.SuspendLayout();
             // 
             // numBoxDays
             // 
-            this.numBoxDays.Location = new System.Drawing.Point(218, 225);
+            this.numBoxDays.Location = new System.Drawing.Point(218, 185);
             this.numBoxDays.Name = "numBoxDays";
             this.numBoxDays.Size = new System.Drawing.Size(60, 20);
             this.numBoxDays.TabIndex = 44;
@@ -92,7 +100,7 @@ namespace CreatingADatabase.GUI
             // 
             // DTPStartDate
             // 
-            this.DTPStartDate.Location = new System.Drawing.Point(218, 177);
+            this.DTPStartDate.Location = new System.Drawing.Point(218, 137);
             this.DTPStartDate.Name = "DTPStartDate";
             this.DTPStartDate.Size = new System.Drawing.Size(134, 20);
             this.DTPStartDate.TabIndex = 40;
@@ -101,7 +109,7 @@ namespace CreatingADatabase.GUI
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Bahnschrift SemiBold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(215, 201);
+            this.label6.Location = new System.Drawing.Point(215, 161);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(104, 16);
             this.label6.TabIndex = 37;
@@ -111,7 +119,7 @@ namespace CreatingADatabase.GUI
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Bahnschrift SemiBold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(215, 156);
+            this.label5.Location = new System.Drawing.Point(215, 116);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(70, 16);
             this.label5.TabIndex = 36;
@@ -121,7 +129,7 @@ namespace CreatingADatabase.GUI
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Bahnschrift SemiBold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(215, 91);
+            this.label3.Location = new System.Drawing.Point(215, 51);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(127, 16);
             this.label3.TabIndex = 35;
@@ -153,7 +161,7 @@ namespace CreatingADatabase.GUI
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Bahnschrift SemiBold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(215, 113);
+            this.label1.Location = new System.Drawing.Point(215, 73);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(44, 16);
             this.label1.TabIndex = 28;
@@ -162,7 +170,7 @@ namespace CreatingADatabase.GUI
             // CBoxClients
             // 
             this.CBoxClients.FormattingEnabled = true;
-            this.CBoxClients.Location = new System.Drawing.Point(218, 132);
+            this.CBoxClients.Location = new System.Drawing.Point(218, 92);
             this.CBoxClients.Name = "CBoxClients";
             this.CBoxClients.Size = new System.Drawing.Size(201, 21);
             this.CBoxClients.TabIndex = 26;
@@ -187,7 +195,7 @@ namespace CreatingADatabase.GUI
             // 
             // txtCateringReqs
             // 
-            this.txtCateringReqs.Location = new System.Drawing.Point(218, 267);
+            this.txtCateringReqs.Location = new System.Drawing.Point(218, 274);
             this.txtCateringReqs.Multiline = true;
             this.txtCateringReqs.Name = "txtCateringReqs";
             this.txtCateringReqs.Size = new System.Drawing.Size(198, 53);
@@ -197,17 +205,80 @@ namespace CreatingADatabase.GUI
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Bahnschrift SemiBold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(215, 248);
+            this.label4.Location = new System.Drawing.Point(215, 255);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(144, 16);
             this.label4.TabIndex = 48;
             this.label4.Text = "Catering Requirements:";
+            // 
+            // ChBoxIsMorning
+            // 
+            this.ChBoxIsMorning.AutoSize = true;
+            this.ChBoxIsMorning.Font = new System.Drawing.Font("Bahnschrift", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ChBoxIsMorning.Location = new System.Drawing.Point(304, 188);
+            this.ChBoxIsMorning.Name = "ChBoxIsMorning";
+            this.ChBoxIsMorning.Size = new System.Drawing.Size(114, 17);
+            this.ChBoxIsMorning.TabIndex = 49;
+            this.ChBoxIsMorning.Text = "Morning booking?";
+            this.ChBoxIsMorning.UseVisualStyleBackColor = true;
+            // 
+            // numBoxAttendees
+            // 
+            this.numBoxAttendees.Location = new System.Drawing.Point(218, 232);
+            this.numBoxAttendees.Name = "numBoxAttendees";
+            this.numBoxAttendees.Size = new System.Drawing.Size(60, 20);
+            this.numBoxAttendees.TabIndex = 51;
+            this.numBoxAttendees.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Bahnschrift SemiBold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(215, 208);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(138, 16);
+            this.label7.TabIndex = 50;
+            this.label7.Text = "How many delelgates?";
+            // 
+            // toolTip1
+            // 
+            this.toolTip1.Tag = "hello there";
+            // 
+            // lblHelpBox
+            // 
+            this.lblHelpBox.AutoSize = true;
+            this.lblHelpBox.Font = new System.Drawing.Font("Bahnschrift", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblHelpBox.Location = new System.Drawing.Point(348, 48);
+            this.lblHelpBox.Name = "lblHelpBox";
+            this.lblHelpBox.Size = new System.Drawing.Size(21, 25);
+            this.lblHelpBox.TabIndex = 52;
+            this.lblHelpBox.Text = "?";
+            // 
+            // btnClearForm
+            // 
+            this.btnClearForm.Font = new System.Drawing.Font("Bahnschrift SemiBold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnClearForm.Location = new System.Drawing.Point(336, 378);
+            this.btnClearForm.Name = "btnClearForm";
+            this.btnClearForm.Size = new System.Drawing.Size(80, 28);
+            this.btnClearForm.TabIndex = 53;
+            this.btnClearForm.Text = "Clear form";
+            this.btnClearForm.UseVisualStyleBackColor = true;
+            this.btnClearForm.Click += new System.EventHandler(this.btnClearForm_Click);
             // 
             // ConferenceHire
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(437, 434);
+            this.Controls.Add(this.btnClearForm);
+            this.Controls.Add(this.lblHelpBox);
+            this.Controls.Add(this.numBoxAttendees);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.ChBoxIsMorning);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.txtCateringReqs);
             this.Controls.Add(this.DTPViewStart);
@@ -231,6 +302,7 @@ namespace CreatingADatabase.GUI
             this.Load += new System.EventHandler(this.btnSearch_Click);
             ((System.ComponentModel.ISupportInitialize)(this.numBoxDays)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.DGVAvailability)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numBoxAttendees)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -254,5 +326,11 @@ namespace CreatingADatabase.GUI
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtCateringReqs;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.CheckBox ChBoxIsMorning;
+        private System.Windows.Forms.NumericUpDown numBoxAttendees;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.ToolTip toolTip1;
+        private System.Windows.Forms.Label lblHelpBox;
+        private System.Windows.Forms.Button btnClearForm;
     }
 }

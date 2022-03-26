@@ -45,6 +45,9 @@ namespace CreatingADatabase.DBAccess
             int clientID,
             DateTime startDateTime,
             DateTime endDateTime,
+            string cateringReqs,
+            int attendees,
+            bool isMorning,
             string staffName)
         {
             db.Cmd = db.Conn.CreateCommand();
@@ -54,7 +57,10 @@ namespace CreatingADatabase.DBAccess
                              VALUES ('{FormatDateTime(DateTime.Today)}', '{staffName}', {clientID});
 
                          insert into [reservation_Conference]
-                        values ((SELECT MAX (ReservationID) FROM Reservation),'{endDateTime:o}',0,'{startDateTime:o}')";
+                         (int ReservationID, Date StartDate, Date EndDate, nchar(100) CateringReqs, int Attendees, bit isMorning)
+                        values ((SELECT MAX (ReservationID) FROM Reservation),
+                       '{startDateTime.Date}', '{endDateTime.Date}', '{cateringReqs}', 
+                      {attendees}, {isMorning})";
             db.Cmd.ExecuteNonQuery();
             return true;
         }
