@@ -33,8 +33,6 @@ namespace CreatingADatabase.DBAccess
                               (CreationDate, Staff, ClientID)
                              VALUES ('{FormatDateTime(DateTime.Today)}', '{staffName}', {clientID});
 
-                              
-
                          insert into [reservation-Room]
                         values ((SELECT MAX (ReservationID) FROM Reservation),{roomNo},'{FormatDateTime(endDateTime)}',0,'{FormatDateTime(startDateTime)}')";
             db.Cmd.ExecuteNonQuery();
@@ -50,6 +48,15 @@ namespace CreatingADatabase.DBAccess
             bool isMorning,
             string staffName)
         {
+            List<ConferenceRoomBooking> bookings = GetConferenceDateRange(startDateTime, endDateTime);
+            foreach (ConferenceRoomBooking b in bookings)
+            {
+                if (b.isMorning == isMorning)
+                {
+                    return false;
+                }
+            }
+
             db.Cmd = db.Conn.CreateCommand();
             db.Cmd.CommandText = $@"
                                 INSERT INTO Reservation
@@ -57,10 +64,10 @@ namespace CreatingADatabase.DBAccess
                              VALUES ('{FormatDateTime(DateTime.Today)}', '{staffName}', {clientID});
 
                          insert into [reservation_Conference]
-                         (int ReservationID, Date StartDate, Date EndDate, nchar(100) CateringReqs, int Attendees, bit isMorning)
+                         (ReservationID, StartDate, EndDate, CateringReqs, Attendees, isMorning)
                         values ((SELECT MAX (ReservationID) FROM Reservation),
-                       '{startDateTime.Date}', '{endDateTime.Date}', '{cateringReqs}', 
-                      {attendees}, {isMorning})";
+                       '{startDateTime.Date:o}', '{endDateTime.Date:o}', '{cateringReqs}', 
+                      {attendees}, '{isMorning}')";
             db.Cmd.ExecuteNonQuery();
             return true;
         }

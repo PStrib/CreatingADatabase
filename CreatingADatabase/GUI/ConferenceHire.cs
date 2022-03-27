@@ -102,7 +102,7 @@ namespace CreatingADatabase.GUI
             //if()
 
             if (!rdbAccess.AddNewConferenceBooking(Convert.ToInt16(parts[0]), DTPStartDate.Value,
-                            DTPStartDate.Value.AddMonths(Convert.ToInt16(numBoxDays.Value)),
+                            DTPStartDate.Value.AddDays(Convert.ToInt16(numBoxDays.Value)),
                             txtCateringReqs.Text,
                             Convert.ToInt16(numBoxAttendees.Value),
                             ChBoxIsMorning.Checked,
