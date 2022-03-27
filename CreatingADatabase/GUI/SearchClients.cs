@@ -131,9 +131,16 @@ namespace CreatingADatabase.GUI
 
                 if (valid) //If the form successfully completes all required text validation
                 {
-                    //ClientDBAccess cDBAccess = new ClientDBAccess(db);
-                    cDBAccess.UpdateClient(client);
-                    MessageBox.Show("Client Information Updated!");
+                    try
+                    {
+                        //ClientDBAccess cDBAccess = new ClientDBAccess(db);
+                        cDBAccess.UpdateClient(client);
+                        MessageBox.Show("Client Information Updated!");
+                    }
+                    catch
+                    {
+                        MessageBox.Show("Oops\nLooks like there's a restricted character in one of your fields\n(Usually a comma)");
+                    }
                 }
             }
         }

@@ -32,8 +32,8 @@ namespace CreatingADatabase.DBAccess
             //Until the statement gets broken out on every string, the system will not accept a ' in the business name
             db.Cmd.CommandText = "insert into Client (ContactForename, ContactSurname, BusinessName, HouseNo, Street, Town, PostCode, County, ContactNo, ContactEmail) values ('" + c.ContactForename + "','" + c.ContactSurname + "','" +
             c.BusinessName + "','" + c.HouseNo + "','" + c.StreetName +
-            "','" + c.TownName + "','" +c.PostCode+ "','" + c.County + "','" + c.ContactPhoneNo + "','" + c.ContactEmail +"')";
-            db.Cmd.ExecuteNonQuery();
+            "','" + c.TownName + "','" + c.PostCode + "','" + c.County + "','" + c.ContactPhoneNo + "','" + c.ContactEmail + "')";
+            db.Cmd.ExecuteNonQuery();            
         }
 
         public void UpdateClient(Client c)
