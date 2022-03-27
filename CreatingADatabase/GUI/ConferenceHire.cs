@@ -99,8 +99,6 @@ namespace CreatingADatabase.GUI
             string clientBox = CBoxClients.Text;
             string[] parts = clientBox.Split(':');
 
-            //if()
-
             if (!rdbAccess.AddNewConferenceBooking(Convert.ToInt16(parts[0]), DTPStartDate.Value,
                             DTPStartDate.Value.AddDays(Convert.ToInt16(numBoxDays.Value)),
                             txtCateringReqs.Text,

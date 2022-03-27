@@ -29,6 +29,7 @@ namespace CreatingADatabase.DBAccess
         public void AddNewClient(Client c)
         {
             db.Cmd = db.Conn.CreateCommand();
+            //Until the statement gets broken out on every string, the system will not accept a ' in the business name
             db.Cmd.CommandText = "insert into Client (ContactForename, ContactSurname, BusinessName, HouseNo, Street, Town, PostCode, County, ContactNo, ContactEmail) values ('" + c.ContactForename + "','" + c.ContactSurname + "','" +
             c.BusinessName + "','" + c.HouseNo + "','" + c.StreetName +
             "','" + c.TownName + "','" +c.PostCode+ "','" + c.County + "','" + c.ContactPhoneNo + "','" + c.ContactEmail +"')";
@@ -68,8 +69,6 @@ namespace CreatingADatabase.DBAccess
 
         public List<string> GetAllClientNames()
         {
-            //string clientID, BusinessName;
-
             string sqlCmd = "Select ClientID, BusinessName FROM Client;";
             db.Cmd = db.Conn.CreateCommand();
             db.Cmd.CommandText = sqlCmd;

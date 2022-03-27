@@ -26,31 +26,8 @@ namespace CreatingADatabase.GUI
             }
         }
 
-        private void btnSearchTool_Click(object sender, EventArgs e)
-        {
-            SearchForm searchForm = new SearchForm();
-            searchForm.Show();
-        }
-
-        private void btnEditProject_Click(object sender, EventArgs e)
-        {
-            EditForm editForm = new EditForm();
-            editForm.Show();
-        }
-
-        private void btnAddProject_Click(object sender, EventArgs e)
-        {
-            AddProjectForm addProjectForm = new AddProjectForm();
-            addProjectForm.Show();
-        }
-
-        private void btnInnerJoin_Click(object sender, EventArgs e)
-        {
-            InnerJoinForm innerJoinForm = new InnerJoinForm()/*(db)*/;
-            innerJoinForm.Show();
-        }
-
         private void btnAddClient_Click(object sender, EventArgs e)
+            //Button that opens the add client form
         {
             this.Hide();
             AddClient addClient = new AddClient();
@@ -60,6 +37,7 @@ namespace CreatingADatabase.GUI
         }
 
         private void btnSearchEdit_Click(object sender, EventArgs e)
+            //Button that opens the search/edit form
         {
             this.Hide();
             SearchClients searchClients = new SearchClients();
@@ -69,6 +47,7 @@ namespace CreatingADatabase.GUI
         }
 
         private void btnBooking_Click(object sender, EventArgs e)
+            //Button that opens the office hire form
         {
             this.Hide();
             OfficeHire officeHire = new OfficeHire();
@@ -77,7 +56,9 @@ namespace CreatingADatabase.GUI
             this.Dispose();
         }
 
+
         private void btnConferenceBooking_Click(object sender, EventArgs e)
+            //Button that opens the conference hire form
         {
             this.Hide();
             ConferenceHire conferenceHire = new ConferenceHire();

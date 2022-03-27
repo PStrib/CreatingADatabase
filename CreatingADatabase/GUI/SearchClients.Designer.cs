@@ -49,7 +49,6 @@ namespace CreatingADatabase.GUI
             this.ClientDatagrid.Size = new System.Drawing.Size(778, 282);
             this.ClientDatagrid.TabIndex = 5;
             this.ClientDatagrid.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.ClientDataGrid_CellClick);
-            this.ClientDatagrid.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.ClientDatagrid_CellContentClick);
             // 
             // btnSearchClients
             // 
@@ -117,7 +116,6 @@ namespace CreatingADatabase.GUI
             this.Name = "SearchClients";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "SearchClients";
-            this.Load += new System.EventHandler(this.SearchClients_Load);
             ((System.ComponentModel.ISupportInitialize)(this.ClientDatagrid)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

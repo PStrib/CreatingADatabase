@@ -52,7 +52,6 @@ namespace CreatingADatabase.GUI
         {
             PopulateColumnHeadings();
             DGVAvailability.Rows.Clear();
-            //iterate through and fill the column headers
             int yearSelected = Convert.ToInt32(CBoxYear.SelectedItem);
 
             int month = 1; //Month is always January
@@ -66,7 +65,6 @@ namespace CreatingADatabase.GUI
                 }
 
                 DGVAvailability.Rows.Add();
-                // TODO: make this be a DateTime
                 DGVAvailability.Rows[i].HeaderCell.Value = $"{month}/{year}";
                 month++;
             }
@@ -118,11 +116,6 @@ namespace CreatingADatabase.GUI
             }
 
             MessageBox.Show("Booking added!");
-            //CBoxClients.Text = "";
-            //TBStaffName.Text = "";
-            //DTPStartDate.Value = DateTime.Today;
-            //numBoxMonths.Value = 0;
         }
-        //The method Listbox.FindString() may be helpful
     }
 }

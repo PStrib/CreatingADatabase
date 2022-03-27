@@ -79,7 +79,7 @@ namespace CreatingADatabase.DBAccess
 
         public List<RoomBooking> GetDateRange(DateTime viewStart, DateTime viewEnd, int officeNo)
         {
-
+            //Passes the query text into FindBookingsFromQuery
             return FindBookingsFromQuery($@"
                                 select roomid,
                                 startDate,
@@ -92,6 +92,7 @@ namespace CreatingADatabase.DBAccess
         }
 
         private List<RoomBooking> FindBookingsFromQuery(string query)
+            //Takes in the SQL query from either of the GetDateRange functions
         {
             db.Cmd = db.Conn.CreateCommand();
             db.Cmd.CommandText = query;
@@ -115,6 +116,7 @@ namespace CreatingADatabase.DBAccess
         }
 
         public List<RoomBooking> GetDateRange(DateTime viewStart, DateTime viewEnd)
+            //GetDateRange for when there is no office number supplied
         {
             return FindBookingsFromQuery($@"
                                 select roomid,

@@ -27,11 +27,6 @@ namespace CreatingADatabase.GUI
             }
         }
 
-        private void monthCalendar2_DateChanged(object sender, DateRangeEventArgs e)
-        {
-
-        }
-
         private void btnEditProj_Click(object sender, EventArgs e)
         {
             bool valid = true;

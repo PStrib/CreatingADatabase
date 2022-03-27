@@ -15,7 +15,6 @@ namespace CreatingADatabase.GUI
     public partial class AddClient : Form
     {
         private Database db = MainApp.Db;
-        ClientDBAccess cdbAccess = new ClientDBAccess(MainApp.Db);
         public AddClient()
         {
             InitializeComponent();
@@ -126,6 +125,7 @@ namespace CreatingADatabase.GUI
         }
 
         private void btnBackToMenu_Click(object sender, EventArgs e)
+            //Closes this form and opens the main menu
         {
             this.Hide();
             MainApp mainApp = new MainApp();

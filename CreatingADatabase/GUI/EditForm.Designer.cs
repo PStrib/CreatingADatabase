@@ -52,7 +52,8 @@ namespace CreatingADatabase.GUI
             // 
             this.lblSelectProj.AutoSize = true;
             this.lblSelectProj.Font = new System.Drawing.Font("Berlin Sans FB Demi", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSelectProj.Location = new System.Drawing.Point(23, 18);
+            this.lblSelectProj.Location = new System.Drawing.Point(17, 15);
+            this.lblSelectProj.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblSelectProj.Name = "lblSelectProj";
             this.lblSelectProj.Size = new System.Drawing.Size(192, 23);
             this.lblSelectProj.TabIndex = 0;
@@ -62,9 +63,10 @@ namespace CreatingADatabase.GUI
             // 
             this.comboBoxSelectProj.Font = new System.Drawing.Font("Berlin Sans FB", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBoxSelectProj.FormattingEnabled = true;
-            this.comboBoxSelectProj.Location = new System.Drawing.Point(239, 20);
+            this.comboBoxSelectProj.Location = new System.Drawing.Point(179, 16);
+            this.comboBoxSelectProj.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.comboBoxSelectProj.Name = "comboBoxSelectProj";
-            this.comboBoxSelectProj.Size = new System.Drawing.Size(588, 26);
+            this.comboBoxSelectProj.Size = new System.Drawing.Size(442, 26);
             this.comboBoxSelectProj.TabIndex = 1;
             this.comboBoxSelectProj.SelectedIndexChanged += new System.EventHandler(this.comboBoxSelectProj_SelectedIndexChanged);
             // 
@@ -72,7 +74,8 @@ namespace CreatingADatabase.GUI
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(23, 65);
+            this.label1.Location = new System.Drawing.Point(17, 53);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(83, 20);
             this.label1.TabIndex = 2;
@@ -82,7 +85,8 @@ namespace CreatingADatabase.GUI
             // 
             this.lblProjectTitle.AutoSize = true;
             this.lblProjectTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblProjectTitle.Location = new System.Drawing.Point(23, 99);
+            this.lblProjectTitle.Location = new System.Drawing.Point(17, 80);
+            this.lblProjectTitle.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblProjectTitle.Name = "lblProjectTitle";
             this.lblProjectTitle.Size = new System.Drawing.Size(95, 20);
             this.lblProjectTitle.TabIndex = 3;
@@ -92,7 +96,8 @@ namespace CreatingADatabase.GUI
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(23, 132);
+            this.label2.Location = new System.Drawing.Point(17, 107);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(129, 20);
             this.label2.TabIndex = 4;
@@ -102,7 +107,8 @@ namespace CreatingADatabase.GUI
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(23, 165);
+            this.label3.Location = new System.Drawing.Point(17, 134);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(114, 20);
             this.label3.TabIndex = 5;
@@ -111,78 +117,87 @@ namespace CreatingADatabase.GUI
             // txtBoxProjID
             // 
             this.txtBoxProjID.Enabled = false;
-            this.txtBoxProjID.Location = new System.Drawing.Point(183, 63);
+            this.txtBoxProjID.Location = new System.Drawing.Point(137, 51);
+            this.txtBoxProjID.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtBoxProjID.Name = "txtBoxProjID";
-            this.txtBoxProjID.Size = new System.Drawing.Size(174, 22);
+            this.txtBoxProjID.Size = new System.Drawing.Size(132, 20);
             this.txtBoxProjID.TabIndex = 6;
             // 
             // txtBoxProjTitle
             // 
-            this.txtBoxProjTitle.Location = new System.Drawing.Point(183, 97);
+            this.txtBoxProjTitle.Location = new System.Drawing.Point(137, 79);
+            this.txtBoxProjTitle.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtBoxProjTitle.Name = "txtBoxProjTitle";
-            this.txtBoxProjTitle.Size = new System.Drawing.Size(174, 22);
+            this.txtBoxProjTitle.Size = new System.Drawing.Size(132, 20);
             this.txtBoxProjTitle.TabIndex = 7;
             // 
             // txtBoxProjManager
             // 
-            this.txtBoxProjManager.Location = new System.Drawing.Point(183, 132);
+            this.txtBoxProjManager.Location = new System.Drawing.Point(137, 107);
+            this.txtBoxProjManager.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtBoxProjManager.Name = "txtBoxProjManager";
-            this.txtBoxProjManager.Size = new System.Drawing.Size(174, 22);
+            this.txtBoxProjManager.Size = new System.Drawing.Size(132, 20);
             this.txtBoxProjManager.TabIndex = 8;
             // 
             // txtBoxProjBudget
             // 
-            this.txtBoxProjBudget.Location = new System.Drawing.Point(183, 165);
+            this.txtBoxProjBudget.Location = new System.Drawing.Point(137, 134);
+            this.txtBoxProjBudget.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtBoxProjBudget.Name = "txtBoxProjBudget";
-            this.txtBoxProjBudget.Size = new System.Drawing.Size(174, 22);
+            this.txtBoxProjBudget.Size = new System.Drawing.Size(132, 20);
             this.txtBoxProjBudget.TabIndex = 9;
             // 
             // calendarStartDate
             // 
-            this.calendarStartDate.Location = new System.Drawing.Point(167, 252);
+            this.calendarStartDate.Location = new System.Drawing.Point(125, 205);
+            this.calendarStartDate.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
             this.calendarStartDate.Name = "calendarStartDate";
             this.calendarStartDate.TabIndex = 10;
             // 
             // calendarEndDate
             // 
-            this.calendarEndDate.Location = new System.Drawing.Point(584, 252);
+            this.calendarEndDate.Location = new System.Drawing.Point(438, 205);
+            this.calendarEndDate.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
             this.calendarEndDate.Name = "calendarEndDate";
             this.calendarEndDate.TabIndex = 11;
-            this.calendarEndDate.DateChanged += new System.Windows.Forms.DateRangeEventHandler(this.monthCalendar2_DateChanged);
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(43, 261);
+            this.label4.Location = new System.Drawing.Point(32, 212);
+            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(112, 16);
+            this.label4.Size = new System.Drawing.Size(91, 13);
             this.label4.TabIndex = 12;
             this.label4.Text = "Project Start Date";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(463, 261);
+            this.label5.Location = new System.Drawing.Point(347, 212);
+            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(109, 16);
+            this.label5.Size = new System.Drawing.Size(88, 13);
             this.label5.TabIndex = 13;
             this.label5.Text = "Project End Date";
             // 
             // checkBoxProjCompleted
             // 
             this.checkBoxProjCompleted.AutoSize = true;
-            this.checkBoxProjCompleted.Location = new System.Drawing.Point(46, 434);
+            this.checkBoxProjCompleted.Location = new System.Drawing.Point(34, 353);
+            this.checkBoxProjCompleted.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.checkBoxProjCompleted.Name = "checkBoxProjCompleted";
-            this.checkBoxProjCompleted.Size = new System.Drawing.Size(145, 20);
+            this.checkBoxProjCompleted.Size = new System.Drawing.Size(118, 17);
             this.checkBoxProjCompleted.TabIndex = 14;
             this.checkBoxProjCompleted.Text = "Project Completed?";
             this.checkBoxProjCompleted.UseVisualStyleBackColor = true;
             // 
             // btnEditProj
             // 
-            this.btnEditProj.Location = new System.Drawing.Point(426, 471);
+            this.btnEditProj.Location = new System.Drawing.Point(320, 383);
+            this.btnEditProj.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnEditProj.Name = "btnEditProj";
-            this.btnEditProj.Size = new System.Drawing.Size(93, 22);
+            this.btnEditProj.Size = new System.Drawing.Size(70, 18);
             this.btnEditProj.TabIndex = 15;
             this.btnEditProj.Text = "Edit Project";
             this.btnEditProj.UseVisualStyleBackColor = true;
@@ -190,9 +205,10 @@ namespace CreatingADatabase.GUI
             // 
             // btnCancelEdit
             // 
-            this.btnCancelEdit.Location = new System.Drawing.Point(547, 471);
+            this.btnCancelEdit.Location = new System.Drawing.Point(410, 383);
+            this.btnCancelEdit.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnCancelEdit.Name = "btnCancelEdit";
-            this.btnCancelEdit.Size = new System.Drawing.Size(85, 22);
+            this.btnCancelEdit.Size = new System.Drawing.Size(64, 18);
             this.btnCancelEdit.TabIndex = 16;
             this.btnCancelEdit.Text = "Cancel Edit";
             this.btnCancelEdit.UseVisualStyleBackColor = true;
@@ -200,9 +216,9 @@ namespace CreatingADatabase.GUI
             // 
             // EditForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(841, 505);
+            this.ClientSize = new System.Drawing.Size(631, 410);
             this.Controls.Add(this.btnCancelEdit);
             this.Controls.Add(this.btnEditProj);
             this.Controls.Add(this.checkBoxProjCompleted);
@@ -220,6 +236,7 @@ namespace CreatingADatabase.GUI
             this.Controls.Add(this.label1);
             this.Controls.Add(this.comboBoxSelectProj);
             this.Controls.Add(this.lblSelectProj);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "EditForm";
             this.Text = "EditForm";
             this.ResumeLayout(false);

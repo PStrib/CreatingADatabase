@@ -22,7 +22,6 @@ namespace CreatingADatabase.GUI
 
         private void btnSearchClients_Click(object sender, EventArgs e)
         {
-           // ClientDBAccess cDBAccess = new ClientDBAccess(Program.Db);
             DataTable dt = new DataTable();
             int typeCheck;
             ClientDatagrid.Columns.Clear();
@@ -45,7 +44,6 @@ namespace CreatingADatabase.GUI
             col.UseColumnTextForButtonValue = true;
             col.Text = "Update Client";
             col.Name = "btnUpdateClient";
-            //col.Font = new Font("Bahnschrift");--------Uncomment and fix this later
             ClientDatagrid.Columns.Add(col);
         }
 
@@ -140,17 +138,8 @@ namespace CreatingADatabase.GUI
             }
         }
 
-        private void SearchClients_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void ClientDatagrid_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
         private void btnBackToMenu_Click(object sender, EventArgs e)
+            //Closes this form and opens the main menu
         {
             this.Hide();
             MainApp mainApp = new MainApp();
