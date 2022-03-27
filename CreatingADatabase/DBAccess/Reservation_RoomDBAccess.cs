@@ -19,14 +19,13 @@ namespace CreatingADatabase.DBAccess
         // Validates and records a booking and returns true if no collisions are detected.
         public bool AddNewBooking(int clientID, DateTime startDateTime, DateTime endDateTime, int roomNo, string staffName)
         {
-            List<RoomBooking> bookings = GetDateRange(startDateTime, endDateTime);
-            foreach (RoomBooking b in bookings)
+            List<RoomBooking> bookings = GetDateRange(startDateTime, endDateTime, roomNo);
+
+            if (!bookings.Any())
             {
-                if (b.office == roomNo)
-                {
-                    return false;
-                }
+                return false;
             }
+
             db.Cmd = db.Conn.CreateCommand();
             db.Cmd.CommandText = $@"
                                 INSERT INTO Reservation
@@ -78,19 +77,27 @@ namespace CreatingADatabase.DBAccess
             return t.ToString("o");
         }
 
-        public List<RoomBooking> GetDateRange(DateTime viewStart, DateTime viewEnd)
+        public List<RoomBooking> GetDateRange(DateTime viewStart, DateTime viewEnd, int officeNo)
         {
-            db.Cmd = db.Conn.CreateCommand();
-            db.Cmd.CommandText = $@"
+
+            return FindBookingsFromQuery($@"
                                 select roomid,
                                 startDate,
                                 endDate
                                 FROM [Reservation-Room]
 
-                                where not(enddate < CAST('{FormatDateTime(viewStart)}' AS date)
-                                OR startdate > CAST('{FormatDateTime(viewEnd)}' AS date));";
+                                where roomid={officeNo} AND 
+                                    not(enddate < CAST('{FormatDateTime(viewStart)}' AS date)
+                                        OR startdate > CAST('{FormatDateTime(viewEnd)}' AS date));");
+        }
+
+        private List<RoomBooking> FindBookingsFromQuery(string query)
+        {
+            db.Cmd = db.Conn.CreateCommand();
+            db.Cmd.CommandText = query;
 
             List<RoomBooking> roomBookings = new List<RoomBooking>();
+
             using (SqlDataReader reader = db.Cmd.ExecuteReader())
             {
                 if (reader.HasRows)
@@ -105,6 +112,18 @@ namespace CreatingADatabase.DBAccess
                 }
             }
             return roomBookings;
+        }
+
+        public List<RoomBooking> GetDateRange(DateTime viewStart, DateTime viewEnd)
+        {
+            return FindBookingsFromQuery($@"
+                                select roomid,
+                                startDate,
+                                endDate
+                                FROM [Reservation-Room]
+
+                                where not(enddate < CAST('{viewStart.Date:o}' AS date)
+                                OR startdate > CAST('{viewEnd.Date:o}' AS date));");
         }
 
         public List<ConferenceRoomBooking> GetConferenceDateRange(DateTime viewStart, DateTime viewEnd)
