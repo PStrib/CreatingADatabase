@@ -36,6 +36,7 @@ namespace CreatingADatabase.GUI
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
+            this.btnReport = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.ClientDatagrid)).BeginInit();
             this.SuspendLayout();
             // 
@@ -101,11 +102,22 @@ namespace CreatingADatabase.GUI
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.btnBackToMenu_Click);
             // 
+            // btnReport
+            // 
+            this.btnReport.Location = new System.Drawing.Point(699, 7);
+            this.btnReport.Name = "btnReport";
+            this.btnReport.Size = new System.Drawing.Size(90, 36);
+            this.btnReport.TabIndex = 33;
+            this.btnReport.Text = "Generate Report";
+            this.btnReport.UseVisualStyleBackColor = true;
+            this.btnReport.Click += new System.EventHandler(this.btnReport_Click);
+            // 
             // SearchClients
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnReport);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.btnSearchClients);
@@ -130,5 +142,6 @@ namespace CreatingADatabase.GUI
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnReport;
     }
 }

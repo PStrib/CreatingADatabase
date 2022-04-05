@@ -154,5 +154,12 @@ namespace CreatingADatabase.GUI
             this.Close();
             this.Dispose();
         }
+
+        private void btnReport_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Report report = new Report(txtClientSearch.Text);
+            report.ShowDialog();
+        }
     }
 }
