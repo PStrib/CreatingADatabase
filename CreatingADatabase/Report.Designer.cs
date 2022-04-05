@@ -31,35 +31,36 @@ namespace CreatingADatabase
         {
             this.components = new System.ComponentModel.Container();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.DataSetBookings = new CreatingADatabase.DataSetBookings();
             this.DataTable1BindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.DataSetBookings = new CreatingADatabase.DataSetBookings();
+            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.DataTable1TableAdapter = new CreatingADatabase.DataSetBookingsTableAdapters.DataTable1TableAdapter();
-            ((System.ComponentModel.ISupportInitialize)(this.DataSetBookings)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DataTable1BindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DataSetBookings)).BeginInit();
             this.SuspendLayout();
             // 
-            // reportViewer1
+            // DataTable1BindingSource
             // 
-            reportDataSource1.Name = "DataSet1";
-            reportDataSource1.Value = this.DataTable1BindingSource;
-            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
-            this.reportViewer1.LocalReport.ReportEmbeddedResource = "CreatingADatabase.Report.rdlc";
-            this.reportViewer1.Location = new System.Drawing.Point(13, 28);
-            this.reportViewer1.Name = "reportViewer1";
-            this.reportViewer1.ServerReport.BearerToken = null;
-            this.reportViewer1.Size = new System.Drawing.Size(396, 246);
-            this.reportViewer1.TabIndex = 0;
+            this.DataTable1BindingSource.DataMember = "DataTable1";
+            this.DataTable1BindingSource.DataSource = this.DataSetBookings;
             // 
             // DataSetBookings
             // 
             this.DataSetBookings.DataSetName = "DataSetBookings";
             this.DataSetBookings.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // DataTable1BindingSource
+            // reportViewer1
             // 
-            this.DataTable1BindingSource.DataMember = "DataTable1";
-            this.DataTable1BindingSource.DataSource = this.DataSetBookings;
+            this.reportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
+            reportDataSource1.Name = "DataSet1";
+            reportDataSource1.Value = this.DataTable1BindingSource;
+            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
+            this.reportViewer1.LocalReport.ReportEmbeddedResource = "CreatingADatabase.Report.rdlc";
+            this.reportViewer1.Location = new System.Drawing.Point(0, 0);
+            this.reportViewer1.Name = "reportViewer1";
+            this.reportViewer1.ServerReport.BearerToken = null;
+            this.reportViewer1.Size = new System.Drawing.Size(800, 450);
+            this.reportViewer1.TabIndex = 0;
             // 
             // DataTable1TableAdapter
             // 
@@ -74,8 +75,8 @@ namespace CreatingADatabase
             this.Name = "Report";
             this.Text = "Report";
             this.Load += new System.EventHandler(this.Report_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.DataSetBookings)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.DataTable1BindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DataSetBookings)).EndInit();
             this.ResumeLayout(false);
 
         }

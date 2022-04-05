@@ -157,9 +157,17 @@ namespace CreatingADatabase.GUI
 
         private void btnReport_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            Report report = new Report(txtClientSearch.Text);
-            report.ShowDialog();
+            try
+            {
+                this.Hide();
+                Report report = new Report(txtClientSearch.Text);
+                report.ShowDialog();
+            }
+
+            catch
+            {
+                MessageBox.Show("You can only generate a report for a client number\nPlease enter a number in the search box");
+            }
         }
     }
 }
